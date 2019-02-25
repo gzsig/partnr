@@ -8,27 +8,42 @@
   </div>
 
   <div class="field">
-    <%= f.input :first_name, autofocus: true %>
+    <%= f.label :first_name, 'First Name' %><br />
+    <%= f.text_field :first_name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.input :last_name, autofocus: true %>
+    <%= f.label :last_name, 'Last Name' %><br />
+    <%= f.text_field :last_name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.input :phone_number, autofocus: true %>
+    <%= f.label :phone_number, 'Phone Number' %><br />
+    <%= f.text_field :phone_number, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.input :CPF, autofocus: true %>
+    <%= f.label :CPF, 'CPF' %><br />
+    <%= f.text_field :CPF, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.input :bio, autofocus: true %>
+    <%= f.label :bio, 'Tell us more about yourself' %><br />
+    <%= f.text_field :bio, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.input :password, autocomplete: "new-password" %>
+    <%= f.label :occupation, 'Occupation' %><br />
+    <%= f.text_field :occupation, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address, 'Address' %><br />
+    <%= f.text_field :address, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
