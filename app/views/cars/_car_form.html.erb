@@ -12,8 +12,16 @@
 <%= f.input :specs, autofocus: true %>
 <%= f.input :facts, autofocus: true %>
 <%= f.input :version, autofocus: true %>
-
+<%= f.input :photo_one %>
+<%= f.input :photo_one_cache, as: :hidden %>
+<%= f.input :photo_two %>
+<%= f.input :photo_two_cache, as: :hidden %>
+<%= f.input :photo_three %>
+<%= f.input :photo_three_cache, as: :hidden %>
+<%= f.input :photo_four %>
+<%= f.input :photo_four_cache, as: :hidden %>
+<%= f.input :video %>
+<%= f.input :video_cache, as: :hidden %>
 <%= f.submit "Save" %>
-
 
 <% end  %>
