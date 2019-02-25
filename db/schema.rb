@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_170611) do
+ActiveRecord::Schema.define(version: 2019_02_25_171743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cars", force: :cascade do |t|
+    t.string "brand"
+    t.string "model"
+    t.integer "model_year"
+    t.integer "fabrication_year"
+    t.string "chassis"
+    t.string "licens_plate"
+    t.string "kilometers"
+    t.string "price"
+    t.string "color"
+    t.string "specs"
+    t.string "facts"
+    t.string "version"
+    t.string "photo_one"
+    t.string "photo_two"
+    t.string "photo_three"
+    t.string "photo_four"
+    t.string "video"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
