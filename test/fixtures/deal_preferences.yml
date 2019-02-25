@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  deal: one
+  track_use: false
+  other_drivers: false
+
+two:
+  user: two
+  deal: two
+  track_use: false
+  other_drivers: false
