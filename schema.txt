@@ -86,6 +86,9 @@
 <row name="versao" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="year" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
 <row name="numero de chassi" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
