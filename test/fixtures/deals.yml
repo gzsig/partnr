@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deal_status: MyString
+  car: one
+
+two:
+  deal_status: MyString
+  car: two
