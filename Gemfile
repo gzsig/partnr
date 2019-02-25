@@ -8,7 +8,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'faker'
 gem 'money-rails'
-
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
