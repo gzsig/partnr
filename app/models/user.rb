@@ -14,4 +14,8 @@ class User < ApplicationRecord
   validates :bio, presence: true
   validates :phone_number, presence: true
   validates :occupation, presence: true
+
+  def is_adm?
+    self.adm
+  end
 end
