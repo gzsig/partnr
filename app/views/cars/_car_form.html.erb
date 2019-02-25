@@ -1,27 +1,29 @@
-<%= simple_form_for @car do |f| %>
+<div class="container">
+  <%= simple_form_for @car do |f| %>
 
-<%= f.input :brand, autofocus: true %>
-<%= f.input :model, autofocus: true %>
-<%= f.input :model_year, autofocus: true %>
-<%= f.input :fabrication_year, autofocus: true %>
-<%= f.input :chassis, autofocus: true %>
-<%= f.input :licens_plate, autofocus: true %>
-<%= f.input :kilometers, autofocus: true %>
-<%= f.input :price, autofocus: true %>
-<%= f.input :color, autofocus: true %>
-<%= f.input :specs, autofocus: true %>
-<%= f.input :facts, autofocus: true %>
-<%= f.input :version, autofocus: true %>
-<%= f.input :photo_one %>
-<%= f.input :photo_one_cache, as: :hidden %>
-<%= f.input :photo_two %>
-<%= f.input :photo_two_cache, as: :hidden %>
-<%= f.input :photo_three %>
-<%= f.input :photo_three_cache, as: :hidden %>
-<%= f.input :photo_four %>
-<%= f.input :photo_four_cache, as: :hidden %>
-<%= f.input :video %>
-<%= f.input :video_cache, as: :hidden %>
-<%= f.submit "Save" %>
+  <%= f.input :brand, autofocus: true %>
+  <%= f.input :model, autofocus: true %>
+  <%= f.input :model_year, autofocus: true %>
+  <%= f.input :fabrication_year, autofocus: true %>
+  <%= f.input :chassis, autofocus: true %>
+  <%= f.input :licens_plate, autofocus: true %>
+  <%= f.input :kilometers, autofocus: true %>
+  <%= f.input :price, autofocus: true %>
+  <%= f.input :color, autofocus: true %>
+  <%= f.input :specs, autofocus: true %>
+  <%= f.input :facts, autofocus: true %>
+  <%= f.input :version, autofocus: true %>
+  <%= f.input :photo_one %>
+  <%= f.input :photo_one_cache, as: :hidden %>
+  <%= f.input :photo_two %>
+  <%= f.input :photo_two_cache, as: :hidden %>
+  <%= f.input :photo_three %>
+  <%= f.input :photo_three_cache, as: :hidden %>
+  <%= f.input :photo_four %>
+  <%= f.input :photo_four_cache, as: :hidden %>
+  <%= f.input :video %>
+  <%= f.input :video_cache, as: :hidden %>
+  <%= f.submit "Save", class:'btn btn-primary'%>
 
-<% end  %>
+  <% end  %>
+</div>
