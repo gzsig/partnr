@@ -7,6 +7,7 @@ gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'faker'
+gem 'money-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
