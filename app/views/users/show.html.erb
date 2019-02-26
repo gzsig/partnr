@@ -2,12 +2,20 @@
 
   <h5>Name</h5>
   <li><%= @user.first_name %>  <%= @user.last_name %></li>
-  <li>CPF: <%= @user.CPF %></li>
-  <h5>Contact</h5>
-  <li>Email: <%= @user.email %></li>
-  <li>Phone number: <%= @user.phone_number %></li>
   <br>
-  <li>About: <%= @user.bio %></li>
+  <h5>Info</h5>
+  <li>CPF: <%= @user.CPF %></li>
   <li>Occupation: <%= @user.occupation %></li>
   <li>address: <%= @user.address %></li>
+  <br>
+  <h5>Contact</h5>
+  <strong>Email:</strong> <%= @user.email %>
+  <strong>Phone number:</strong> <%= @user.phone_number %>
+  <br>
+  <br>
+  <h5>About</h5>
+  <li>About: <%= @user.bio %></li>
+
+  <%= link_to 'Edit profile', edit_user_path %> 
+
 </div>
