@@ -1,1 +1,43 @@
-<%= @good.brand %>
+<div class="parntr-container">
+  <div class="flex">
+    <div class="col-sm-12 col-md-2 float-left bg-partnr-yellow p-4">
+      <h4><%= @good.brand %> <%= @good.model %></h4>
+      .
+
+    </div>
+
+    <div class="col-sm-12 col-md-9 col-offset-1 float-right">
+
+      <div id="carouselExampleControls" class="carousel slide mb-3" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= cl_image_tag @good.photo_one %>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag @good.photo_two %>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag @good.photo_three %>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag @good.photo_four %>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <video width="100%" height="auto" poster="<%= cl_image_path @good.photo_one %>" controls>
+        <source src="<%= cl_video_path @good.video %>" type="video/webm">
+      </video>
+
+    </div>
+  </div>
+</div>
+
