@@ -6,5 +6,4 @@ class Car < ApplicationRecord
   mount_uploader :photo_three, PhotoUploader
   mount_uploader :photo_four, PhotoUploader
   mount_uploader :video, PhotoUploader
-
 end
