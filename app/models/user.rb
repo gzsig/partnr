@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
-  has_many :deal_users
-  has_many :deals, through: :deal_users
+  has_many :partnrs
+  has_many :goods, through: :partnrs
 
   validates :first_name, presence: true
   validates :last_name, presence: true
