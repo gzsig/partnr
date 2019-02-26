@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_194329) do
+ActiveRecord::Schema.define(version: 2019_02_26_164909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_194329) do
     t.string "kilometers"
     t.string "price"
     t.string "color"
-    t.string "specs"
     t.string "facts"
     t.string "version"
     t.string "good_type"
