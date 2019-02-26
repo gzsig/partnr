@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 private
 
   def require_admin!
-    unless current_user && current_user.is_adm?
+    unless current_user && current_user.adm?
       flash[:notice] = 'You must be admin make this action'
       redirect_to root_path
     end
