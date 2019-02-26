@@ -1,5 +1,5 @@
 class Car < ApplicationRecord
-  belongs_to :deal
+  has_one :deal
 
   mount_uploader :photo_one, PhotoUploader
   mount_uploader :photo_two, PhotoUploader

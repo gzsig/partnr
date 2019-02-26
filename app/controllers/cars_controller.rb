@@ -3,8 +3,7 @@ class CarsController < ApplicationController
     @cars = Cars.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @car = Car.new
@@ -19,8 +18,7 @@ class CarsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @car.update(car_params)
@@ -31,7 +29,7 @@ class CarsController < ApplicationController
   end
 
   def destroy
-    @car.car.destroy
+    @car.destroy
 
     redirect_to :root
   end
