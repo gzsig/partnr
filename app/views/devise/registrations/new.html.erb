@@ -8,42 +8,35 @@
   </div>
 
   <div class="field">
-    <%= f.label :first_name, 'First Name' %><br />
     <%= f.input :first_name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :last_name, 'Last Name' %><br />
     <%= f.input :last_name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :phone_number, 'Phone Number' %><br />
     <%= f.input :phone_number, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :CPF, 'CPF' %><br />
     <%= f.input :CPF, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :bio, 'Tell us more about yourself' %><br />
     <%= f.input :bio, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :occupation, 'Occupation' %><br />
     <%= f.input :occupation, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :address, 'Address' %><br />
     <%= f.input :address, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.input :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
