@@ -1,12 +1,7 @@
 <div class="parntr-container">
   <div class="flex">
-    <div class="col-sm-12 col-md-2 float-left bg-partnr-yellow">
-      <h4><%= @good.brand %> <%= @good.model %></h4>
-      .
 
-    </div>
-
-    <div class="col-sm-12 col-md-9 col-offset-1 float-right">
+    <div class="col-sm-12 col-md-9 float-left p-0">
 
       <div id="carouselExampleControls" class="carousel slide mb-3" data-ride="carousel">
         <div class="carousel-inner">
@@ -36,6 +31,14 @@
       <video width="100%" height="auto" poster="<%= cl_image_path @good.photo_one %>" controls>
         <source src="<%= cl_video_path @good.video %>" type="video/webm">
       </video>
+
+    </div>
+
+    <div class="col-sm-12 col-md-3 float-right p-0">
+      <div class="bg-partnr-yellow p-4">
+        <p class="border border-dark rounded p-1"><%= @good.fabrication_year %></p>
+        <h4><%= @good.brand %> <%= @good.model %></h4>
+      </div>
 
     </div>
   </div>
