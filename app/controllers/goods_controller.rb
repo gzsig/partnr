@@ -20,9 +20,13 @@ class GoodsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @good = Good.find(params[:id])
+  end
 
   def update
+    @good = Good.find(params[:id])
+
     if @good.update(good_params)
       redirect_to @good
     else
