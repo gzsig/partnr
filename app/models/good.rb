@@ -1,5 +1,5 @@
 class Good < ApplicationRecord
-  has_many :partnrs
+  has_many :partners
 
   mount_uploader :photo_one, PhotoUploader
   mount_uploader :photo_two, PhotoUploader
