@@ -1,5 +1,5 @@
-class Car < ApplicationRecord
-  has_one :deal
+class Good < ApplicationRecord
+  has_many :partnrs
 
   mount_uploader :photo_one, PhotoUploader
   mount_uploader :photo_two, PhotoUploader
