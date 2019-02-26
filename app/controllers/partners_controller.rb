@@ -19,7 +19,7 @@ class PartnersController < ApplicationController
     @partner.good = @good
     @partner.user = current_user
     if @partner.save
-      redirect_to @partner
+      redirect_to good_path(@good)
     else
       render :new
     end
