@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
-
   before_action :set_user, except: %i[new create]
 
-  def show
-  end
+  def show; end
 
   def new
     @user = User.new
