@@ -6,11 +6,29 @@
   <div class="links">
     <div class="nav-bar-right d-flex align-items-center">
       <% if user_signed_in? %>
-        <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+        <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn btn-link" %>
       <% else %>
-        <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "btn btn-dark" %>
-        <%= link_to t(".sign_in", default: "CRIAR CONTA"), new_user_registration_path, class: "btn btn-dark" %>
+        <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "btn btn-link" %>
+        <%= link_to t(".sign_in", default: "CRIAR CONTA"), new_user_registration_path, class: "btn btn-link" %>
       <% end %>
+        <div class="image-navbar">
+          <div class="dropdown  d-none d-sm-block">
+            <%= image_tag "seb.jpeg", class: "rounded-circle px-3", alt:"avatar", type: "image", id: "dropdownMenuButton", data: { toggle:"dropdown" }, aria: { haspopup:"true", expanded: "false" } %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <%= link_to "My Profile", _path, class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Something else here", "#", class: "dropdown-item" %>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
+  <div class="dropdown burger d-block d-sm-none">
+      <i class="fas fa-bars" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <%= link_to "My Profile", "#", class: "dropdown-item" %>
+        <%= link_to "Another action", "#", class: "dropdown-item" %>
+        <%= link_to "Something else here", "#", class: "dropdown-item" %>
+      </div>
+    </div>
 </div>

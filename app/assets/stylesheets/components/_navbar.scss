@@ -1,16 +1,20 @@
 .partnr-logo img {
-  width: 150px;
+  width: 100px;
 }
 
 .links {
   a {
-    text-decoration: none;
+    text-decoration: none !important;
   }
   a.hover {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 
-.btn-dark {
+.btn-link {
   margin-left: 10px;
+}
+
+.image-navbar img {
+  width: 70px;
 }
