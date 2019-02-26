@@ -23,7 +23,9 @@
   <%= f.input :photo_four_cache, as: :hidden %>
   <%= f.input :video %>
   <%= f.input :video_cache, as: :hidden %>
-  <%= f.submit "Save", class:'btn btn-primary'%>
+  <div class="actions">
+    <%= f.button :submit, class:'btn btn-primary'%>
+  </div>
 
   <% end  %>
 </div>
