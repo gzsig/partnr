@@ -1,23 +1,6 @@
-class UsersController < ApplicationController
-  before_action :set_user, except: %i[new create show]
+class Admin::UsersController < ApplicationController
 
-  def show
-    @user = current_user
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    @user.user = current_user
-    if @user.save
-      redirect_to @user
-    else
-      render :new
-    end
-  end
+  def show; end
 
   def edit; end
 
