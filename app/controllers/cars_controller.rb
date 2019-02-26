@@ -1,9 +1,11 @@
 class CarsController < ApplicationController
   def index
-    @cars = Cars.all
+    @cars = Car.all
   end
 
-  def show; end
+  def show
+    @car = Car.find(params[:id])
+  end
 
   def new
     @car = Car.new
