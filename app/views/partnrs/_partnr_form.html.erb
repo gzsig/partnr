@@ -1,5 +1,6 @@
 <%= simple_form_for @partnr do |f|  %>
-  
 
+  <%= f.input :track_use, as: :boolean, checked_value: true, unchecked_value: false %>
+  <%= f.input :other_drivers, as: :boolean, checked_value: true, unchecked_value: false %>
 
 <% end %>
