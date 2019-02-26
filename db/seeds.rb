@@ -11,5 +11,5 @@ User.create(first_name: "Eike", last_name: "Batista", email: "im@eike.com", bio:
 puts "done!"
 
 puts "creating 1 car..."
-Car.create(brand: "Lamborgini", model: "Aventador", model_year: 2014, fabrication_year: 2015, chassis: "12345tfdsadfg", licens_plate: "EIK-1111", kilometers: "8000", price: "1500000", color: "perola", specs: "30000 cv", facts: "Esse carro eh foda!", version: "v12", photo_one: "photo1", photo_two: "photo2", photo_three: "photo3", photo_four: "photo4", video: "video")
+Good.create(brand: "Lamborgini", model: "Aventador", model_year: 2014, fabrication_year: 2015, chassis: "12345tfdsadfg", licens_plate: "EIK-1111", kilometers: "8000", price: "1500000", color: "perola", specs: "30000 cv", facts: "Esse carro eh foda!", version: "v12", good_type: 'car', photo_one: "photo1", photo_two: "photo2", photo_three: "photo3", photo_four: "photo4", video: "video")
 puts "done!"

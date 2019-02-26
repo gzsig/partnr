@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_194329) do
     t.string "specs"
     t.string "facts"
     t.string "version"
-    t.string "type"
+    t.string "good_type"
     t.string "photo_one"
     t.string "photo_two"
     t.string "photo_three"
