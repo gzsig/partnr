@@ -1,0 +1,16 @@
+<div class="navbar bg-white py-3 px-4">
+  <div class="partnr-logo"> <%= link_to :root do %>
+        <%= image_tag "partnr_dark.png" %>
+      <% end %>
+  </div>
+  <div class="links">
+    <div class="nav-bar-right d-flex align-items-center">
+      <% if user_signed_in? %>
+        <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+      <% else %>
+        <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "btn btn-dark" %>
+        <%= link_to t(".sign_in", default: "CRIAR CONTA"), new_user_registration_path, class: "btn btn-dark" %>
+      <% end %>
+    </div>
+  </div>
+</div>
