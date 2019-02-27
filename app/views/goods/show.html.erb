@@ -40,6 +40,10 @@
         <h4><%= @good.brand %> <%= @good.model %></h4>
       </div>
     </div>
-    <%= link_to "QUERO", new_good_partner_path(@good) %>
+    <% if @users.include?(current_user) %>
+      These are your partnrs!
+    <% else %>
+      <%= link_to "QUERO", new_good_partner_path(@good) %>
+    <% end %>
   </div>
 </div>

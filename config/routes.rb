@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   resources :goods do
     resources :partners, only: %i[new create]
   end
-
 end
