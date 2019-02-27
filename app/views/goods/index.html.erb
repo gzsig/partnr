@@ -1,6 +1,36 @@
-<div class="container">
+<div class="container d-flex flex-wrap">
 
-  <% @goods.each do |good| %>
-    <%= good.brand %>
-  <% end %>
+    <% @goods.each do |good| %>
+    <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card index-card">
+      <div class="index-img"></div>
+      <div class="card-body">
+        <h5 class="card-title"><%= good.brand %> <%= good.model %></h5>
+        <div class="card-text">
+          <div class="good-type">
+            <%= good.good_type %>
+          </div>
+          <div class="good-date">
+            <%= good.model_year %>
+            <%= good.fabrication_year %>
+          </div>
+          <div class="good-price">
+            <%= good.price %>
+          </div>
+          <div class="good-details">
+            <%= good.chassis %>
+            <%= good.licens_plate %>
+            <%= good.kilometers %>
+            <%= good.color %>
+          </div>
+          <div class="good-facts">
+            <%=  good.facts %>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+  </div>
+    <% end %>
 </div>
