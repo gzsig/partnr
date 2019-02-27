@@ -1,8 +1,10 @@
 <div class="container d-flex flex-wrap">
 
+  <%= render 'shared/search' %>
+
   <% @goods.each do |good| %>
   <div class="col-sm-12 col-md-6 col-lg-4">
-    <%= link_to good_path(good) do, style: 'text-decoration: none'%>
+    <%= link_to good_path(good), class: 'text-decoration-none' do %>
     <div class="card index-card">
       <div class="index-img"></div>
       <div class="card-body">
