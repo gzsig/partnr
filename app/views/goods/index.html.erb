@@ -1,7 +1,8 @@
 <div class="container d-flex flex-wrap">
 
-    <% @goods.each do |good| %>
-    <div class="col-sm-12 col-md-6 col-lg-4">
+  <% @goods.each do |good| %>
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <%= link_to good_path(good) do, style: 'text-decoration: none'%>
     <div class="card index-card">
       <div class="index-img"></div>
       <div class="card-body">
@@ -27,10 +28,9 @@
             <%=  good.facts %>
           </div>
         </div>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-
-  </div>
     <% end %>
+  </div>
+  <% end %>
 </div>
