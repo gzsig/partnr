@@ -8,7 +8,7 @@
     <div class="links">
       <div class="nav-bar-right d-flex align-items-center">
         <% if user_signed_in? %>
-          <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn btn-link" %>
+          <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn btn-light" %>
           <div class="image-navbar">
             <div class="dropdown  d-none d-sm-block">
               <%= image_tag "seb.jpeg", class: "rounded-circle px-3", alt:"avatar", type: "image", id: "dropdownMenuButton", data: { toggle:"dropdown" }, aria: { haspopup:"true", expanded: "false" } %>
@@ -26,8 +26,8 @@
             </div>
           </div>
         <% else %>
-          <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "btn btn-link" %>
-          <%= link_to t(".sign_in", default: "CRIAR CONTA"), new_user_registration_path, class: "btn btn-link" %>
+          <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "btn btn-light" %>
+          <%= link_to t(".sign_in", default: "CRIAR CONTA"), new_user_registration_path, class: "btn btn-light" %>
         <% end %>
       </div>
     </div>
