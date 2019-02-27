@@ -41,9 +41,17 @@
       </div>
     </div>
     <% if @users.include?(current_user) %>
-      These are your partnrs!
+      <% if @good.status %>
+        Fechou!
+      <% else %>
+        These are your partnrs!
+      <% end %>
     <% else %>
-      <%= link_to "QUERO", new_good_partner_path(@good) %>
+      <% if @good.status %>
+        Epa, perdeu o deal!
+      <% else %>
+        <%= link_to "QUERO", new_good_partner_path(@good) %>
+      <% end %>
     <% end %>
   </div>
 </div>

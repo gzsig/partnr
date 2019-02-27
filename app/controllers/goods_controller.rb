@@ -1,10 +1,12 @@
 class GoodsController < ApplicationController
+  before_action :set_good, only: %i[show edit update]
+  before_action :set_good_status
+
   def index
     @goods = Good.all
   end
 
   def show
-    @good = Good.find(params[:id])
     @users = []
     @good.partners.each do |partner|
       @users << partner.user
@@ -24,13 +26,9 @@ class GoodsController < ApplicationController
     end
   end
 
-  def edit
-    @good = Good.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @good = Good.find(params[:id])
-
     if @good.update(good_params)
       redirect_to @good
     else
@@ -48,5 +46,14 @@ class GoodsController < ApplicationController
 
   def good_params
     params.require(:good).permit(:brand, :model, :model_year, :fabrication_year, :chassis, :licens_plate, :kilometers, :price, :color, :specs, :facts, :version, :photo_one, :photo_two, :photo_three, :photo_four, :video, :type)
+  end
+
+  def set_good
+    @good = Good.find(params[:id])
+  end
+
+  def set_good_status
+    set_good
+    @good.set_status
   end
 end
