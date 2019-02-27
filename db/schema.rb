@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_135011) do
     t.string "video"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status", default: false
   end
 
   create_table "partners", force: :cascade do |t|
