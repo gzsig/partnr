@@ -1,8 +1,9 @@
 .partnr-logo img {
   width: 100px;
+  // margin-right: 1200px;
 }
 
-.links {
+.partnr-logo {
   a {
     text-decoration: none !important;
   }
@@ -11,10 +12,22 @@
   }
 }
 
-.btn-link {
-  margin-left: 10px;
+li {
+  a {
+    text-decoration: none !important;
+    color: $partnr-dark-gray;
+  }
+  a.hover {
+    text-decoration: none !important;
+    color: $partnr-dark-gray;
+  }
 }
 
-.image-navbar img {
-  width: 70px;
+.navbar-text img {
+  width: 80px;
+}
+
+.btn-light {
+  background-color: #e3f2fd !important;
+  margin-left: 20px;
 }
