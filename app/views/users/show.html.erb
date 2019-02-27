@@ -1,5 +1,7 @@
 <div class="container">
 
+
+  <%= cl_image_tag current_user.profile_picture, width:150, height: 150, crop: :thumb, gravity: :face, class: 'profile-pic' %>
   <h5>Name</h5>
   <li><%= @user.first_name %>  <%= @user.last_name %></li>
   <br>
@@ -16,6 +18,6 @@
   <h5>About</h5>
   <li>About: <%= @user.bio %></li>
 
-  <%= link_to 'Edit profile', edit_user_registration_path %> 
+  <%= link_to 'Edit profile', edit_user_registration_path %>
 
 </div>

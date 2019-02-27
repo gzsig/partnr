@@ -35,7 +35,7 @@
         </li>
         <li class="nav-item">
             <span class="navbar-text">
-            <%= image_tag "seb.jpeg", class: "rounded-circle px-3", alt:"avatar", type: "image" %>
+            <%= cl_image_tag current_user.profile_picture, width:50, height: 50, crop: :thumb, gravity: :face %>
             </span>
         </li>
       <% else %>

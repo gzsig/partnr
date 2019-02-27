@@ -15,4 +15,6 @@ class User < ApplicationRecord
   validates :phone_number, presence: true
   validates :occupation, presence: true
 
+  mount_uploader :profile_picture, PhotoUploader
+
 end
