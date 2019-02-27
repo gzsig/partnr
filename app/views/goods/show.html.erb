@@ -39,8 +39,11 @@
         <p class="border border-dark rounded p-1"><%= @good.fabrication_year %></p>
         <h4><%= @good.brand %> <%= @good.model %></h4>
       </div>
-
     </div>
+    <% if @users.include?(current_user) %>
+      These are your partnrs!
+    <% else %>
+      <%= link_to "QUERO", new_good_partner_path(@good) %>
+    <% end %>
   </div>
 </div>
-

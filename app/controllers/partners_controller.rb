@@ -41,10 +41,9 @@ class PartnersController < ApplicationController
     redirect_to :root
   end
 
-private
+  private
 
-def partner_params
-  params.require(:partner).permit(:track_use, :other_drivers)
-end
-
+  def partner_params
+    params.require(:partner).permit(:track_use, :other_drivers, :none_of_the_above)
+  end
 end
