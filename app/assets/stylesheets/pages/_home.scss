@@ -1,0 +1,32 @@
+
+.home-page {
+  background-image: asset-url('back1.jpg');
+  background-size: cover !important;
+  height: 93vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .about {
+    margin-top: 500px;
+    color: $partnr-yellow;
+  }
+  .clickme {
+    color: $partnr-yellow;
+    a {
+      text-decoration: none;
+      color: $partnr-yellow;
+    }
+    a.hover {
+      text-decoration: none;
+      color: $partnr-yellow;
+    }
+  }
+   @media(min-width: 300px) {
+    .home-page {
+      overflow-x: scroll;
+      overflow-y: scroll;
+      }
+    .about {
+      }
+  }
+}
