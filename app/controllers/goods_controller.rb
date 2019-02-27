@@ -5,6 +5,10 @@ class GoodsController < ApplicationController
 
   def show
     @good = Good.find(params[:id])
+    @users = []
+    @good.partners.each do |partner|
+      @users << partner.user
+    end
   end
 
   def new
