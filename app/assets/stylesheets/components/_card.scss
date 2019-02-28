@@ -1,7 +1,7 @@
 .index-card {
   min-width: 300px !important;
   margin: 0 auto;
-  margin-top: 5px;
+  margin-top: 20px;
   overflow: hidden;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
 }
@@ -18,4 +18,20 @@
 .good-facts {
   color: blue;
 
+}
+
+.profile-user {
+  background-color: $body-background-color;
+  margin-top: 25px;
+  color: $partnr-blue;
+  font-family: $profile-font;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(103,112,119, 0.5);
+  .btn-profile {
+    margin-top: 15px;
+  }
+}
+
+.profile-name {
+  margin-top: 20px;
 }
