@@ -19,6 +19,10 @@ class PartnersController < ApplicationController
     @partner.good = @good
     @partner.user = current_user
     if @partner.save
+      @good.set_status
+      if @good.status
+        closed_deal(@partner.user, @good)
+      end
       redirect_to good_path(@good)
     else
       render :new
@@ -46,4 +50,11 @@ class PartnersController < ApplicationController
   def partner_params
     params.require(:partner).permit(:track_use, :other_drivers, :none_of_the_above)
   end
+
+  def closed_deal(user, good)
+    @user = user
+    @good = good
+    UserMailer.new_partnrs(@user, @good).deliver_now
+  end
+
 end
