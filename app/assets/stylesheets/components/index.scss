@@ -4,6 +4,7 @@
 @import "carousel";
 @import "button";
 @import "profile";
+@import "flipcard";
 
 
 .my-card {
@@ -18,5 +19,4 @@
   &:hover {
     opacity: 1;
   }
-
 }
