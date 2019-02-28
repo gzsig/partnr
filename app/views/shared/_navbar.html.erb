@@ -12,6 +12,11 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <%= link_to "INDEX", goods_path, class: "btn btn-light" %>
+        </a>
+      </li>
       <% if user_signed_in? %>
         <li class="nav-item">
           <a class="nav-link" href="#">
@@ -30,7 +35,7 @@
         </li>
         <li class="nav-item">
             <span class="navbar-text">
-            <%= image_tag "seb.jpeg", class: "rounded-circle px-3", alt:"avatar", type: "image" %>
+            <%= cl_image_tag current_user.profile_picture, width:50, height: 50, crop: :thumb, gravity: :face %>
             </span>
         </li>
       <% else %>
