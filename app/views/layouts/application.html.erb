@@ -12,9 +12,10 @@
 
 <body>
   <%= render 'shared/navbar' %>
-  <% if notice || alert %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <% if notice %>
+    <p class="notice alert alert-success text-center"><%= notice %></p>
+    <% elsif alert %>
+    <p class="alert alert alert-danger text-center"><%= alert %></p>
   <% end %>
   <%= yield %>
   <%= javascript_pack_tag 'application' %>
