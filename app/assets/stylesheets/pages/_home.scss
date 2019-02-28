@@ -1,0 +1,36 @@
+
+.home-page {
+  background-image: asset-url('back1.jpg');
+  background-size: cover !important;
+  height: 93vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .about {
+    margin-top: 400px;
+    color: $partnr-yellow;
+    font-family: $about-font;
+    font-size: 45px;
+  }
+  .clickme {
+    color: $partnr-yellow;
+    font-family: $about-font;
+    font-size: 45px;
+    a {
+      text-decoration: none;
+      color: $partnr-yellow;
+      font-family: $about-font;
+      font-size: 45px;
+    }
+    a.hover {
+      text-decoration: none;
+      color: $partnr-yellow;
+    }
+  }
+   @media(min-width: 320px) {
+    .home-page {
+      overflow-x: scroll;
+      overflow-y: scroll;
+    }
+  }
+}
