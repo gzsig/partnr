@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.user = current_user
     if @user.save
+      
       redirect_to @user
     else
       render :new
