@@ -1,0 +1,8 @@
+<% @goods.each do |good| %>
+  <div class="card">
+    <h3><%= good.model %></h3>
+    <% good.users.each do |user| %>
+      <p><%= user.first_name %></p>
+    <% end %>
+  </div>
+<% end %>
