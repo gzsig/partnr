@@ -21,7 +21,7 @@ class PartnersController < ApplicationController
     if @partner.save
       @good.set_status
       if @good.status
-        closed_deal(@partner.user, @good)
+        closed_deal(@good)
       end
       redirect_to good_path(@good)
     else
@@ -51,10 +51,12 @@ class PartnersController < ApplicationController
     params.require(:partner).permit(:track_use, :other_drivers, :none_of_the_above)
   end
 
-  def closed_deal(user, good)
-    @user = user
+  def closed_deal(good)
     @good = good
-    UserMailer.new_partnrs(@user, @good).deliver_now
+    Partner.where(good: good).each do |p|
+      @user = User.where(id: p.user_id).first
+      UserMailer.new_partnrs(@user, @good).deliver_now
+    end
   end
 
 end
