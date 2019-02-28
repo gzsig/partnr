@@ -1,0 +1,22 @@
+<div class="bg-white w-100 p-4">
+  <h5>Filters</h5>
+
+  <%= form_for goods_path, method: 'GET' do |f| %>
+
+    <%= text_field_tag :query,
+      params[:query],
+      class: 'form-control mb-3',
+      placeholder: 'Find you next luxury car...' %>
+
+    <%= select_tag :fabrication_year,
+      options_for_select(@fabrication_year_range),
+      class: 'form-control mb-3',
+      prompt: "From..." %>
+
+    <%= f.range_field :price, min: @min_price, max: @max_price, step: '100000', class: "custom-range", id:"price-slider"%>
+
+    <%= submit_tag :submit,
+      class: 'btn btn-dark' %>
+  <% end %>
+
+</div>
