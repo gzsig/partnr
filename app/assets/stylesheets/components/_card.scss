@@ -21,17 +21,41 @@
 }
 
 .profile-user {
-  background-color: $body-background-color;
   margin-top: 25px;
   color: $partnr-blue;
   font-family: $profile-font;
   border-radius: 0.5rem;
   border: 1px solid rgba(103,112,119, 0.5);
+  background-color: $body-background-color;
+  background-size: cover;
   .btn-profile {
     margin-top: 15px;
   }
 }
 
+.profile-photo {
+  padding-left: 15px;
+  background-image: asset-url('prof3.jpg');
+  background-size: cover;
+  background-position-y: center;
+  position: relative;
+  height: 170px;
+}
+
 .profile-name {
-  margin-top: 20px;
+  // text-align: center;
+  margin-top: 130px;
+  font-size: 28px;
+  margin-left: 190px;
+  color: white;
+}
+
+.profile-content {
+  // text-align: center;
+  margin-top: 50px;
+}
+
+.profile-pic {
+  position: absolute;
+  bottom: -65px;
 }
