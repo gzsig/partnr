@@ -5,18 +5,3 @@
 @import "button";
 @import "profile";
 @import "flipcard";
-
-
-.my-card {
-  border-radius: 15px;
-  background-color: $partnr-light-gray;
-  height: 170px;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 25px;
-  padding: 20px;
-  opacity: 0.9;
-  &:hover {
-    opacity: 1;
-  }
-}
