@@ -12,7 +12,7 @@
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
-  background-image:url('ferrari.jpg');
+  background-image:asset-url('ferrari.jpg');
 }
 
 .good-facts {
@@ -35,7 +35,7 @@
 
 .profile-photo {
   padding-left: 15px;
-  
+
   background-size: cover;
   background-position-y: center;
   position: relative;
