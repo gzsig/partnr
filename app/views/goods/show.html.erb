@@ -27,7 +27,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    <% if @good.video == !nil %>
+    <% if !@good.video.nil? %>
       <video width="100%" height="auto" poster="<%= cl_image_path @good.photo_one %>" controls>
         <source src="<%= cl_video_path @good.video %>" type="video/webm">
       </video>
