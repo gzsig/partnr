@@ -5,7 +5,7 @@ class CreateGoods < ActiveRecord::Migration[5.2]
       t.string :model
       t.integer :model_year
       t.integer :fabrication_year
-      t.string :chassis
+      t.string :serial_number
       t.string :licens_plate
       t.string :kilometers
       t.string :price
