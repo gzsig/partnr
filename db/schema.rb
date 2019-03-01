@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_03_01_142936) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "status", default: false
+    t.string "body_style"
   end
 
   create_table "partners", force: :cascade do |t|
