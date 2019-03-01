@@ -4,7 +4,7 @@ one:
   brand: MyString
   model: MyString
   year: MyString
-  chassis: MyString
+  serial_number: MyString
   licens_plate: MyString
   kilometers: MyString
   price: MyString
@@ -22,7 +22,7 @@ two:
   brand: MyString
   model: MyString
   year: MyString
-  chassis: MyString
+  serial_number: MyString
   licens_plate: MyString
   kilometers: MyString
   price: MyString

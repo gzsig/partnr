@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
   resource :users, only: :show
 
-  resources :goods do
+namespace :admin do
+  resources :goods, except: %i[show index]
+end
+
+  resources :goods, only: %i[show index] do
     resources :partners, only: %i[new create]
   end
 

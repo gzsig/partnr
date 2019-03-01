@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card profile-edit">
-      <div class="profile-edit-content">
+    <div class="profile-edit-content">
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -14,31 +14,31 @@
       </div>
 
       <div class="field">
-        <%= f.input :first_name, autofocus: true %>
+        <%= f.input :first_name %>
       </div>
 
       <div class="field">
-        <%= f.input :last_name, autofocus: true %>
+        <%= f.input :last_name %>
       </div>
 
       <div class="field">
-        <%= f.input :phone_number, autofocus: true %>
+        <%= f.input :phone_number %>
       </div>
 
       <div class="field">
-        <%= f.input :CPF, autofocus: true %>
+        <%= f.input :CPF %>
       </div>
 
       <div class="field">
-        <%= f.input :bio, autofocus: true %>
+        <%= f.input :bio %>
       </div>
 
       <div class="field">
-        <%= f.input :occupation, autofocus: true %>
+        <%= f.input :occupation %>
       </div>
 
       <div class="field">
-        <%= f.input :address, autofocus: true %>
+        <%= f.input :address %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

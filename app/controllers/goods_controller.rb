@@ -1,7 +1,7 @@
 class GoodsController < ApplicationController
   before_action :set_good, only: %i[show edit update]
   before_action :set_good_status, only: %i[show edit update]
-  skip_before_action :authenticate_user!, only: %i[index show] 
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @fabrication_year_range = (Good.oldest_good_fabrication_year..Time.now.year + 1).to_a
@@ -34,39 +34,10 @@ class GoodsController < ApplicationController
     end
   end
 
-  def new
-    @good = Good.new
-  end
-
-  def create
-    @good = Good.new(good_params)
-    if @good.save
-      redirect_to @good
-    else
-      render :new
-    end
-  end
-
-  def edit; end
-
-  def update
-    if @good.update(good_params)
-      redirect_to @good
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @good.destroy
-
-    redirect_to :root
-  end
-
   private
 
   def good_params
-    params.require(:good).permit(:brand, :model, :model_year, :fabrication_year, :chassis, :licens_plate, :kilometers, :price, :color, :specs, :facts, :version, :photo_one, :photo_two, :photo_three, :photo_four, :video, :good_type)
+    params.require(:good).permit(:brand, :model, :model_year, :fabrication_year, :serial_number, :licens_plate, :kilometers, :price, :color, :specs, :facts, :version, :photo_one, :photo_two, :photo_three, :photo_four, :video, :type)
   end
 
   def set_good
