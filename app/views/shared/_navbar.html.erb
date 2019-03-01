@@ -23,21 +23,15 @@
             <%= link_to "MY PROFILE", users_path(current_user), class: "btn btn-light" %>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <%= link_to (current_user.adm? ? 'GOODS' : 'PARTNERS'), partnrs_path, class: "btn btn-light" %>
+          </a>
+        </li>
         <% if current_user.adm? %>
         <li class="nav-item">
           <a class="nav-link" href="#">
-            <%= link_to "GOODS", partnrs_path, class: "btn btn-light" %>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
             <%= link_to "ADD GOOD", new_admin_good_path, class: "btn btn-light" %>
-          </a>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <%= link_to "PARTNERS", partnrs_path, class: "btn btn-light" %>
           </a>
         </li>
         <% end %>

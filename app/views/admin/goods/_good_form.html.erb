@@ -1,5 +1,5 @@
 <div class="container">
-  <%= simple_form_for @good do |f| %>
+  <%= simple_form_for [:admin, @good] do |f| %>
 
     <%= f.input :good_type, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
     <%= f.input :brand %>

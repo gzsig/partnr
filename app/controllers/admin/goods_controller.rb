@@ -31,7 +31,7 @@ class Admin::GoodsController < ApplicationController
   private
 
   def good_params
-    params.require(:good).permit(:brand, :model, :model_year, :fabrication_year, :serial_number, :licens_plate, :kilometers, :price, :color, :specs, :facts, :version, :photo_one, :photo_two, :photo_three, :photo_four, :video, :type)
+    params.require(:good).permit(:brand, :model, :model_year, :fabrication_year, :serial_number, :licens_plate, :kilometers, :price, :color, :good_type, :facts, :version, :photo_one, :photo_two, :photo_three, :photo_four, :video, :type)
   end
 
 end
