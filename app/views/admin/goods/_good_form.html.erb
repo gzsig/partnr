@@ -1,0 +1,31 @@
+<div class="container">
+  <%= simple_form_for @good do |f| %>
+
+    <%= f.input :good_type, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
+    <%= f.input :brand %>
+    <%= f.input :model %>
+    <%= f.input :model_year %>
+    <%= f.input :fabrication_year %>
+    <%= f.input :serial_number %>
+    <%= f.input :licens_plate %>
+    <%= f.input :kilometers %>
+    <%= f.input :price %>
+    <%= f.input :color %>
+    <%= f.input :facts %>
+    <%= f.input :version %>
+    <%= f.input :photo_one %>
+    <%= f.input :photo_one_cache, as: :hidden %>
+    <%= f.input :photo_two %>
+    <%= f.input :photo_two_cache, as: :hidden %>
+    <%= f.input :photo_three %>
+    <%= f.input :photo_three_cache, as: :hidden %>
+    <%= f.input :photo_four %>
+    <%= f.input :photo_four_cache, as: :hidden %>
+    <%= f.input :video %>
+    <%= f.input :video_cache, as: :hidden %>
+    <div class="actions">
+      <%= f.button :submit, class:'btn btn-primary'%>
+    </div>
+
+  <% end  %>
+</div>
