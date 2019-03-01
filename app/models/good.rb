@@ -21,6 +21,10 @@ class Good < ApplicationRecord
     end
   end
 
+  # def ask_colors
+  #   Good.order(color: :asc).pluck(:color).uniq
+  # end
+
   # def oldest fabrication year (to build year range @ view level)
   def self.oldest_good_fabrication_year
     Good.order(fabrication_year: :asc).first.fabrication_year
@@ -33,5 +37,10 @@ class Good < ApplicationRecord
 
   def self.max_good_price
     Good.order(price: :asc).pluck(:price).last
+  end
+
+  # def all good types within our db (to build price range @ view level)
+  def self.good_types
+    Good.all.pluck(:good_type).uniq
   end
 end

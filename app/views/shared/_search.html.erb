@@ -1,22 +1,41 @@
-<div class="bg-white w-100 p-4">
-  <h5>Filters</h5>
+<!-- responsive version TODO -->
+<% if  %>
 
-  <%= form_for goods_path, method: 'GET' do |f| %>
+  <div class="bg-white w-100 p-4">
+<% end %>
+    <h5>Filters</h5>
 
-    <%= text_field_tag :query,
-      params[:query],
-      class: 'form-control mb-3',
-      placeholder: 'Find you next luxury car...' %>
+    <%= form_for goods_path, method: 'GET' do |f| %>
 
-    <%= select_tag :fabrication_year,
-      options_for_select(@fabrication_year_range),
-      class: 'form-control mb-3',
-      prompt: "From..." %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: 'form-control mb-3',
+        placeholder: 'Search' %>
 
-    <%= f.range_field :price, min: @min_price, max: @max_price, step: '100000', class: "custom-range", id:"price-slider"%>
+      <%= select_tag :good_type,
+        options_for_select(@good_types),
+        class: 'form-control mb-3',
+        prompt: "Find your next..." %>
 
-    <%= submit_tag :submit,
-      class: 'btn btn-dark' %>
-  <% end %>
+      <%= select_tag :fabrication_year,
+        options_for_select(@fabrication_year_range),
+        class: 'form-control mb-3',
+        prompt: "From..." %>
 
-</div>
+      <%= select_tag :color,
+        options_for_select(@colors),
+        class: 'form-control mb-3',
+        prompt: "Pick a color" %>
+
+      <%= select_tag :body_style,
+        options_for_select(@body_styles),
+        class: 'form-control mb-3',
+        prompt: "Tipo" %>
+
+      <%= f.range_field :price, min: @min_price, max: @max_price, step: "100000", class: "custom-range" %>
+
+      <%= submit_tag :submit,
+        class: 'btn btn-dark' %>
+    <% end %>
+
+  </div>
