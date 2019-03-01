@@ -1,20 +1,22 @@
-<div class="partnr-container">
-  <div class="forgotp">
-    <h2>Forgot your password?</h2>
+<div class="container">
+  <div class=" card forgotp">
+    <div class="forgot-content">
+      <h2>Forgot your password?</h2>
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-      <div class="actions">
-        <%= f.submit "Send me reset password instructions", class: 'btn btn-secondary' %>
-        <%= link_to "Log in", new_user_session_path, class: 'btn btn-secondary' %>
-        <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-secondary' %>
-      </div>
-    <% end %>
+        <div class="actions">
+          <%= f.submit "Send me reset password instructions", class: 'btn btn-secondary btn-forgot' %>
+          <%= link_to "Log in", new_user_session_path, class: 'btn btn-secondary btn-forgot' %>
+          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-secondary btn-forgot' %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
