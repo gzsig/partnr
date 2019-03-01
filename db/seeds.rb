@@ -14,9 +14,9 @@ def seed_video(file_name)
 end
 
 puts "creating 5 user (admin)..."
-5.times do
-  User.create(first_name: "Admin", last_name: "User", email: "admin@test.com", bio: "I'm Admin Regular, what else do you wanna know?", CPF: "4446667772", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", adm: true)
-end
+
+User.create(first_name: "Admin", last_name: "User", email: "admin@test.com", bio: "I'm Admin Regular, what else do you wanna know?", CPF: "4446667772", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", adm: true)
+
 puts "done!"
 
 cont = 0
