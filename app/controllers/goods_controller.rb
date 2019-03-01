@@ -1,6 +1,7 @@
 class GoodsController < ApplicationController
   before_action :set_good, only: %i[show edit update]
   before_action :set_good_status, only: %i[show edit update]
+  skip_before_action :authenticate_user!, only: %i[index show] 
 
   def index
     @fabrication_year_range = (Good.oldest_good_fabrication_year..Time.now.year + 1).to_a

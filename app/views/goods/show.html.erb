@@ -50,8 +50,9 @@
       <% if @good.status %>
         Epa, perdeu o deal!
       <% else %>
-        <%= link_to "QUERO", new_good_partner_path(@good) %>
+        <%= link_to "QUERO", new_good_partner_path(@good), class: 'btn btn-ligth' %>
       <% end %>
     <% end %>
+    <%= link_to "BACK", goods_path, class: 'btn btn-ligth' %>
   </div>
 </div>

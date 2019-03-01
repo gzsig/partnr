@@ -7,13 +7,15 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="icon" type="image/x-icon"  href="assets/favicon.ico">
 </head>
 
 <body>
   <%= render 'shared/navbar' %>
-  <% if notice || alert %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <% if notice %>
+    <p class="notice alert alert-success text-center"><%= notice %></p>
+    <% elsif alert %>
+    <p class="alert alert alert-danger text-center"><%= alert %></p>
   <% end %>
   <%= yield %>
   <%= javascript_pack_tag 'application' %>

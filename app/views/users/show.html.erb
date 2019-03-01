@@ -1,21 +1,23 @@
 <div class="container">
+  <div class="card profile-user">
+    <div class="profile-photo"><%= cl_image_tag current_user.profile_picture, width:170, height: 170, crop: :thumb, gravity: :face, class: 'profile-pic', style: "border-radius: 50%" %>
+      <h5 class="profile-name"><%= @user.first_name %>  <%= @user.last_name %></h5>
+    </div>
+    <div class="card-body profile-content">
+      <br>
+      <h5>Info</h5>
+      <p><i class="far fa-id-card"> <%= @user.CPF %></i></p>
+      <p><i class="fas fa-briefcase"> <%= @user.occupation %></i></p>
+      <p><i class="fas fa-home"> <%= @user.address %></i></p>
+      <br>
+      <h5>Contact</h5>
+      <p><i class="fas fa-at"> <%= @user.email %></i></p>
+      <p><i class="fas fa-phone"> <%= @user.phone_number %></i></p>
+      <br>
+      <h5>About me</h5>
+      <p><i class="fas fa-book-open"> <%= @user.bio %></i></p>
 
-  <h5>Name</h5>
-  <li><%= @user.first_name %>  <%= @user.last_name %></li>
-  <br>
-  <h5>Info</h5>
-  <li>CPF: <%= @user.CPF %></li>
-  <li>Occupation: <%= @user.occupation %></li>
-  <li>address: <%= @user.address %></li>
-  <br>
-  <h5>Contact</h5>
-  <strong>Email:</strong> <%= @user.email %>
-  <strong>Phone number:</strong> <%= @user.phone_number %>
-  <br>
-  <br>
-  <h5>About</h5>
-  <li>About: <%= @user.bio %></li>
-
-  <%= link_to 'Edit profile', edit_user_registration_path %> 
-
+      <%= link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-secondary btn-profile' %>
+    </div>
+  </div>
 </div>

@@ -1,58 +1,63 @@
 <div class="container">
+  <div class="card signup">
+    <div class="signup-content">
+      <h2 class="title-signup">Sign up</h2>
 
-  <h2>Sign up</h2>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <%= f.input :profile_picture %>
+      <%= f.input :profile_picture_cache, as: :hidden %>
 
-  <div class="field">
-    <%= f.input :email, autofocus: true, autocomplete: "email" %>
+      <div class="field">
+        <%= f.input :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.input :first_name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.input :last_name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.input :phone_number, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.input :CPF, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.input :bio, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.input :occupation, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.input :address, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.input :password, autocomplete: "new-password" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+      </div>
+
+      <div class="field">
+        <%= f.input :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: 'btn btn-secondary btn-signup' %>
+        <%= link_to "Cancel", root_path, class: 'btn btn-secondary btn-signup' %>
+        <%= link_to "Login", new_user_session_path, class: 'btn btn-secondary btn-signup' %>
+      </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.input :first_name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.input :last_name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.input :phone_number, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.input :CPF, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.input :bio, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.input :occupation, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.input :address, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.input :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-  </div>
-
-  <div class="field">
-    <%= f.input :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-
 </div>
