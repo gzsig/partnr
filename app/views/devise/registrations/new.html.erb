@@ -10,7 +10,11 @@
       <%= f.input :profile_picture_cache, as: :hidden %>
 
       <div class="field">
-        <%= f.input :email, autofocus: true, autocomplete: "email" %>
+        <%= f.input :favorite, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.input :email, autocomplete: "email" %>
       </div>
 
       <div class="field">
@@ -61,4 +65,3 @@
     </div>
   </div>
 </div>
-

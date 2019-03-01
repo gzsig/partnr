@@ -1,6 +1,7 @@
 <div class="container">
   <div class="card profile-user">
-    <div class="profile-photo"><%= cl_image_tag current_user.profile_picture, width:170, height: 170, crop: :thumb, gravity: :face, class: 'profile-pic', style: "border-radius: 50%" %>
+    <div style="background-image: url(<%= asset_url "#{@user.favorite}.jpg"%>)" class="profile-photo">
+      <%= cl_image_tag current_user.profile_picture, width:170, height: 170, crop: :thumb, gravity: :face, class: 'profile-pic', style: "border-radius: 50%" %>
       <h5 class="profile-name"><%= @user.first_name %>  <%= @user.last_name %></h5>
     </div>
     <div class="card-body profile-content">
