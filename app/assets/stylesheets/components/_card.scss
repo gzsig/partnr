@@ -1,7 +1,7 @@
 .index-card {
   min-width: 300px !important;
   margin: 0 auto;
-  margin-top: 5px;
+  margin-top: 20px;
   overflow: hidden;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
 }
@@ -18,4 +18,119 @@
 .good-facts {
   color: blue;
 
+}
+
+.profile-user {
+  margin-top: 25px;
+  color: $partnr-blue;
+  font-family: $profile-font;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(103,112,119, 0.5);
+  background-color: $body-background-color;
+  background-size: cover;
+  .btn-profile {
+    margin-top: 15px;
+  }
+}
+
+.profile-photo {
+  padding-left: 15px;
+  background-image: asset-url('prof3.jpg');
+  background-size: cover;
+  background-position-y: center;
+  position: relative;
+  height: 170px;
+}
+
+.profile-name {
+  // text-align: center;
+  margin-top: 130px;
+  font-size: 28px;
+  margin-left: 190px;
+  color: white;
+}
+
+.profile-content {
+  margin-top: 50px;
+}
+
+.profile-pic {
+  position: absolute;
+  bottom: -65px;
+}
+
+.login-user {
+  background-color: $body-background-color;
+  font-family: $profile-font;
+  margin-top: 90px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border: 1px solid rgba(103,112,119, 0.5);
+  border-radius: 0.5rem;
+}
+
+.login-content {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  .btn-signin {
+    margin-top: 25px;
+    margin-right: 10px;
+  }
+}
+
+.signup {
+  margin-top: 50px;
+  background-color: $body-background-color;
+  font-family: $profile-font;
+  border: 1px solid rgba(103,112,119, 0.5);
+  border-radius: 0.5rem;
+}
+
+.signup-content {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  .btn-signup {
+    margin-top: 25px;
+    margin-right: 10px;
+  }
+}
+
+.forgotp {
+  margin-top: 50px;
+  background-color: $body-background-color;
+  font-family: $profile-font;
+  border: 1px solid rgba(103,112,119, 0.5);
+  border-radius: 0.5rem;
+}
+
+.forgot-content {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  .btn-forgot {
+    margin-top: 25px;
+    margin-right: 10px;
+  }
+}
+
+.my-card {
+  border-radius: 15px;
+  background-color: $partnr-light-gray;
+  height: 170px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding: 20px;
+  opacity: 0.9;
+  background-image: url('ferrari.jpg');
+  background-size: cover;
+  background-position: center;
+  &:hover {
+    opacity: 1;
+  }
 }

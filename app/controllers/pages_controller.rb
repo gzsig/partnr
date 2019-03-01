@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home; end
 
+  def partnrs
+    @goods = current_user.goods
+  end
+
+
 end
