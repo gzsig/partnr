@@ -1,18 +1,20 @@
-
 .home-page {
   background-image: asset-url('back1.jpg');
-  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 93vh;
   overflow-x: hidden;
   overflow-y: hidden;
 
   .about {
-    margin-top: 400px;
+    margin-top: 450px;
+    margin-left: 25px;
     color: $partnr-yellow;
     font-family: $about-font;
     font-size: 45px;
   }
   .clickme {
+    margin-left: 25px;
     color: $partnr-yellow;
     font-family: $about-font;
     font-size: 45px;
