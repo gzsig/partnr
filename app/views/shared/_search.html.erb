@@ -3,15 +3,16 @@
 
   <div class="bg-white w-100 p-4">
 <% end %>
-    <h5>Filters</h5>
 
     <%= form_for goods_path, method: 'GET' do |f| %>
 
+      <h5>Busca</h5>
       <%= text_field_tag :query,
         params[:query],
         class: 'form-control mb-3',
         placeholder: 'Search' %>
 
+      <h5>Filters</h5>
       <%= select_tag :good_type,
         options_for_select(@good_types),
         class: 'form-control mb-3',
@@ -20,7 +21,7 @@
       <%= select_tag :fabrication_year,
         options_for_select(@fabrication_year_range),
         class: 'form-control mb-3',
-        prompt: "From..." %>
+        prompt: "Fabrication year" %>
 
       <%= select_tag :color,
         options_for_select(@colors),
@@ -30,7 +31,7 @@
       <%= select_tag :body_style,
         options_for_select(@body_styles),
         class: 'form-control mb-3',
-        prompt: "Tipo" %>
+        prompt: "Type" %>
 
       <%= f.range_field :price, min: @min_price, max: @max_price, step: "100000", class: "custom-range" %>
 
