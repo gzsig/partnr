@@ -1,0 +1,11 @@
+.partner-form-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: blue;
+  background-position: center;
+  background-size: cover;
+  min-height: 400px;
+  height: calc(100vh - 93px);
+  width: calc(100vw - 15px);
+}
