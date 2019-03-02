@@ -8,6 +8,7 @@
   <% @goods.each do |good| %>
   <div class="my-card d-flex align-content-end flex-wrap items-center">
     <h3><%= good.brand %> <%= good.model %></h3>
+    <%= link_to "good", good_path(good), class: 'btn btn-light' %>
     <div class="ticaum-damassa">
       <% good.users.each do |user| %>
       <div class="flip-card">
