@@ -1,4 +1,8 @@
 <div class="container">
+  <% if current_user.partners.empty? %>
+    <h1>You dont have any partnrs yet</h1>
+<% else %>
+
   <% @goods.each do |good| %>
   <div class="my-card d-flex align-content-end flex-wrap items-center">
     <h3><%= good.brand %> <%= good.model %></h3>
@@ -17,5 +21,6 @@
       <% end %>
     </div>
   </div>
+  <% end %>
   <% end %>
 </div>
