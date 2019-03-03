@@ -44,7 +44,9 @@
       <% if @good.status %>
         Fechou!
       <% else %>
-        These are your partnrs!
+        <% @good.users.each do |user| %>
+        <%= cl_image_tag user.profile_picture, class: 'avatar ' %>
+        <% end %>
       <% end %>
     <% else %>
       <% if @good.status %>
