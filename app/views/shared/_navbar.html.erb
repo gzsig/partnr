@@ -3,7 +3,7 @@
     <a class="navbar-brand" href="#">
       <div class="partnr-logo">
         <%= link_to :root do %>
-        <%= image_tag "partnr_dark.png" %>
+          <%= image_tag "partnr_dark.png" %>
         <% end %>
       </div>
     </a>
@@ -18,41 +18,41 @@
           </a>
         </li>
         <% if user_signed_in? %>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <%= link_to (current_user.adm? ? 'GOODS' : 'PARTNERS'), partnrs_path, class: "btn btn-light" %>
-          </a>
-        </li>
-        <% if current_user.adm? %>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <%= link_to "ADD GOOD", new_admin_good_path, class: "btn btn-light" %>
-          </a>
-        </li>
-        <% end %>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn btn-light" %><span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <span class="navbar-text">
-            <%= link_to user_path(current_user) do %>
-            <%= cl_image_tag current_user.profile_picture, width:50, height: 50, crop: :thumb, gravity: :face %>
-            <% end %>
-          </span>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <%= link_to (current_user.adm? ? 'GOODS' : 'PARTNERS'), partnrs_path, class: "btn btn-light" %>
+            </a>
+          </li>
+          <% if current_user.adm? %>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <%= link_to "ADD GOOD", new_admin_good_path, class: "btn btn-light" %>
+              </a>
+            </li>
+          <% end %>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn btn-light" %><span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">
+              <%= link_to user_path(current_user) do %>
+                <%= cl_image_tag current_user.profile_picture, width:50, height: 50, crop: :thumb, gravity: :face %>
+              <% end %>
+            </span>
+          </li>
         <% else %>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "btn btn-light" %>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <%= link_to t(".sign_in", default: "CRIAR CONTA"), new_user_registration_path, class: "btn btn-light" %>
-          </a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "btn btn-light" %>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <%= link_to t(".sign_in", default: "CRIAR CONTA"), new_user_registration_path, class: "btn btn-light" %>
+            </a>
+          </li>
         <% end %>
       </ul>
     </div>
