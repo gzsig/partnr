@@ -7,7 +7,7 @@
     <div class="col-sm-12 col-md-6 col-lg-4">
       <%= link_to good_path(good), class: 'text-decoration-none' do %>
         <div class="card index-card">
-          <div class="index-img"></div>
+          <div class="index-img" style="background-image: url(<%= asset_url good.photo_one%>)"> </div>
           <div class="card-body">
             <h5 class="card-title"><%= good.brand %> <%= good.model %></h5>
             <div class="card-text">
