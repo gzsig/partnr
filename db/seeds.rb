@@ -23,6 +23,6 @@ cont = 0
 3.times do
   cont += 1
   puts "creating #{cont} (car)..."
-  Good.create(brand: "Lamborgini", model: "Aventador", model_year: 2014, fabrication_year: 2015, serial_number: "12345tfdsadfg", licens_plate: "EIK-1111", kilometers: "8000", price: "1500000", color: "perola", facts: "Esse carro eh foda!", version: "v12", good_type: 'car', photo_one: seed_image('carousel1'), photo_two: seed_image('carousel2'), photo_three: seed_image('carousel3'), photo_four: seed_image('carousel4'), video: seed_video('carousel-video'))
+  Good.create(brand: ["Lamborgini", "Porsche"].sample, model: "Aventador", model_year: 2014, fabrication_year: [2007, 2015, 2018].sample, body_style: ['suv', 'coupe', 'conversivel'].sample, serial_number: "12345tfdsadfg", licens_plate: "EIK-1111", kilometers: "8000", price: ["1500000", "2000000", "2500000"].sample, color: ["perola", "branco", "preto"].sample, facts: "Esse carro eh foda!", version: "v12", good_type: ['car', 'plane', 'boat'].sample, photo_one: seed_image('carousel1'), photo_two: seed_image('carousel2'), photo_three: seed_image('carousel3'), photo_four: seed_image('carousel4'), video: seed_video('carousel-video'))
 end
 puts "done!"

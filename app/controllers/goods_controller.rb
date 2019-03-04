@@ -19,12 +19,12 @@ class GoodsController < ApplicationController
     body_style = params[:body_style]
 
     @goods = Good.all
-    @goods = @goods.search_by_brand_and_model(query) unless !query.present?
-    @goods = @goods.where(good_type: good_type) unless !good_type.present?
+    @goods = @goods.search_by_brand_and_model(query.downcase) unless !query.present?
+    @goods = @goods.where(good_type: good_type.downcase) unless !good_type.present?
     @goods = @goods.where('fabrication_year >= ?', fabrication_year) unless !fabrication_year.present?
     @goods = @goods.where('price >= ?', price) unless !price.present?
-    @goods = @goods.where(color: color) unless !color.present?
-    @goods = @goods.where(body_style: body_style) unless !body_style.present?
+    @goods = @goods.where(color: color.downcase) unless !color.present?
+    @goods = @goods.where(body_style: body_style.downcase) unless !body_style.present?
   end
 
   def show
