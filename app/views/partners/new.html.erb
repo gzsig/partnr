@@ -1,1 +1,9 @@
-<%= render 'partner_form' %>
+<% if @good.good_type == 'car' %>
+  <%= render 'car_form' %>
+  <% elsif @good.good_type == 'Boat' %>
+  <%= render 'boat_form' %>
+  <% elsif @good.good_type == 'helicopter' %>
+  <%= render 'helicopter_form' %>
+  <% elsif @good.good_type == 'jet' %>
+  <%= render 'jet_form' %>
+<% end %>
