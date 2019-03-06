@@ -11,5 +11,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def confirmation
+    @good = Good.find(params[:good_id])
+    head :forbidden unless @good.users.include? current_user
+  end
+
 
 end

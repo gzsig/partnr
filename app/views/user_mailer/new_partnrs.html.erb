@@ -6,5 +6,5 @@
 <%= user.first_name %> <%= user.last_name %>
 <% end %>
 <% end %>
-please click here to confirm or withdaw from the deal
+please <%= link_to 'click here to confirm or withdaw', confirmation_url(@good), target: 'blank' %> from the deal
 </p>

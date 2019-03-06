@@ -1,0 +1,5 @@
+<% current_user.goods.first.users.each do |p| %>
+<%= p.first_name %>
+<%= p.last_name %>
+<%= p.bio %>
+<% end %>
