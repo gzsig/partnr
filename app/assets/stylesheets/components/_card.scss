@@ -220,3 +220,17 @@
  .upload {
   display: flex;
  }
+
+.upload-profilephoto {
+  border: 1px solid rgba(103,112,119, 0.5);
+  border-radius: 0.5rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: 500;
+  background: $partnr-dark-gray;
+  color: white;
+  margin-top: 10px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
