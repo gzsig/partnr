@@ -2,29 +2,20 @@
   <%= render 'shared/search' %>
 </div>
 
-<div class="col-xs-12 col-md-10 d-flex flex-wrap p-0 pt-2 float-right">
+<div class="col-xs-12 col-md-10 d-flex flex-wrap p-0 pt-2 float-right card-index">
   <% @goods.each do |good| %>
     <div class="col-sm-12 col-md-6 col-lg-4">
       <%= link_to good_path(good), class: 'text-decoration-none' do %>
         <div class="card index-card">
           <div class="index-img" style="background-image: url(<%= asset_url good.photo_one%>)"> </div>
           <div class="card-body">
-            <h5 class="card-title"><%= good.brand %> <%= good.model %></h5>
+            <h5 class="card-title"><strong> <%= good.brand %> <%= good.model %></strong></h5>
             <div class="card-text">
               <div class="good-type">
                <p><strong>Type:</strong> <%= good.good_type %></p>
               </div>
-              <div class="good-date">
-                <p><strong>Year: </strong><%= good.model_year %> - <%= good.fabrication_year %></p>
-              </div>
               <div class="good-price">
-                <p><strong>Price: </strong>R$ <%= good.price %></p>
-              </div>
-              <div class="good-details">
-                <p><strong>Serial Number: </strong><%= good.serial_number %></p>
-                <p><strong> Licens Plate: </strong><%= good.licens_plate %></p>
-                <p><strong>Kilometer: </strong><%= good.kilometers %></p>
-                <p><strong>Color: </strong><%= good.color %></p>
+                <p><i class="fas fa-dollar-sign"></i> <%= good.price %></p>
               </div>
               <div class="good-facts">
                 <p><strong>Facts: </strong><%=  good.facts %></p>

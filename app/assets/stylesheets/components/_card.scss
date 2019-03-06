@@ -1,7 +1,10 @@
 .index-card {
   min-width: 300px !important;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  margin-right: 10px;
   overflow: hidden;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   font-family: $profile-font;
@@ -25,9 +28,15 @@
   // background-image:asset-url('ferrari.jpg');
 }
 
+.search-index {
+  margin-top: 19px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: $profile-font;
+}
+
 .good-facts {
   color: blue;
-
 }
 
 .profile-user {
@@ -243,4 +252,28 @@
   &:hover {
     opacity: 0.8;
   }
+}
+
+.good-show {
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-right: 30px;
+}
+
+.yellow-show {
+  margin-right: 20px;
+  font-family: $profile-font;
+  font-size: 18px;
+}
+
+.btn-show-good {
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-show-good-quero {
+  margin-left: 123px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
