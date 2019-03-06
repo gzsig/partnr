@@ -11,7 +11,7 @@ namespace :admin do
 end
 
   resources :goods, only: %i[show index] do
-    resources :partners, only: %i[new create]
+    resources :partners, only: %i[new create destroy]
   end
 
 end

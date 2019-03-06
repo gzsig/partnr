@@ -40,8 +40,8 @@ class PartnersController < ApplicationController
   end
 
   def destroy
+    @partner = Partner.find(params[:id])
     @partner.destroy
-
     redirect_to :root
   end
 

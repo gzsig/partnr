@@ -14,6 +14,7 @@ class PagesController < ApplicationController
 
   def confirmation
     head :forbidden unless @good.users.include? current_user
+    @partner = Partner.find_by(good: @good, user: current_user)
   end
 
   def contract
