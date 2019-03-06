@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: :partnrs
+  before_action :set_good, only: %i[ confirmation contract]
 
   def home; end
 
@@ -12,9 +13,18 @@ class PagesController < ApplicationController
   end
 
   def confirmation
-    @good = Good.find(params[:good_id])
     head :forbidden unless @good.users.include? current_user
   end
 
+  def contract
+    head :forbidden unless @good.users.include? current_user
+    Partner.find_by(good: @good, user: current_user).update! step: 2
+  end
+
+private
+
+def set_good
+  @good = Good.find(params[:good_id])
+end
 
 end

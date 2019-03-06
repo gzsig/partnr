@@ -29,5 +29,5 @@
     <% end %>
     <% end %>
   </div>
-
+    <%= link_to 'CONFIRM', contract_path(@good), class:'btn btn-secondary', confirm: "I agree to buy a #{@good.brand} #{@good.model}" %>
 </div>
