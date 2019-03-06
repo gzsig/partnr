@@ -3,7 +3,9 @@
   margin: 0 auto;
   margin-top: 20px;
   overflow: hidden;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: $profile-font;
+  color: $partnr-blue;
 }
 
 .index-img {
