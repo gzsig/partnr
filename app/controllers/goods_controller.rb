@@ -20,7 +20,7 @@ class GoodsController < ApplicationController
 
     @goods = Good.all
     @goods = @goods.search_by_brand_and_model(query.downcase) unless !query.present?
-    @goods = @goods.where(good_type: good_type.downcase) unless !good_type.present?
+    @goods = @goods.where(good_type: good_type.capitalize) unless !good_type.present?
     @goods = @goods.where('fabrication_year >= ?', fabrication_year) unless !fabrication_year.present?
     @goods = @goods.where('price >= ?', price) unless !price.present?
     @goods = @goods.where(color: color.downcase) unless !color.present?
