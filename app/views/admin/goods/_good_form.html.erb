@@ -15,16 +15,18 @@
         <%= f.input :color %>
         <%= f.input :facts %>
         <%= f.input :version %>
-        <%= f.input :photo_one %>
-        <%= f.input :photo_one_cache, as: :hidden %>
-        <%= f.input :photo_two %>
-        <%= f.input :photo_two_cache, as: :hidden %>
-        <%= f.input :photo_three %>
-        <%= f.input :photo_three_cache, as: :hidden %>
-        <%= f.input :photo_four %>
-        <%= f.input :photo_four_cache, as: :hidden %>
-        <%= f.input :video %>
-        <%= f.input :video_cache, as: :hidden %>
+        <div class="actions upload">
+          <%= f.input :photo_one, as: :hidden,label_html: { class: 'upload-photo'}, label: '📷 Upload photo' %>
+          <%= f.input :photo_one_cache, as: :hidden %>
+          <%= f.input :photo_two, as: :hidden,label_html: { class: 'upload-photo'}, label: '📷 Upload photo' %>
+          <%= f.input :photo_two_cache, as: :hidden %>
+          <%= f.input :photo_three, as: :hidden,label_html: { class: 'upload-photo'}, label: '📷 Upload photo' %>
+          <%= f.input :photo_three_cache, as: :hidden %>
+          <%= f.input :photo_four, as: :hidden,label_html: { class: 'upload-photo'}, label: '📷 Upload photo' %>
+          <%= f.input :photo_four_cache, as: :hidden %>
+          <%= f.input :video, as: :hidden,label_html: { class: 'upload-video'}, label: '📷 Upload video' %>
+          <%= f.input :video_cache, as: :hidden %>
+        </div>
         <div class="actions">
           <%= f.button :submit, class:'btn btn-secondary btn-add-good'%>
         </div>
