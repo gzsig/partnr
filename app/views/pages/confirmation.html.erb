@@ -1,5 +1,33 @@
-<% current_user.goods.first.users.each do |p| %>
-<%= p.first_name %>
-<%= p.last_name %>
-<%= p.bio %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @good.users.each do |user| %>
+    <% unless user == current_user %>
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <div class="card confirmation-card">
+        <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_url "#{user.favorite}.jpg"%>)" class="profile-photo">
+          <%= cl_image_tag user.profile_picture, width:170, height: 170, crop: :thumb, gravity: :face, class: 'profile-pic', style: "border-radius: 50%" %>
+          <h5 class="confirmation-profile-name"><%= user.first_name %>  <%= user.last_name %></h5>
+        </div>
+        <div class="card-body profile-content">
+          <br>
+          <h5>Info</h5>
+          <p><i class="far fa-id-card"> <%= user.CPF %></i></p>
+          <p><i class="fas fa-briefcase"> <%= user.occupation %></i></p>
+          <p><i class="fas fa-home"> <%= user.address %></i></p>
+          <br>
+          <div class="bg-white">
+            <h5>Contact</h5>
+            <p><i class="fas fa-at"> <%= user.email %></i></p>
+            <p><i class="fas fa-phone"> <%= user.phone_number %></i></p>
+          </div>
+          <br>
+          <h5>About me</h5>
+          <p><i class="fas fa-book-open"> <%= user.bio %></i></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+
+</div>

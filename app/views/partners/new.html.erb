@@ -1,9 +1,9 @@
-<% if @good.good_type == 'Car' %>
+<% if @good.good_type.capitalize == 'Car' %>
   <%= render 'car_form' %>
-  <% elsif @good.good_type == 'Boat' %>
+  <% elsif @good.good_type.capitalize == 'Boat' %>
   <%= render 'boat_form' %>
-  <% elsif @good.good_type == 'helicopter' %>
+  <% elsif @good.good_type.capitalize == 'helicopter' %>
   <%= render 'helicopter_form' %>
-  <% elsif @good.good_type == 'jet' %>
+  <% elsif @good.good_type.capitalize == 'jet' %>
   <%= render 'jet_form' %>
 <% end %>

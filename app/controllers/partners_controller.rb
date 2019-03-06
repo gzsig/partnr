@@ -48,7 +48,7 @@ class PartnersController < ApplicationController
   private
 
   def partner_params
-    params.require(:partner).permit(:track_use, :other_drivers, :none_of_the_above)
+    params.permit(:track_use, :other_drivers)
   end
 
   def closed_deal(good)
