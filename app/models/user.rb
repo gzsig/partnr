@@ -17,6 +17,7 @@ class User < ApplicationRecord
   validates :bio, presence: true
   validates :phone_number, presence: true
   validates :occupation, presence: true
+  validates :favorite, presence: true
 
   mount_uploader :profile_picture, PhotoUploader
 

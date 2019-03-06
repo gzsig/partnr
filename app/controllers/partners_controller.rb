@@ -22,6 +22,7 @@ class PartnersController < ApplicationController
       @good.set_status
       if @good.status
         closed_deal(@good)
+        @partner.update! step: 1
       end
       redirect_to good_path(@good)
     else
