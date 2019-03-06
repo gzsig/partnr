@@ -1,7 +1,7 @@
 <!-- responsive version TODO -->
 <% if  %>
 
-  <div class="bg-white w-100 p-4">
+  <div class="bg-white w-100 p-4 search-index">
 <% end %>
 
     <%= form_for goods_path, method: 'GET' do |f| %>
@@ -36,7 +36,6 @@
       <%= f.range_field :price, min: @min_price, max: @max_price, step: "100000", class: "custom-range" %>
 
       <%= submit_tag :submit,
-        class: 'btn btn-dark' %>
+        class: 'btn btn-secondary' %>
     <% end %>
-
   </div>
