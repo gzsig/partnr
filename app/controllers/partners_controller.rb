@@ -22,7 +22,6 @@ class PartnersController < ApplicationController
       @good.set_status
       if @good.status
         closed_deal(@good)
-        @partner.update! step: 1
       end
       redirect_to good_path(@good)
     else
@@ -55,6 +54,7 @@ class PartnersController < ApplicationController
   def closed_deal(good)
     @good = good
     Partner.where(good: good).each do |p|
+      p.update! step: 1
       @user = User.where(id: p.user_id).first
       UserMailer.new_partnrs(@user, @good).deliver_now
     end

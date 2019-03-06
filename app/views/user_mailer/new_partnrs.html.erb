@@ -1,2 +1,10 @@
 <h3>Congratulations!!! <%= @user.first_name %></h3>
-<p>you have 3 new Partnrs to share your new <%= @good.brand %> <%= @good.model %></p>
+
+<p>you have 3 new Partnrs to share your new <%= @good.brand %> <%= @good.model %>
+<% @good.users.each do |user| %>
+<% unless user == @user %>
+<%= user.first_name %> <%= user.last_name %>
+<% end %>
+<% end %>
+please click here to confirm or withdaw from the deal
+</p>
