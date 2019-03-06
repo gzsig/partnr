@@ -14,8 +14,13 @@
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
   &:hover {
-    opacity: 0.8;
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
   }
   // background-image:asset-url('ferrari.jpg');
 }
