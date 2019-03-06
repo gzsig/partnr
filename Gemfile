@@ -23,7 +23,10 @@ gem 'money-rails'
 gem 'pg_search'
 
 # mailing
-gem "letter_opener"
+gem 'letter_opener'
+
+# http requests
+gem 'httparty'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
