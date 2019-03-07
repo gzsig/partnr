@@ -1,21 +1,23 @@
 <h3>Contract</h3>
 <div id='container'></div>
 
-<script>
-  // Carrega o widget embedded com a request_signature_key
-  widget = new Clicksign('7d6d6252-d34f-46a8-bb7b-43226eef7a02');
+<% content_for :after_js do %>
+  <script>
+    // Carrega o widget embedded com a request_signature_key
+    widget = new Clicksign('7d6d6252-d34f-46a8-bb7b-43226eef7a02');
 
-  // Define o endpoint https://sandbox.clicksign.com ou https://app.clicksign.com
-  widget.endpoint = 'https://sandbox.clicksign.com';
+    // Define o endpoint https://sandbox.clicksign.com ou https://app.clicksign.com
+    widget.endpoint = 'https://sandbox.clicksign.com';
 
-  // Define a URL de origem (parametro necessário para utilizar através de WebView)
-  widget.origin = 'http://localhost:3000';
-  // widget.origin = 'https://partnr.me';
+    // Define a URL de origem (parametro necessário para utilizar através de WebView)
+    widget.origin = 'http://localhost:3000';
+    // widget.origin = 'https://partnr.me';
 
-  // Monta o widget no div
-  widget.mount('container');
+    // Monta o widget no div
+    widget.mount('container');
 
-  widget.on('loaded', function(ev) { console.log('loaded!'); });
-  widget.on('signed', function(ev) { console.log('signed!'); });
+    widget.on('loaded', function(ev) { console.log('loaded!'); });
+    widget.on('signed', function(ev) { console.log('signed!'); });
 
-</script>
+  </script>
+<% end %>

@@ -16,8 +16,10 @@
     <% elsif alert %>
       <p class="alert alert alert-danger text-center"><%= alert %></p>
     <% end %>
+    <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <%= yield %>
+    <!-- calls clicksign function after importing clicksign js library function -->
+    <%= yield :after_js %>
   </body>
 </html>

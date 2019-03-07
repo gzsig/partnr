@@ -84,7 +84,7 @@ class PagesController < ApplicationController
           }
         }.to_json)
 
-      # create signer's clicksign uniq hash for each user of the given good
+      # get signer's clicksign uniq hash for each user of the given good
       if p.user.clicksign_key.nil?
         p.user.clicksign_key = response['signer']['key']
         p.user.save
@@ -96,7 +96,7 @@ class PagesController < ApplicationController
 
   def add_signers_to_contract(good)
     Partner.where(good: good).each do |p|
-      HTTParty.post('https://sandbox.clicksign.com/api/v1/lists?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+      response = HTTParty.post('https://sandbox.clicksign.com/api/v1/lists?access_token=27db8324-897b-485a-9848-1e8482a60aab',
         headers: {
           Host: 'sandbox.clicksign.com',
           'Content-Type' => 'application/json',
@@ -109,9 +109,29 @@ class PagesController < ApplicationController
             sign_as: 'party'
           }
         }.to_json)
+
+      # get signer's clicksign uniq hash for each user of the given good
+      if p.request_signature_key.nil?
+        p.request_signature_key = response['list']['request_signature_key']
+        p.save
+      end
     end
   end
 
+  def request_signature_key(sign = {})
+    good = sign[:good]
+    user = sign[:user]
+
+    repsonse = HTTParty.get('https://sandbox.clicksign.com/api/v1/documents/#{good.clicksign_key}?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+      headers: {
+        Host: 'sandbox.clicksign.com',
+        'Content-Type' => 'application/json',
+        Accept: 'application/json'
+      }
+
+    # request_signature_key
+    @key = response['signers']['key']
+  end
 
   def contract_email(good)
     @good = good
