@@ -1,7 +1,7 @@
 <div class="container">
   <div class=" card forgotp">
     <div class="forgot-content">
-      <h2>Forgot your password?</h2>
+      <h2>Esqueceu sua senha?</h2>
 
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
@@ -12,9 +12,9 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "Send me reset password instructions", class: 'btn btn-secondary btn-forgot' %>
+          <%= f.submit "Me enviar instruções de mudar senha", class: 'btn btn-secondary btn-forgot' %>
           <%= link_to "Log in", new_user_session_path, class: 'btn btn-secondary btn-forgot' %>
-          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-secondary btn-forgot' %>
+          <%= link_to "Cadastrar-se", new_user_registration_path, class: 'btn btn-secondary btn-forgot' %>
         </div>
       <% end %>
     </div>

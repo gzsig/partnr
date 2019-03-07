@@ -36,19 +36,19 @@
       <div class="bg-partnr-yellow p-4 yellow-show">
         <h4 class="border border-dark rounded p-1"><%= @good.fabrication_year %> <%= @good.brand %> <%= @good.model %></h4>
         <div class="good-date">
-          <p><strong>Year: </strong><%= @good.model_year %> - <%= @good.fabrication_year %></p>
+          <p><strong>Ano: </strong><%= @good.model_year %> - <%= @good.fabrication_year %></p>
         </div>
         <div class="good-details">
-          <p><strong>Serial Number: </strong><%= @good.serial_number %></p>
-          <p><strong> Licens Plate: </strong><%= @good.licens_plate %></p>
-          <p><strong>Kilometer: </strong><%= @good.kilometers %></p>
-          <p><strong>Color: </strong><%= @good.color %></p>
+          <p><strong>Número serial: </strong><%= @good.serial_number %></p>
+          <p><strong>Placa: </strong><%= @good.licens_plate %></p>
+          <p><strong>Quilometragem: </strong><%= @good.kilometers %>km</p>
+          <p><strong>Cor: </strong><%= @good.color %></p>
         </div>
         <div class="good-price">
           <p><i class="fas fa-dollar-sign"></i> <%= @good.price %></p>
         </div>
         <div class="good-facts">
-          <p><strong>Facts: </strong><%=  @good.facts %></p>
+          <p><strong>Fatos: </strong><%=  @good.facts %></p>
         </div>
       </div>
     </div>
@@ -67,6 +67,6 @@
         <%= link_to "QUERO", new_good_partner_path(@good), class: 'btn btn-secondary btn-show-good-quero' %>
       <% end %>
     <% end %>
-    <%= link_to "BACK", goods_path, class: 'btn btn-secondary btn-show-good' %>
+    <%= link_to "Voltar", goods_path, class: 'btn btn-secondary btn-show-good' %>
   </div>
 </div>

@@ -1,12 +1,12 @@
 <div class="container">
   <div class="card signup">
     <div class="signup-content">
-      <h2 class="title-signup">Sign up</h2>
+      <h2 class="title-signup">Cadastrar-se</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <%= f.input :profile_picture, input_html: { class: 'invisible'}, label_html: { class: 'upload-profilephoto'}, label: '📷 Upload profile photo' %>
+      <%= f.input :profile_picture, input_html: { class: 'invisible'}, label_html: { class: 'upload-profilephoto'}, label: '📷 Escolher foto de perfil' %>
       <%= f.input :profile_picture_cache, as: :hidden %>
 
       <div class="field">
@@ -57,8 +57,8 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: 'btn btn-secondary btn-signup' %>
-        <%= link_to "Cancel", root_path, class: 'btn btn-secondary btn-signup' %>
+        <%= f.submit "Salvar", class: 'btn btn-secondary btn-signup' %>
+        <%= link_to "Cancelar", root_path, class: 'btn btn-secondary btn-signup' %>
         <%= link_to "Login", new_user_session_path, class: 'btn btn-secondary btn-signup' %>
       </div>
       <% end %>
