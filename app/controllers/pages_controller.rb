@@ -22,7 +22,10 @@ class PagesController < ApplicationController
     Partner.find_by(good: @good, user: current_user).update! step: 2
 
     # create contract if all partners are confirmed
-    create_contract(@good) if @good.partners.pluck(:step).uniq == ['confirmed']
+    if @good.partners.pluck(:step).uniq == ['confirmed']
+      create_contract(@good)
+      contract_email(@good)
+    end
   end
 
   private
@@ -109,6 +112,14 @@ class PagesController < ApplicationController
     end
   end
 
+
+  def contract_email(good)
+    @good = good
+    @good.users.each do |user|
+      @user = user
+      UserMailer.contract_ready(@user, @good).deliver_now
+    end
+  end
   # def delete_signer_from_contract(good)
   #   Partner.where(good: good).each do |p|
   #     HTTParty.delete('https://sandbox.clicksign.com/api/v1/lists?access_token=27db8324-897b-485a-9848-1e8482a60aab',
