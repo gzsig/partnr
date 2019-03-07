@@ -2,14 +2,20 @@
   <div class="partner-card">
 
 
-<%= simple_form_for [@good, @partner] do |f|  %>
+    <%= simple_form_for [@good, @partner] do |f|  %>
+    <div class="field">
+      <%= f.input :numberber_of_passengers %>
+    </div>
+    <div class="field">
+      <%= f.input :km_month %>
+    </div>
+    <div class="field">
+      <%= f.input :frenquency_month %>
+    </div>
 
-  <%= f.input :track_use, as: :boolean, checked_value: true, unchecked_value: false %>
-  <%= f.input :other_drivers, as: :boolean, checked_value: true, unchecked_value: false %>
+    <%= f.button :submit, class:'btn btn-light' %>
+    <%= link_to "Cancel", :back, class:'btn btn-light' %>
 
-  <%= f.button :submit, class:'btn btn-light' %>
-  <%= link_to "Cancel", :back, class:'btn btn-light' %>
-
-<% end %>
-</div>
+    <% end %>
+  </div>
 </div>
