@@ -145,21 +145,21 @@ class PartnersController < ApplicationController
     end
   end
 
-  def delete_signer_from_contract(good)
-    Partner.where(good: good).each do |p|
-      HTTParty.delete('https://sandbox.clicksign.com/api/v1/lists?access_token=27db8324-897b-485a-9848-1e8482a60aab',
-        headers: {
-          Host: 'sandbox.clicksign.com',
-          'Content-Type' => 'application/json',
-          Accept: 'application/json'
-        },
-        body: {
-          list: {
-            document_key: "#{good.clicksign_key}",
-            signer_key: "#{p.user.clicksign_key}",
-            sign_as: 'party'
-          }
-        }.to_json)
-    end
-  end
+  # def delete_signer_from_contract(good)
+  #   Partner.where(good: good).each do |p|
+  #     HTTParty.delete('https://sandbox.clicksign.com/api/v1/lists?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+  #       headers: {
+  #         Host: 'sandbox.clicksign.com',
+  #         'Content-Type' => 'application/json',
+  #         Accept: 'application/json'
+  #       },
+  #       body: {
+  #         list: {
+  #           document_key: "#{good.clicksign_key}",
+  #           signer_key: "#{p.user.clicksign_key}",
+  #           sign_as: 'party'
+  #         }
+  #       }.to_json)
+  #   end
+  # end
 end
