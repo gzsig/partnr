@@ -5,24 +5,24 @@
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.input :email, autofocus: true %>
+        <%= f.input :email, label: "E-mail", autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.input :password %>
+        <%= f.input :password, label: "Senha" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
       <div class="field">
         <%= f.input_field :remember_me, as: :boolean, boolean_style: :inline %>
-        <%= f.label :remember_me %>
+        <%= f.label :remember_me, label: "Lembrar-me" %>
       </div>
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Log in", class: 'btn btn-secondary btn-signin' %>
-        <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-secondary btn-signin' %>
-        <%= link_to "Forgot your password?", new_user_password_path, class: 'btn btn-secondary btn-signin' %>
+        <%= f.submit "Entrar", class: 'btn btn-secondary btn-signin' %>
+        <%= link_to "Cadastrar-se", new_user_registration_path, class: 'btn btn-secondary btn-signin' %>
+        <%= link_to "Esqueceu sua senha?", new_user_password_path, class: 'btn btn-secondary btn-signin' %>
       </div>
       <% end %>
     </div>

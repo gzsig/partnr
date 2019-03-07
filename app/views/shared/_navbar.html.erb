@@ -13,19 +13,19 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item d-flex flex-column justify-content-center">
-            <%= link_to "GOODS", goods_path, class: "btn btn-link text-dark mr-3" %>
+            <%= link_to "VEÍCULOS", goods_path, class: "btn btn-link text-dark mr-3" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item d-flex flex-column justify-content-center">
-              <%= link_to (current_user.adm? ? 'DASHBOARD' : 'MY PARTNERS'), partnrs_path, class: "btn btn-link text-dark mr-3 pr-3" %>
+              <%= link_to (current_user.adm? ? 'DASHBOARD' : 'MEUS PARCEIROS'), partnrs_path, class: "btn btn-link text-dark mr-3 pr-3" %>
           </li>
           <% if current_user.adm? %>
             <li class="nav-item d-flex flex-column justify-content-center">
-                <%= link_to "ADD GOOD", new_admin_good_path, class: "btn btn-link text-dark mr-3 pr-3" %>
+                <%= link_to "ADICIONAR VEÍCULO", new_admin_good_path, class: "btn btn-link text-dark mr-3 pr-3" %>
             </li>
           <% end %>
           <li class="nav-item d-flex flex-column justify-content-center">
-              <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark mr-3" %><span class="sr-only">(current)</span>
+              <%= link_to "SAIR", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark mr-3" %><span class="sr-only">(current)</span>
           </li>
           <li class="nav-item d-flex flex-column justify-content-center">
             <span class="navbar-text">
@@ -36,7 +36,7 @@
           </li>
         <% else %>
           <li class="nav-item d-flex flex-column justify-content-center">
-              <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "btn btn-link text-dark mr-3 pr-3" %>
+              <%= link_to t(".sign_in", default: "ENTRAR"), new_user_session_path, class: "btn btn-link text-dark mr-3 pr-3" %>
           </li>
           <li class="nav-item d-flex flex-column justify-content-center">
               <%= link_to t(".sign_in", default: "CRIAR CONTA"), new_user_registration_path, class: "btn btn-outline-dark mr-3" %>
