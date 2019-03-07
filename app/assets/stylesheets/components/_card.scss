@@ -186,7 +186,27 @@
   border-radius: 15px;
   background-color: $partnr-blue;
   opacity: 0.7;
+}
 
+.confirmation-card {
+  margin-top: 25px;
+  color: $partnr-blue;
+  font-family: $profile-font;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(103,112,119, 0.5);
+  background-color: $body-background-color;
+  background-size: cover;
+  .bg-white {
+    background-color: white;
+    margin: -1.25rem;
+    padding: 0 1.25rem;
+  }
+}
+.confirmation-profile-name {
+  width: 200px;
+  margin: 20px auto 0 auto;
+  font-size: 23px;
+  color: white;
 }
 
 .add-good {
