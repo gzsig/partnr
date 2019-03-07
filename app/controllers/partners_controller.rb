@@ -56,7 +56,7 @@ class PartnersController < ApplicationController
   private
 
   def partner_params
-    params.permit(:track_use, :other_drivers)
+    params.require(:partner).permit(:track_use, :other_drivers, :numberber_of_passengers, :km_month, :frenquency_month, :for_work)
   end
 
   def confirmation_email(good)
