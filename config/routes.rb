@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   get '/partnrs', to: 'pages#partnrs'
+  get '/confirmation/:good_id', to: 'pages#confirmation', as: :confirmation
+  get '/contract/:good_id', to: 'pages#contract', as: :contract
   devise_for :users
   resources :users, only: :show
 
@@ -9,7 +11,7 @@ namespace :admin do
 end
 
   resources :goods, only: %i[show index] do
-    resources :partners, only: %i[new create]
+    resources :partners, only: %i[new create destroy]
   end
 
 end

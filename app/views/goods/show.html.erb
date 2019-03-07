@@ -1,10 +1,8 @@
-<div class="parntr-container">
+<div class="parntr-container good-show">
   <div class="flex">
-
     <div class="col-sm-12 col-md-9 float-left p-0">
-
       <div id="carouselExampleControls" class="carousel slide mb-3" data-ride="carousel">
-        <div class="carousel-inner">
+        <div class="carousel-inner show-photos">
           <div class="carousel-item active">
             <%= cl_image_tag @good.photo_one %>
           </div>
@@ -35,9 +33,23 @@
     </div>
 
     <div class="col-sm-12 col-md-3 float-right p-0">
-      <div class="bg-partnr-yellow p-4">
-        <p class="border border-dark rounded p-1"><%= @good.fabrication_year %></p>
-        <h4><%= @good.brand %> <%= @good.model %></h4>
+      <div class="bg-partnr-yellow p-4 yellow-show">
+        <h4 class="border border-dark rounded p-1"><%= @good.fabrication_year %> <%= @good.brand %> <%= @good.model %></h4>
+        <div class="good-date">
+          <p><strong>Year: </strong><%= @good.model_year %> - <%= @good.fabrication_year %></p>
+        </div>
+        <div class="good-details">
+          <p><strong>Serial Number: </strong><%= @good.serial_number %></p>
+          <p><strong> Licens Plate: </strong><%= @good.licens_plate %></p>
+          <p><strong>Kilometer: </strong><%= @good.kilometers %></p>
+          <p><strong>Color: </strong><%= @good.color %></p>
+        </div>
+        <div class="good-price">
+          <p><i class="fas fa-dollar-sign"></i> <%= @good.price %></p>
+        </div>
+        <div class="good-facts">
+          <p><strong>Facts: </strong><%=  @good.facts %></p>
+        </div>
       </div>
     </div>
     <% if @users.include?(current_user) %>
@@ -52,9 +64,9 @@
       <% if @good.status %>
         Epa, perdeu o deal!
       <% else %>
-        <%= link_to "QUERO", new_good_partner_path(@good), class: 'btn btn-ligth' %>
+        <%= link_to "QUERO", new_good_partner_path(@good), class: 'btn btn-secondary btn-show-good-quero' %>
       <% end %>
     <% end %>
-    <%= link_to "BACK", goods_path, class: 'btn btn-ligth' %>
+    <%= link_to "BACK", goods_path, class: 'btn btn-secondary btn-show-good' %>
   </div>
 </div>

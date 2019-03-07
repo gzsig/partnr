@@ -47,20 +47,21 @@ class PartnersController < ApplicationController
   end
 
   def destroy
+    @partner = Partner.find(params[:id])
     @partner.destroy
-
     redirect_to :root
   end
 
   private
 
   def partner_params
-    params.require(:partner).permit(:track_use, :other_drivers, :none_of_the_above)
+    params.permit(:track_use, :other_drivers)
   end
 
   def confirmation_email(good)
     @good = good
     Partner.where(good: good).each do |p|
+      p.update! step: 1
       @user = User.where(id: p.user_id).first
       UserMailer.new_partnrs(@user, @good).deliver_now
     end
