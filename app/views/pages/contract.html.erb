@@ -1,7 +1,6 @@
 <h3>Contract</h3>
 <div id='container'></div>
 
-
 <script>
   // Carrega o widget embedded com a request_signature_key
   widget = new Clicksign('7d6d6252-d34f-46a8-bb7b-43226eef7a02');
@@ -10,7 +9,8 @@
   widget.endpoint = 'https://sandbox.clicksign.com';
 
   // Define a URL de origem (parametro necessário para utilizar através de WebView)
-  widget.origin = 'https://partnr.me';
+  widget.origin = 'http://localhost:3000';
+  // widget.origin = 'https://partnr.me';
 
   // Monta o widget no div
   widget.mount('container');
