@@ -2,6 +2,7 @@ class Good < ApplicationRecord
   has_many :partners
   has_many :users, through: :partners
 
+  # cloudnary uploads
   mount_uploader :photo_one, PhotoUploader
   mount_uploader :photo_two, PhotoUploader
   mount_uploader :photo_three, PhotoUploader
@@ -16,6 +17,7 @@ class Good < ApplicationRecord
                     tsearch: { prefix: true }
                   }
 
+  # set good status to true as soon as numebr of partner > 4
   def set_status
     unless self.partners.count < 4
       self.status = true
@@ -44,4 +46,6 @@ class Good < ApplicationRecord
   def self.good_types
     Good.all.pluck(:good_type).uniq
   end
+
+  # def all
 end
