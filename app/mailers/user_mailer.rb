@@ -20,4 +20,11 @@ class UserMailer < ApplicationMailer
     @good = good
     mail(to: @user.email, subject: 'You have new Partnrs')
   end
+
+  def contract_ready(user, good)
+    @user = user
+    @good = good
+    mail(to: @user.email, subject: 'You have a new Contract to sign')
+  end
+
 end
