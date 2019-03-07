@@ -25,10 +25,10 @@ class PartnersController < ApplicationController
     if @partner.save
       # set good status
       @good.set_status
+      @good.save
       if @good.status
         confirmation_email(@good)
         create_contract(@good)
-        add_signers_to_contract
       end
       redirect_to good_path(@good)
     else
@@ -67,7 +67,7 @@ class PartnersController < ApplicationController
   end
 
   def create_contract(good)
-    HTTParty.post('https://sandbox.clicksign.com/api/v1/templates/eaa238ba-f5e9-4a29-849a-94427897c23e/documents?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+    response = HTTParty.post('https://sandbox.clicksign.com/api/v1/templates/eaa238ba-f5e9-4a29-849a-94427897c23e/documents?access_token=27db8324-897b-485a-9848-1e8482a60aab',
       headers: {
         Host: 'sandbox.clicksign.com',
         'Content-Type' => 'application/json',
@@ -121,10 +121,44 @@ class PartnersController < ApplicationController
         p.user.clicksign_key = response['signer']['key']
         p.user.save
       end
+
+      add_signers_to_contract(good)
     end
   end
 
-  # def add_signers_to_contract
+  def add_signers_to_contract(good)
+    Partner.where(good: good).each do |p|
+      HTTParty.post('https://sandbox.clicksign.com/api/v1/lists?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+        headers: {
+          Host: 'sandbox.clicksign.com',
+          'Content-Type' => 'application/json',
+          Accept: 'application/json'
+        },
+        body: {
+          list: {
+            document_key: "#{good.clicksign_key}",
+            signer_key: "#{p.user.clicksign_key}",
+            sign_as: 'party'
+          }
+        }.to_json)
+    end
+  end
 
-  # end
+  def delete_signer_from_contract(good)
+    Partner.where(good: good).each do |p|
+      HTTParty.delete('https://sandbox.clicksign.com/api/v1/lists?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+        headers: {
+          Host: 'sandbox.clicksign.com',
+          'Content-Type' => 'application/json',
+          Accept: 'application/json'
+        },
+        body: {
+          list: {
+            document_key: "#{good.clicksign_key}",
+            signer_key: "#{p.user.clicksign_key}",
+            sign_as: 'party'
+          }
+        }.to_json)
+    end
+  end
 end
