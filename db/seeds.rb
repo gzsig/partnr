@@ -13,10 +13,11 @@ def seed_video(file_name)
   File.open(File.join(Rails.root, "/app/assets/images/seed/#{file_name}.mp4"))
 end
 
-puts "creating 5 user (admin)..."
-
-User.create(first_name: "Admin", last_name: "User", email: "admin@test.com", bio: "I'm Admin Regular, what else do you wanna know?", CPF: "4446667772", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", adm: true)
-
+puts "creating user (admin)..."
+  User.create(first_name: "Admin", last_name: "User", email: "admin@test.com", bio: "I'm Admin Regular, what else do you wanna know?", CPF: "44466492808", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Car", adm: true)
+  User.create(first_name: "Admin", last_name: "User", email: "user1@test.com", bio: "I'm Regular, what else do you wanna know?", CPF: "47688683807", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Car", adm: false)
+  User.create(first_name: "Admin", last_name: "User", email: "user2@test.com", bio: "I'm Regular, what else do you wanna know?", CPF: "41931115800", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Car", adm: false)
+  User.create(first_name: "Admin", last_name: "User", email: "user3@test.com", bio: "I'm Regular, what else do you wanna know?", CPF: "00320809803", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Car", adm: false)
 puts "done!"
 
 cont = 0
