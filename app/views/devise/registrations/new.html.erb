@@ -1,64 +1,64 @@
 <div class="container">
   <div class="card signup">
     <div class="signup-content">
-      <h2 class="title-signup">Sign up</h2>
+      <h2 class="title-signup">Cadastrar-se</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <%= f.input :profile_picture, input_html: { class: 'invisible'}, label_html: { class: 'upload-profilephoto'}, label: '📷 Upload profile photo' %>
+      <%= f.input :profile_picture, input_html: { class: 'invisible'}, label_html: { class: 'upload-profilephoto'}, label: '📷 Escolher foto de perfil' %>
       <%= f.input :profile_picture_cache, as: :hidden %>
 
       <div class="field">
-        <%= f.input :favorite, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
+        <%= f.input :favorite, label: "Favorito", collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.input :email, autocomplete: "email" %>
+        <%= f.input :email, label: "E-mail", autocomplete: "email" %>
       </div>
 
       <div class="field">
-        <%= f.input :first_name %>
+        <%= f.input :first_name, label: "Primeiro nome" %>
       </div>
 
       <div class="field">
-        <%= f.input :last_name %>
+        <%= f.input :last_name, label: "Último nome" %>
       </div>
 
       <div class="field">
-        <%= f.input :phone_number %>
+        <%= f.input :phone_number, label: "Celular" %>
       </div>
 
       <div class="field">
-        <%= f.input :CPF %>
+        <%= f.input :CPF, label: "CPF" %>
       </div>
 
       <div class="field">
-        <%= f.input :bio %>
+        <%= f.input :bio, label: "Biografia" %>
       </div>
 
       <div class="field">
-        <%= f.input :occupation %>
+        <%= f.input :occupation, label: "Ocupação" %>
       </div>
 
       <div class="field">
-        <%= f.input :address %>
+        <%= f.input :address, label: "Endereço" %>
       </div>
 
       <div class="field">
-        <%= f.input :password, autocomplete: "new-password" %>
+        <%= f.input :password, label: "Senha", autocomplete: "new-password" %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
       </div>
 
       <div class="field">
-        <%= f.input :password_confirmation, autocomplete: "new-password" %>
+        <%= f.input :password_confirmation, label: "Confirmar senha", autocomplete: "new-password" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: 'btn btn-secondary btn-signup' %>
-        <%= link_to "Cancel", root_path, class: 'btn btn-secondary btn-signup' %>
+        <%= f.submit "Salvar", class: 'btn btn-secondary btn-signup' %>
+        <%= link_to "Cancelar", root_path, class: 'btn btn-secondary btn-signup' %>
         <%= link_to "Login", new_user_session_path, class: 'btn btn-secondary btn-signup' %>
       </div>
       <% end %>

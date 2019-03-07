@@ -10,28 +10,28 @@
       <%= text_field_tag :query,
         params[:query],
         class: 'form-control mb-3',
-        placeholder: 'Search' %>
+        placeholder: 'Procurar' %>
 
-      <h5>Filters</h5>
+      <h5>Filtros</h5>
       <%= select_tag :good_type,
         options_for_select(@good_types),
         class: 'form-control mb-3',
-        prompt: "Find your next..." %>
+        prompt: "Encontre o seu próximo..." %>
 
       <%= select_tag :fabrication_year,
         options_for_select(@fabrication_year_range),
         class: 'form-control mb-3',
-        prompt: "Fabrication year" %>
+        prompt: "Ano de fabricação" %>
 
       <%= select_tag :color,
         options_for_select(@colors),
         class: 'form-control mb-3',
-        prompt: "Pick a color" %>
+        prompt: "Cor" %>
 
       <%= select_tag :body_style,
         options_for_select(@body_styles),
         class: 'form-control mb-3',
-        prompt: "Type" %>
+        prompt: "Tipo" %>
 
       <%= f.range_field :price, min: @min_price, max: @max_price, step: "100000", class: "custom-range" %>
 

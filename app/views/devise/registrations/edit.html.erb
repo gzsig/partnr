@@ -1,48 +1,48 @@
 <div class="container">
   <div class="card profile-edit">
     <div class="profile-edit-content">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <h2>Editar <%= resource_name.to_s.humanize %></h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <%= f.input :profile_picture, input_html: { class: 'invisible'}, label_html: { class: 'upload-profilephoto'}, label: '📷 Upload profile photo' %>
+      <%= f.input :profile_picture, input_html: { class: 'invisible'}, label_html: { class: 'upload-profilephoto'}, label: '📷 Mudar foto de perfil' %>
       <%= f.input :profile_picture_cache, as: :hidden %>
 
       <div class="field">
-        <%= f.input :favorite, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
+        <%= f.input :favorite, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true, label: "Favorito" %>
       </div>
 
       <div class="field">
-        <%= f.input :email, autofocus: true, autocomplete: "email" %>
+        <%= f.input :email, autofocus: true, autocomplete: "email", label: "E-mail" %>
       </div>
 
       <div class="field">
-        <%= f.input :first_name %>
+        <%= f.input :first_name, label: "Primeiro nome" %>
       </div>
 
       <div class="field">
-        <%= f.input :last_name %>
+        <%= f.input :last_name, label: "Último nome" %>
       </div>
 
       <div class="field">
-        <%= f.input :phone_number %>
+        <%= f.input :phone_number, label: "Celular" %>
       </div>
 
       <div class="field">
-        <%= f.input :CPF %>
+        <%= f.input :CPF, label: "CPF" %>
       </div>
 
       <div class="field">
-        <%= f.input :bio %>
+        <%= f.input :bio, label: "Biografia" %>
       </div>
 
       <div class="field">
-        <%= f.input :occupation %>
+        <%= f.input :occupation, label: "Ocupação" %>
       </div>
 
       <div class="field">
-        <%= f.input :address %>
+        <%= f.input :address, label: "Endereço" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -50,7 +50,7 @@
       <% end %>
 
       <div class="field">
-        <%= f.input :password, autocomplete: "new-password", hint: "Leave blank if you don't want to change it." %>
+        <%= f.input :password, autocomplete: "new-password", label: "Senha", hint: "Deixar em branco se não quiser mudar." %>
         <% if @minimum_password_length %>
         <br />
         <em><%= @minimum_password_length %> characters minimum</em>
@@ -58,22 +58,22 @@
       </div>
 
       <div class="field">
-        <%= f.input :password_confirmation, autocomplete: "new-password" %>
+        <%= f.input :password_confirmation, label: "Confirmar senha", autocomplete: "new-password" %>
       </div>
 
       <div class="field">
-        <%= f.input :current_password, autocomplete: "current-password", hint: "We need your current password to confirm your changes." %>
+        <%= f.input :current_password, label: "Senha atual", autocomplete: "current-password", hint: "Precisamos da sua senha atual para confirmar suas mudanças." %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Update", class: 'btn btn-secondary btn-edit' %>
-        <%= link_to "Back", :back, class: 'btn btn-secondary' %>
+        <%= f.submit "Salvar", class: 'btn btn-secondary btn-edit' %>
+        <%= link_to "Voltar", :back, class: 'btn btn-secondary' %>
       </div>
       <% end %>
 
-      <h3 class="cancel">Cancel my account</h3>
+      <h3 class="cancel">Cancelar minha conta</h3>
 
-      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-secondary' %></p>
+      <p>Insatisfeito? <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Você tem certeza" }, method: :delete, class: 'btn btn-secondary' %></p>
     </div>
   </div>
 </div>
