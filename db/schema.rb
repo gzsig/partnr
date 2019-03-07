@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_012956) do
+ActiveRecord::Schema.define(version: 2019_03_07_183056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,10 @@ ActiveRecord::Schema.define(version: 2019_03_07_012956) do
     t.datetime "updated_at", null: false
     t.boolean "none_of_the_above"
     t.integer "step", default: 0
+    t.integer "numberber_of_passengers"
+    t.integer "km_month"
+    t.integer "frenquency_month"
+    t.boolean "for_work"
     t.index ["good_id"], name: "index_partners_on_good_id"
     t.index ["user_id"], name: "index_partners_on_user_id"
   end
