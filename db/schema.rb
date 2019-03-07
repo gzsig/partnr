@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_183056) do
     t.datetime "updated_at", null: false
     t.boolean "none_of_the_above"
     t.integer "step", default: 0
+    t.string "request_signature_key"
     t.integer "numberber_of_passengers"
     t.integer "km_month"
     t.integer "frenquency_month"

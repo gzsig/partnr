@@ -14,7 +14,7 @@ def seed_video(file_name)
 end
 
 puts "creating user (admin)..."
-  User.create(first_name: "Admin", last_name: "User", email: "admin@test.com", bio: "I'm Admin Regular, what else do you wanna know?", CPF: "44466492808", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Car", adm: true)
+  User.create(first_name: "Admin", last_name: "User", email: "admin@test.com", bio: "I'm Admin Regular, what else do you wanna know?", CPF: "44466492808", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988775551", password: "123456", favorite: "Car", adm: true)
   User.create(first_name: "Admin", last_name: "User", email: "user1@test.com", bio: "I'm Regular, what else do you wanna know?", CPF: "47688683807", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Car", adm: false)
   User.create(first_name: "Admin", last_name: "User", email: "user2@test.com", bio: "I'm Regular, what else do you wanna know?", CPF: "41931115800", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Car", adm: false)
   User.create(first_name: "Admin", last_name: "User", email: "user3@test.com", bio: "I'm Regular, what else do you wanna know?", CPF: "00320809803", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Car", adm: false)
