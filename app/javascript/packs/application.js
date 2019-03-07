@@ -11,3 +11,7 @@
 //= require popper
 //= require bootstrap-sprockets
 import 'bootstrap';
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
