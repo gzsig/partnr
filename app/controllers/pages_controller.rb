@@ -22,7 +22,7 @@ class PagesController < ApplicationController
     Partner.find_by(good: @good, user: current_user).update! step: 2
 
     # create contract if all partners are confirmed
-    if @good.partners.pluck(:step).uniq == ['confirmed']
+    if @good.partners.pluck(:step).uniq == ['confirmed'] && @good.clicksign_key.nil?
       create_contract(@good)
       contract_email(@good)
     end
@@ -90,8 +90,8 @@ class PagesController < ApplicationController
         p.user.save
       end
 
-      add_signers_to_contract(good)
     end
+    add_signers_to_contract(good)
   end
 
   def add_signers_to_contract(good)
@@ -118,20 +118,20 @@ class PagesController < ApplicationController
     end
   end
 
-  def request_signature_key(sign = {})
-    good = sign[:good]
-    user = sign[:user]
+  # def request_signature_key(sign = {})
+  #   good = sign[:good]
+  #   user = sign[:user]
 
-    repsonse = HTTParty.get('https://sandbox.clicksign.com/api/v1/documents/#{good.clicksign_key}?access_token=27db8324-897b-485a-9848-1e8482a60aab',
-      headers: {
-        Host: 'sandbox.clicksign.com',
-        'Content-Type' => 'application/json',
-        Accept: 'application/json'
-      }
+  #   repsonse = HTTParty.get('https://sandbox.clicksign.com/api/v1/documents/#{good.clicksign_key}?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+  #     headers: {
+  #       Host: 'sandbox.clicksign.com',
+  #       'Content-Type' => 'application/json',
+  #       Accept: 'application/json'
+  #     }
 
-    # request_signature_key
-    @key = response['signers']['key']
-  end
+  #   # request_signature_key
+  #   @key = response['signers']['key']
+  # end
 
   def contract_email(good)
     @good = good

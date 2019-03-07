@@ -1,10 +1,11 @@
-<h3>Contract</h3>
+<h3>Contract of <%= @good.brand %> <%= @good.model %></h3>
 <div id='container'></div>
 
 <% content_for :after_js do %>
   <script>
     // Carrega o widget embedded com a request_signature_key
-    widget = new Clicksign('7d6d6252-d34f-46a8-bb7b-43226eef7a02');
+    widget = new Clicksign("<%= @good.partners.where(user: current_user).first.request_signature_key %>");
+
 
     // Define o endpoint https://sandbox.clicksign.com ou https://app.clicksign.com
     widget.endpoint = 'https://sandbox.clicksign.com';
