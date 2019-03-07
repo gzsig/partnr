@@ -23,14 +23,12 @@ class PartnersController < ApplicationController
     @partner.good = @good
     @partner.user = current_user
     if @partner.save
-      # create signer at clicksign platform
-      create_signer(@good)
       # set good status
       @good.set_status
       if @good.status
         confirmation_email(@good)
         create_contract(@good)
-        raise
+        add_signers_to_contract
       end
       redirect_to good_path(@good)
     else
@@ -86,9 +84,18 @@ class PartnersController < ApplicationController
           }
         }
       }.to_json)
+
+    # create contrac's clicksign uniq hash
+    if good.clicksign_key.nil?
+      good.clicksign_key = response['document']['key']
+      good.save
+    end
+
+    # create signer on clicksign platform
+    create_signers(@good)
   end
 
-  def create_signer(good)
+  def create_signers(good)
     Partner.where(good: good).each do |p|
       response = HTTParty.post('https://sandbox.clicksign.com/api/v1/signers?access_token=27db8324-897b-485a-9848-1e8482a60aab',
         headers: {
@@ -109,7 +116,11 @@ class PartnersController < ApplicationController
           }
         }.to_json)
 
-      p.user.clicksign_key = response['signer']['key'] if p.user.clicksign_key.nil?
+      # create signer's clicksign uniq hash for each user of the given good
+      if p.user.clicksign_key.nil?
+        p.user.clicksign_key = response['signer']['key']
+        p.user.save
+      end
     end
   end
 
