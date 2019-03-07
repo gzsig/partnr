@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card profile-edit">
     <div class="profile-edit-content">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <h2>Editar <%= resource_name.to_s.humanize %></h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -10,39 +10,39 @@
       <%= f.input :profile_picture_cache, as: :hidden %>
 
       <div class="field">
-        <%= f.input :favorite, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
+        <%= f.input :favorite, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true, label: "Favorito" %>
       </div>
 
       <div class="field">
-        <%= f.input :email, autofocus: true, autocomplete: "email" %>
+        <%= f.input :email, autofocus: true, autocomplete: "email", label: "E-mail" %>
       </div>
 
       <div class="field">
-        <%= f.input :first_name %>
+        <%= f.input :first_name, label: "Primeiro nome" %>
       </div>
 
       <div class="field">
-        <%= f.input :last_name %>
+        <%= f.input :last_name, label: "Último nome" %>
       </div>
 
       <div class="field">
-        <%= f.input :phone_number %>
+        <%= f.input :phone_number, label: "Celular" %>
       </div>
 
       <div class="field">
-        <%= f.input :CPF %>
+        <%= f.input :CPF, label: "CPF" %>
       </div>
 
       <div class="field">
-        <%= f.input :bio %>
+        <%= f.input :bio, label: "Biografia" %>
       </div>
 
       <div class="field">
-        <%= f.input :occupation %>
+        <%= f.input :occupation, label: "Ocupação" %>
       </div>
 
       <div class="field">
-        <%= f.input :address %>
+        <%= f.input :address, label: "Endereço" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -50,7 +50,7 @@
       <% end %>
 
       <div class="field">
-        <%= f.input :password, autocomplete: "new-password", hint: "Deixar em branco se não quiser mudar." %>
+        <%= f.input :password, autocomplete: "new-password", label: "Senha", hint: "Deixar em branco se não quiser mudar." %>
         <% if @minimum_password_length %>
         <br />
         <em><%= @minimum_password_length %> characters minimum</em>
@@ -58,11 +58,11 @@
       </div>
 
       <div class="field">
-        <%= f.input :password_confirmation, autocomplete: "new-password" %>
+        <%= f.input :password_confirmation, label: "Confirmar senha", autocomplete: "new-password" %>
       </div>
 
       <div class="field">
-        <%= f.input :current_password, autocomplete: "current-password", hint: "Precisamos da sua senha atual para confirmar suas mudanças." %>
+        <%= f.input :current_password, label: "Senha atual", autocomplete: "current-password", hint: "Precisamos da sua senha atual para confirmar suas mudanças." %>
       </div>
 
       <div class="actions">

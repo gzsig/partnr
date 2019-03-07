@@ -5,17 +5,17 @@
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.input :email, autofocus: true %>
+        <%= f.input :email, label: "E-mail", autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.input :password %>
+        <%= f.input :password, label: "Senha" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
       <div class="field">
         <%= f.input_field :remember_me, as: :boolean, boolean_style: :inline %>
-        <%= f.label :remember_me %>
+        <%= f.label :remember_me, label: "Lembrar-me" %>
       </div>
       <% end %>
 

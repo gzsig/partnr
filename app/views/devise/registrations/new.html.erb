@@ -10,50 +10,50 @@
       <%= f.input :profile_picture_cache, as: :hidden %>
 
       <div class="field">
-        <%= f.input :favorite, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
+        <%= f.input :favorite, label: "Favorito", collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.input :email, autocomplete: "email" %>
+        <%= f.input :email, label: "E-mail", autocomplete: "email" %>
       </div>
 
       <div class="field">
-        <%= f.input :first_name %>
+        <%= f.input :first_name, label: "Primeiro nome" %>
       </div>
 
       <div class="field">
-        <%= f.input :last_name %>
+        <%= f.input :last_name, label: "Último nome" %>
       </div>
 
       <div class="field">
-        <%= f.input :phone_number %>
+        <%= f.input :phone_number, label: "Celular" %>
       </div>
 
       <div class="field">
-        <%= f.input :CPF %>
+        <%= f.input :CPF, label: "CPF" %>
       </div>
 
       <div class="field">
-        <%= f.input :bio %>
+        <%= f.input :bio, label: "Biografia" %>
       </div>
 
       <div class="field">
-        <%= f.input :occupation %>
+        <%= f.input :occupation, label: "Ocupação" %>
       </div>
 
       <div class="field">
-        <%= f.input :address %>
+        <%= f.input :address, label: "Endereço" %>
       </div>
 
       <div class="field">
-        <%= f.input :password, autocomplete: "new-password" %>
+        <%= f.input :password, label: "Senha", autocomplete: "new-password" %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
       </div>
 
       <div class="field">
-        <%= f.input :password_confirmation, autocomplete: "new-password" %>
+        <%= f.input :password_confirmation, label: "Confirmar senha", autocomplete: "new-password" %>
       </div>
 
       <div class="actions">

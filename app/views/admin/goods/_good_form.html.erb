@@ -3,18 +3,18 @@
     <div class="add-good-content">
       <%= simple_form_for [:admin, @good] do |f| %>
 
-        <%= f.input :good_type, collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
-        <%= f.input :brand %>
-        <%= f.input :model %>
-        <%= f.input :model_year %>
-        <%= f.input :fabrication_year %>
-        <%= f.input :serial_number %>
-        <%= f.input :licens_plate %>
-        <%= f.input :kilometers %>
-        <%= f.input :price %>
-        <%= f.input :color %>
-        <%= f.input :facts %>
-        <%= f.input :version %>
+        <%= f.input :good_type, label: "Tipo do bem", collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
+        <%= f.input :brand, label: "Marca" %>
+        <%= f.input :model, label: "Modelo" %>
+        <%= f.input :model_year, label: "Ano" %>
+        <%= f.input :fabrication_year, label: "Ano de fabricação" %>
+        <%= f.input :serial_number, label: "Número serial" %>
+        <%= f.input :licens_plate, label: "Placa" %>
+        <%= f.input :kilometers, label: "Quilometragem" %>
+        <%= f.input :price, label: "Preço" %>
+        <%= f.input :color, label: "Cor" %>
+        <%= f.input :facts, label: "Fatos" %>
+        <%= f.input :version, label: "Versão" %>
         <div class="actions upload">
           <%= f.input :photo_one, input_html: { class: 'invisible'}, label_html: { class: 'upload-photo'}, label: '📷 Escolher foto' %>
           <%= f.input :photo_one_cache, as: :hidden %>
@@ -28,7 +28,7 @@
           <%= f.input :video_cache, as: :hidden %>
         </div>
         <div class="actions">
-          <%= f.button :submit, class:'btn btn-secondary btn-add-good'%>
+          <%= f.button :submit, class:'btn btn-secondary btn-add-good' %>
         </div>
 
       <% end  %>
