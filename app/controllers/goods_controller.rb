@@ -32,6 +32,8 @@ class GoodsController < ApplicationController
     @good.partners.each do |partner|
       @users << partner.user
     end
+
+    @formated_price = @good.price.split('')
   end
 
   private
