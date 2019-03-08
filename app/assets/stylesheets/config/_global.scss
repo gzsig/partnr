@@ -2,6 +2,17 @@ body {
   background-color: $body-background-color;
 }
 
+input:not([type="range"], [type="submit"]), select {
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid $partnr-light-gray !important;
+  padding-left: 0 !important;
+
+  &:focus {
+    box-shadow: 0px 0px 0px 0px transparent !important;
+  }
+}
+
 .parntr-container {
   margin: 0 auto;
 }
@@ -14,6 +25,16 @@ body {
   background-color: $partnr-yellow;
 }
 
+
+// bootstrap-like text-related classes
 .text-partnr-dark-gray {
   color: $partnr-dark-gray !important;
+}
+
+.text-partnr-yellow {
+  color: $partnr-yellow !important;
+}
+
+.border-partnr-yellow {
+  border: 1px solid $partnr-yellow;
 }

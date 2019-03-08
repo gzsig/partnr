@@ -52,7 +52,7 @@
               <% @formated_price.each do |d| %>
                 <% @formated_price.index(d) % 3 == 0 ? formated_price << "#{d}." : formated_price << d %>
               <% end %>
-              <span class="font-weight-bold"><%= formated_price.join %></span> | <%= @formated_price.join.to_i / 4 %><small class="text-secondary">/partner</small>
+              <span class="font-weight-bold"><%= formated_price.join %></span> | <%= @formated_price.join.to_i / 4 %><small class="text-secondary">/partnr</small>
             </span>
           </p>
         </div>
