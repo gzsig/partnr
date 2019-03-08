@@ -238,7 +238,7 @@
   font-weight: 500;
   background: $partnr-dark-gray;
   color: white;
-  margin-right: 12px;
+  margin-right: 5px;
   &:hover {
     opacity: 0.8;
   }
@@ -252,13 +252,13 @@
   font-weight: 500;
   background: $partnr-dark-gray;
   color: white;
-  margin-right: 10px;
+  margin-right: 5px;
   &:hover {
     opacity: 0.8;
   }
 }
  .upload {
-  display: flex;
+  margin-top: 30px;
  }
 
 .upload-profilephoto {
@@ -273,6 +273,21 @@
   &:hover {
     opacity: 0.8;
   }
+}
+
+.photo1 {
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+.photo2 {
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+.photo3 {
+  margin-left: 30px;
+  margin-bottom: 5px;
 }
 
 .good-show {
@@ -297,4 +312,12 @@
 
 .round-partnr {
   text-align: center;
+}
+
+.closed-deal {
+  font-family: $profile-font;
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-style: double;
+  border-width: 4px 4px 4px 4px;
 }

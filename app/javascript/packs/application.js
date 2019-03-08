@@ -11,7 +11,10 @@
 //= require popper
 //= require bootstrap-sprockets
 import 'bootstrap';
+import { previewImageOnFileSelect } from 'components/photo_preview.js';
 
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
+
+previewImageOnFileSelect();

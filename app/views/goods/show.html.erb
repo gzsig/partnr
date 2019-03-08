@@ -50,12 +50,10 @@
         <div class="good-facts">
           <p><strong>Fatos: </strong><%=  @good.facts %></p>
         </div>
-      </div>
-    </div>
-    <div class="round-partnr">
+        <div class="round-partnr">
     <% if @users.include?(current_user) %>
       <% if @good.status %>
-        Fechou!
+       <div class="closed-deal"> Parceria fechada! </div>
       <% else %>
         <% @good.users.each do |user| %>
         <%= cl_image_tag user.profile_picture, class: 'avatar ' %>
@@ -69,6 +67,8 @@
       <% end %>
     <% end %>
     <%= link_to "Voltar", goods_path, class: 'btn btn-secondary btn-show-good' %>
+    </div>
+      </div>
     </div>
   </div>
 </div>
