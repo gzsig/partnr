@@ -1,3 +1,7 @@
+.navbar-light {
+  background-color: #252839;
+}
+
 .partnr-logo img {
   width: 100px;
   // margin-right: 1200px;
@@ -15,11 +19,10 @@
 li {
   a {
     text-decoration: none !important;
-    color: $partnr-dark-gray;
+    color: #fff !important;
   }
   a.hover {
     text-decoration: none !important;
-    color: $partnr-dark-gray;
   }
 }
 
@@ -29,6 +32,6 @@ li {
 }
 
 .btn-light {
-  background-color: #e3f2fd !important;
+  background-color: $partnr-yellow !important;
   margin-left: 10px;
 }
