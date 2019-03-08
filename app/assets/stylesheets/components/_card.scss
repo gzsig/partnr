@@ -179,10 +179,11 @@
 
 .partner-card {
   color: white;
-  margin-top: 30vh;
+  margin: 20vh auto;
   padding: 20px;
   width: 30vw;
-  height: 200px;
+  min-width: 300px;
+  height: auto;
   border-radius: 15px;
   background-color: $partnr-blue;
   opacity: 0.7;

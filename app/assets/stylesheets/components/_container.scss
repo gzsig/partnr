@@ -1,8 +1,13 @@
 .partner-form-container {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  color: blue;
+  // display: flex;
+  // text-align: center;
+  // justify-content: center;
+  // margin: 25vh 0 25vh 0;
+  overflow-y: hidden;
+  padding: 20px;
+  // width: 30vw;
+  height: auto;
+  color: white;
   background-position: center;
   background-size: cover;
   min-height: 400px;
