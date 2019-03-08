@@ -17,3 +17,21 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.partners-show-flex {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0 0;
+}
+
+.good-title {
+  font-size: 30px;
+  color: black;
+}
+
+.partners-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
