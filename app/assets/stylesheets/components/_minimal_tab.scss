@@ -1,6 +1,7 @@
 .my-minimal-tab {
   background-color: transparent !important;
   color: $partnr-dark-gray !important;
+  font-size: 1.2em;
   font-weight: bold;
   border-bottom: 3px solid transparent;
   transition: .3s;
@@ -10,6 +11,9 @@
 
   }
   &:active {
+    border-bottom: 3px solid $partnr-yellow !important;
+  }
+  &.active {
     border-bottom: 3px solid $partnr-yellow !important;
   }
 }

@@ -1,9 +1,9 @@
 <div class="parntr-container">
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;" p-4">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="#">
       <div class="partnr-logo">
         <%= link_to (user_signed_in? ? goods_path : :root) do %>
-          <%= image_tag "partnr_dark.png" %>
+          <%= image_tag "partnr_light.png" %>
         <% end %>
       </div>
     </a>
@@ -13,19 +13,19 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item d-flex flex-column justify-content-center">
-            <%= link_to "VEÍCULOS", goods_path, class: "btn btn-link text-dark mr-3" %>
+            <%= link_to "VEÍCULOS", goods_path, class: "btn btn-link mr-3" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item d-flex flex-column justify-content-center">
-              <%= link_to (current_user.adm? ? 'DASHBOARD' : 'MEUS PARCEIROS'), partnrs_path, class: "btn btn-link text-dark mr-3 pr-3" %>
+              <%= link_to (current_user.adm? ? 'DASHBOARD' : 'MEUS PARCEIROS'), partnrs_path, class: "btn btn-link mr-3 pr-3" %>
           </li>
           <% if current_user.adm? %>
             <li class="nav-item d-flex flex-column justify-content-center">
-                <%= link_to "ADICIONAR VEÍCULO", new_admin_good_path, class: "btn btn-link text-dark mr-3 pr-3" %>
+                <%= link_to "ADICIONAR VEÍCULO", new_admin_good_path, class: "btn btn-link mr-3 pr-3" %>
             </li>
           <% end %>
           <li class="nav-item d-flex flex-column justify-content-center">
-              <%= link_to "SAIR", destroy_user_session_path, method: :delete, class: "btn btn-outline-dark mr-3" %><span class="sr-only">(current)</span>
+              <%= link_to "SAIR", destroy_user_session_path, method: :delete, class: "btn btn-partnr-yellow mr-3" %><span class="sr-only">(current)</span>
           </li>
           <li class="nav-item d-flex flex-column justify-content-center">
             <span class="navbar-text">

@@ -1,5 +1,4 @@
 .btn-partnr {
-  font-weight: bold;
   &:hover {
     color: #fff;
     opacity: 0.90;
@@ -26,11 +25,11 @@
   color: $partnr-blue !important;
 }
 
-.btn-outline-partnr-blue {
-  color: $partnr-blue;
-  border: 1px solid $partnr-blue;
+.btn-outline-partnr-dark-gray {
+  color: $partnr-dark-gray;
+  border: 1px solid $partnr-dark-gray;
   &:hover {
-    background-color: $partnr-blue;
+    background-color: $partnr-dark-gray;
     color: white;
   }
 }
