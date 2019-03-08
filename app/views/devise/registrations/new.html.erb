@@ -6,7 +6,7 @@
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-      <%= image_tag "", width: 100, class: "invisible photo1", id: "photo-preview0" %>
+      <%= image_tag "", width: 100, class: "invisible photo1", id: "photo-preview0", width:170, height: 170, crop: :thumb, gravity: :face, style: "border-radius: 50%" %>
       <%= f.input :profile_picture, input_html: { class: 'invisible photo-input'}, label_html: { class: 'upload-profilephoto'}, label: '📷 Escolher foto de perfil' %>
       <%= f.input :profile_picture_cache, as: :hidden %>
 
