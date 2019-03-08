@@ -1,7 +1,7 @@
-<div class="partner-form-container" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= asset_url @good.photo_one %>)">
+<div class="partner-form-container d-flex align-items-center justify-content-around" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= asset_url @good.photo_one %>)">
   <div class="partner-card row">
-    <div class="other-info col-lg-4">
-      <span class="text-dark">Some randome stuff will be here</span>
+    <div class="other-info col-lg-4 d-flex align-items-center justify-content-around">
+      <strong><h1 class="text-center text-dark">Preparado para conhecer seus proximos parceiros?</h1></strong>
     </div>
     <div class="diff-forms col-lg-8">
       <% if @good.good_type.capitalize == 'Car' %>

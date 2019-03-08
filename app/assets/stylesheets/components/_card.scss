@@ -175,7 +175,7 @@
 
 .partner-card {
   color: white;
-  margin: 10vh auto;
+  margin: auto;
   padding: 20px;
   width: 50vw;
   min-width: 300px;
@@ -185,8 +185,6 @@
 }
 
 .other-info {
-  // border: solid;
-  // border-color: white;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
   background-color: $partnr-light-gray;
