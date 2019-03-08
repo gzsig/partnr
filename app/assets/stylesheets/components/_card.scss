@@ -1,18 +1,19 @@
 .index-card {
-  min-width: 300px !important;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  margin-left: 30px;
-  margin-right: 10px;
   overflow: hidden;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  font-family: $profile-font;
   color: $partnr-blue;
+  transition: .3s;
+  &:hover {
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  // sets imag effects on index-card hover
+  &:hover > .index-img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
 }
 
 .index-img {
-  // width:150px;
   height:200px;
   background-size:cover;
   background-position:center center;
@@ -21,24 +22,12 @@
   filter: grayscale(100%);
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
-  &:hover {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-  }
-  // background-image:asset-url('ferrari.jpg');
-}
-
-.search-index {
-  margin-top: 19px;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family: $profile-font;
 }
 
 .profile-user {
   margin-top: 25px;
   color: $partnr-blue;
-  font-family: $profile-font;
+  font-family: $body-font;
   border-radius: 0.5rem;
   border: 1px solid rgba(103,112,119, 0.5);
   background-color: $body-background-color;
@@ -76,7 +65,7 @@
 
 .login-user {
   background-color: $body-background-color;
-  font-family: $profile-font;
+  font-family: $body-font;
   margin-top: 90px;
   margin-left: 25px;
   margin-right: 25px;
@@ -99,7 +88,7 @@
   margin-top: 50px;
   margin-bottom: 30px;
   background-color: $body-background-color;
-  font-family: $profile-font;
+  font-family: $body-font;
   border: 1px solid rgba(103,112,119, 0.5);
   border-radius: 0.5rem;
 }
@@ -118,7 +107,7 @@
 .forgotp {
   margin-top: 50px;
   background-color: $body-background-color;
-  font-family: $profile-font;
+  font-family: $body-font;
   border: 1px solid rgba(103,112,119, 0.5);
   border-radius: 0.5rem;
 }
@@ -155,7 +144,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: $body-background-color;
-  font-family: $profile-font;
+  font-family: $body-font;
   border: 1px solid rgba(103,112,119, 0.5);
   border-radius: 0.5rem;
 }
@@ -188,7 +177,7 @@
 .confirmation-card {
   margin-top: 25px;
   color: $partnr-blue;
-  font-family: $profile-font;
+  font-family: $body-font;
   border-radius: 0.5rem;
   border: 1px solid rgba(103,112,119, 0.5);
   background-color: $body-background-color;
@@ -210,7 +199,7 @@
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: $body-background-color;
-  font-family: $profile-font;
+  font-family: $body-font;
   border: 1px solid rgba(103,112,119, 0.5);
   border-radius: 0.5rem;
 }

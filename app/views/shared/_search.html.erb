@@ -1,41 +1,54 @@
-<!-- responsive version TODO -->
-<% if  %>
+<div class="bg-white w-100 p-4 search-index">
 
-  <div class="bg-white w-100 p-4 search-index">
-<% end %>
+  <%= form_for goods_path, method: 'GET' do |f| %>
 
-    <%= form_for goods_path, method: 'GET' do |f| %>
+    <h5>Busca</h5>
+    <%= text_field_tag :query,
+      params[:query],
+      class: 'form-control mb-3',
+      placeholder: 'Procurar' %>
 
-      <h5>Busca</h5>
-      <%= text_field_tag :query,
-        params[:query],
-        class: 'form-control mb-3',
-        placeholder: 'Procurar' %>
+    <h5>Filtros</h5>
+    <%= select_tag :good_type,
+      options_for_select(@good_types),
+      class: 'form-control mb-3',
+      prompt: "Encontre o seu próximo..." %>
 
-      <h5>Filtros</h5>
-      <%= select_tag :good_type,
-        options_for_select(@good_types),
-        class: 'form-control mb-3',
-        prompt: "Encontre o seu próximo..." %>
+    <%= select_tag :fabrication_year,
+      options_for_select(@fabrication_year_range),
+      class: 'form-control mb-3',
+      prompt: "Ano de fabricação" %>
 
-      <%= select_tag :fabrication_year,
-        options_for_select(@fabrication_year_range),
-        class: 'form-control mb-3',
-        prompt: "Ano de fabricação" %>
+    <%= select_tag :color,
+      options_for_select(@colors),
+      class: 'form-control mb-3',
+      prompt: "Cor" %>
 
-      <%= select_tag :color,
-        options_for_select(@colors),
-        class: 'form-control mb-3',
-        prompt: "Cor" %>
+    <%= select_tag :body_style,
+      options_for_select(@body_styles),
+      class: 'form-control mb-3',
+      prompt: "Tipo" %>
 
-      <%= select_tag :body_style,
-        options_for_select(@body_styles),
-        class: 'form-control mb-3',
-        prompt: "Tipo" %>
+    <div class="mt-4 text-uppercase text-partnr-dark-gray">Preço</div>
+    <div class="h4 text-partnr-dark-gray font-weight-light">
+      <span id="range-output"></span>&nbspK
+    </div>
+    <%= f.range_field :price, min: @min_price, max: @max_price, step: "100000", class: "custom-range" %>
 
-      <%= f.range_field :price, min: @min_price, max: @max_price, step: "100000", class: "custom-range" %>
+    <%= submit_tag :submit,
+      class: 'btn btn-partnr btn-partnr-yellow' %>
 
-      <%= submit_tag :submit,
-        class: 'btn btn-secondary' %>
-    <% end %>
-  </div>
+    <!-- gets range value and injects it into the right element -->
+    <script>
+      var slider = document.querySelector(".custom-range");
+      var output = document.getElementById("range-output");
+      output.innerHTML = slider.value; // Display the default slider value
+
+      // Update the current slider value (each time you drag the slider handle)
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+    </script>
+
+  <% end %>
+</div>
