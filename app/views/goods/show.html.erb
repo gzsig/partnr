@@ -1,8 +1,8 @@
-<div class="parntr-container good-show">
+<div class="parntr-container">
   <div class="flex">
     <div class="col-sm-12 col-md-9 float-left p-0">
       <div id="carouselExampleControls" class="carousel slide mb-3" data-ride="carousel">
-        <div class="carousel-inner show-photos">
+        <div class="carousel-inner">
           <div class="carousel-item active">
             <%= cl_image_tag @good.photo_one %>
           </div>
@@ -25,49 +25,94 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    <% if !@file.nil?%>
-      <video width="100%" height="auto" poster="<%= cl_image_path @good.photo_one %>" controls>
-        <source src="<%= cl_video_path @good.video %>" type="video/webm">
-      </video>
-<% end %>
+      <% unless @file.nil? %>
+        <video width="100%" height="auto" poster="<%= cl_image_path @good.photo_one %>" controls>
+          <source src="<%= cl_video_path @good.video %>" type="video/webm">
+        </video>
+      <% end %>
     </div>
 
     <div class="col-sm-12 col-md-3 float-right p-0">
-      <div class="bg-partnr-yellow p-4 yellow-show">
-        <h4 class="border border-dark rounded p-1"><%= @good.fabrication_year %> <%= @good.brand %> <%= @good.model %></h4>
-        <div class="good-date">
-          <p><strong>Ano: </strong><%= @good.model_year %> - <%= @good.fabrication_year %></p>
-        </div>
-        <div class="good-details">
-          <p><strong>Número serial: </strong><%= @good.serial_number %></p>
-          <p><strong>Placa: </strong><%= @good.licens_plate %></p>
-          <p><strong>Quilometragem: </strong><%= @good.kilometers %>km</p>
-          <p><strong>Cor: </strong><%= @good.color %></p>
-        </div>
+      <div class="bg-partnr-yellow px-5 py-4">
+        <h4 class="p-0 m-0 mb-1">
+          <span class="h6 border border-dark rounded p-1 pl-2 mr-2">
+            <%= @good.fabrication_year %>
+          </span>
+          <span class="font-weight-bold">
+            <%= @good.brand %> <%= @good.model %>
+          </span>
+        </h4>
+      </div>
+      <div class="px-5 py-4">
         <div class="good-price">
-          <p><i class="fas fa-dollar-sign"></i> <%= @good.price %></p>
+          <p class="d-flex">
+            <small>R$</small>
+            <span class="h4">
+              <% formated_price = [] %>
+              <% @formated_price.each do |d| %>
+                <% @formated_price.index(d) % 3 == 0 ? formated_price << "#{d}." : formated_price << d %>
+              <% end %>
+              <span class="font-weight-bold"><%= formated_price.join %></span> | <%= @formated_price.join.to_i / 4 %><small class="text-secondary">/partner</small>
+            </span>
+          </p>
         </div>
-        <div class="good-facts">
-          <p><strong>Fatos: </strong><%=  @good.facts %></p>
+
+        <div>
+          <% if @users.include?(current_user) %>
+            <% if @good.status %>
+              <%= link_to icon('fas', 'glass-cheers') + " Fechou!", goods_path, class: 'btn btn-partnr btn-partnr-yellow px-4 py-3 disabled' %> <%=  %>
+            <% else %>
+              <% @good.users.each do |user| %>
+                <%= cl_image_tag user.profile_picture, class: 'avatar ' %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <% if @good.status %>
+              <%= link_to "Perdeu o deal", goods_path, class: 'btn btn-partnr btn-partnr-blue px-4 py-3 disabled' %>
+            <% else %>
+              <%= link_to "Quero", new_good_partner_path(@good), class: 'btn btn-partnr btn-partnr-blue px-4 py-3' %>
+            <% end %>
+          <% end %>
+          <%= link_to "Voltar", goods_path, class: 'btn btn-outline-partnr-dark-gray px-4 py-3' %>
         </div>
-        <div class="round-partnr">
-    <% if @users.include?(current_user) %>
-      <% if @good.status %>
-       <div class="closed-deal"> Parceria fechada! </div>
-      <% else %>
-        <% @good.users.each do |user| %>
-        <%= cl_image_tag user.profile_picture, class: 'avatar ' %>
-        <% end %>
-      <% end %>
-    <% else %>
-      <% if @good.status %>
-        Epa, perdeu o deal!
-      <% else %>
-        <%= link_to "Quero", new_good_partner_path(@good), class: 'btn btn-secondary btn-show-good-quero' %>
-      <% end %>
-    <% end %>
-    <%= link_to "Voltar", goods_path, class: 'btn btn-secondary btn-show-good' %>
-    </div>
+
+        <!-- starts the nav w/ general info/specs -->
+        <ul class="nav my-4" id="myTab" role="tablist">
+          <li class="nav-item pl-0 pr-2 py-2">
+            <a class="my-minimal-tab px-0 py-2 active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Geral</a>
+          </li>
+          <li class="nav-item p-2">
+            <a class="my-minimal-tab px-0 py-2" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Specs</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div>
+              <div class="d-flex justify-content-between mb-2 good-detail">
+                <strong>Ano</strong><%= @good.model_year %>/<%= @good.fabrication_year %>
+              </div>
+              <div class="d-flex justify-content-between mb-2 good-detail">
+                <strong>Chassis</strong><%= @good.serial_number %>
+              </div>
+              <div class="d-flex justify-content-between mb-2 good-detail">
+                <strong>Placa </strong><%= @good.licens_plate %>
+              </div>
+              <div class="d-flex justify-content-between mb-2 good-detail">
+                <strong>Quilometragem </strong><%= @good.kilometers %> km
+              </div>
+              <div class="d-flex justify-content-between mb-2 good-detail">
+                <strong>Cor </strong><%= @good.color.capitalize %>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div>
+              <%=  @good.facts %>
+            </div>
+          </div>
+        </div>
+
+>>>>>>> master
       </div>
     </div>
   </div>

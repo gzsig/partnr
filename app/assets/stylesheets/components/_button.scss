@@ -1,3 +1,10 @@
+.btn-partnr {
+  &:hover {
+    color: #fff;
+    opacity: 0.90;
+  }
+}
+
 .btn-partnr-blue {
   background-color: $partnr-blue;
   color: white;
@@ -15,5 +22,22 @@
 
 .btn-partnr-yellow {
   background-color: $partnr-yellow;
-  color: white;
+  color: $partnr-blue !important;
 }
+
+.btn-outline-partnr-dark-gray {
+  color: $partnr-dark-gray;
+  border: 1px solid $partnr-dark-gray;
+  &:hover {
+    background-color: $partnr-dark-gray;
+    color: white;
+  }
+}
+
+.btn-link-partner-dark-gray {
+  color: $partnr-dark-gray !important;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
