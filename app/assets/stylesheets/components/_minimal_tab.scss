@@ -1,0 +1,15 @@
+.my-minimal-tab {
+  background-color: transparent !important;
+  color: $partnr-dark-gray !important;
+  font-weight: bold;
+  border-bottom: 3px solid transparent;
+  transition: .3s;
+
+  &:hover {
+    border-bottom: 3px solid $partnr-yellow;
+
+  }
+  &:active {
+    border-bottom: 3px solid $partnr-yellow !important;
+  }
+}
