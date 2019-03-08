@@ -1,7 +1,3 @@
-<div class="partner-form-container" style="background-image: url(<%= asset_url @good.photo_one %>)">
-  <div class="partner-card">
-
-
     <%= simple_form_for [@good, @partner] do |f|  %>
     <div class="field">
       <%= f.input :numberber_of_passengers %>
@@ -17,5 +13,3 @@
     <%= link_to "Cancel", :back, class:'btn btn-light' %>
 
     <% end %>
-  </div>
-</div>
