@@ -16,6 +16,7 @@ class GoodsController < ApplicationController
     query = params[:query]
     good_type = params[:good_type]
     fabrication_year = params[:fabrication_year]
+    kilometers = params["/goods"][:kilometers] unless params["/goods"].nil?
     price = params["/goods"][:price] unless params["/goods"].nil?
     color = params[:color]
     body_style = params[:body_style]
@@ -24,6 +25,7 @@ class GoodsController < ApplicationController
     @goods = @goods.search_by_brand_and_model(query.downcase) unless !query.present?
     @goods = @goods.where(good_type: good_type.capitalize) unless !good_type.present?
     @goods = @goods.where('fabrication_year >= ?', fabrication_year) unless !fabrication_year.present?
+    @goods = @goods.where('kilometers <= ?', kilometers) unless !kilometers.present?
     @goods = @goods.where('price <= ?', price) unless !price.present?
     @goods = @goods.where(color: color.downcase) unless !color.present?
     @goods = @goods.where(body_style: body_style.downcase) unless !body_style.present?
