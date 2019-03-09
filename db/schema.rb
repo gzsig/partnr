@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 2019_03_07_183549) do
     t.datetime "updated_at", null: false
     t.boolean "none_of_the_above"
     t.integer "step", default: 0
-    t.string "request_signature_key"
     t.integer "numberber_of_passengers"
     t.integer "km_month"
     t.integer "frenquency_month"
     t.boolean "for_work"
+    t.string "request_signature_key"
     t.index ["good_id"], name: "index_partners_on_good_id"
     t.index ["user_id"], name: "index_partners_on_user_id"
   end
