@@ -35,9 +35,10 @@
           <p>num of pass<%= @good.partners.find_by(user: user).numberber_of_passengers %></p>
           <p>km per month<%= @good.partners.find_by(user: user).km_month %></p>
           <p>frequency <%= @good.partners.find_by(user: user).frenquency_month %></p>
-          <p>work?<%= @good.partners.find_by(user: user).for_work %></p>
+          <p>work?<%= @good.partners.find_by(user: user).for_work.nil? ? 'false':'true' %></p>
+
           <% elsif @good.good_type.capitalize == 'Helicopter' %>
-          <p>num of pass<%= @good.partners.find_by(user: user).numberber_of_passengers %></p>
+          <p><%= @good.partners.find_by(user: user).numberber_of_passengers %></p>
           <p>km per month<%= @good.partners.find_by(user: user).km_month %></p>
           <p>frequency <%= @good.partners.find_by(user: user).frenquency_month %></p>
           <p>work?<%= @good.partners.find_by(user: user).for_work %></p>
