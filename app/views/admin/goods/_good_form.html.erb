@@ -2,7 +2,7 @@
   <div class="card add-good">
     <div class="add-good-content">
       <%= simple_form_for [:admin, @good] do |f| %>
-        <%= f.input :good_type, label: "Tipo do bem", collection: [ "Car", "Boat", "Helicopter", "Jet"], autofocus: true %>
+        <%= f.input :good_type, label: "Tipo do bem", collection: [ "Carro", "Barco", "Helicoptero", "Jatinho"], autofocus: true %>
         <%= f.input :brand, label: "Marca" %>
         <%= f.input :model, label: "Modelo" %>
         <%= f.input :model_year, label: "Ano" %>
@@ -39,4 +39,3 @@
     </div>
   </div>
 </div>
-
