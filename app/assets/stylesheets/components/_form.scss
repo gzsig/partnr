@@ -3,6 +3,7 @@ input:focus {
 }
 
 input:not([type="range"], [type="submit"]), select {
+  background-color: transparent;
   border: none !important;
   border-radius: 0 !important;
   border-bottom: 1px solid $partnr-light-gray !important;
