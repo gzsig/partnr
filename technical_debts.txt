@@ -3,3 +3,5 @@
 #1 - deadline na clicksign (Ocorre quando a data limite de assinatura de um documento for atingida. Se o documento contiver ao menos uma assinatura, ele é finalizado. Caso contrário, o documento é cancelado).
 
 #2 - ajax on search (goods/index)
+
+#3 - fix price display (dots each 3 digits) for goods show
