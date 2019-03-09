@@ -164,15 +164,33 @@
 
 .partner-card {
   color: white;
-  margin: 20vh auto;
+  margin: auto;
   padding: 20px;
-  width: 30vw;
+  width: 50vw;
   min-width: 300px;
   height: auto;
-  border-radius: 15px;
+  border-radius: 4px;
   background-color: $partnr-blue;
-  opacity: 0.7;
 }
+
+.other-info {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  background-color: $partnr-light-gray;
+}
+
+.diff-forms {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: $partnr-dark-gray;
+  padding: 50px;
+}
+
+.form-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .confirmation-card {
   margin-top: 25px;
@@ -242,9 +260,11 @@
     opacity: 0.8;
   }
 }
- .upload {
+
+.upload {
   margin-top: 30px;
  }
+
 
 .upload-profilephoto {
   border: 1px solid rgba(103,112,119, 0.5);

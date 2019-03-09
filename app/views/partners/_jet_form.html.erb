@@ -1,19 +1,16 @@
-    <%= simple_form_for [@good, @partner] do |f|  %>
-    <div class="field">
-      <%= f.input :numberber_of_passengers %>
-    </div>
-    <div class="field">
-      <%= f.input :km_month %>
-    </div>
-    <div class="field">
-      <%= f.input :frenquency_month %>
-    </div>
-    <div class="field">
-      <%= f.input :for_work %>
-    </div>
-
-
-    <%= f.button :submit, class:'btn btn-light' %>
-    <%= link_to "Cancel", :back, class:'btn btn-light' %>
-
-    <% end %>
+<%= simple_form_for [@good, @partner] do |f|  %>
+<div class="field">
+  <%= f.input :numberber_of_passengers, label: "Quantos passageiros você pretende levar em média?" %>
+</div>
+<div class="field">
+  <%= f.input :km_month, label: "Quantos kilometros você pretende voar em média por mês?" %>
+</div>
+<div class="field">
+  <%= f.input :frenquency_month, label: "Quantas vezes por mês você pretende usar?" %>
+</div>
+<div class="field">
+  <%= f.input :for_work, label: "Você esta comprando esse #{@good.model} por motivos de trablho?" %>
+</div>
+<%= f.button :submit, class:'btn btn-partnr-yellow' %>
+<%= link_to "Cancel", good_path(@good), class:'btn btn-partnr-yellow' %>
+<% end %>
