@@ -39,7 +39,7 @@
             <%= @good.fabrication_year %>
           </span>
           <span class="font-weight-bold">
-            <%= @good.brand %> <%= @good.model %>
+            <%= @good.brand %>&nbsp<%= @good.model %>
           </span>
         </h4>
       </div>
@@ -52,7 +52,7 @@
               <% @formated_price.each do |d| %>
                 <% @formated_price.index(d) % 3 == 0 ? formated_price << "#{d}." : formated_price << d %>
               <% end %>
-              <span class="font-weight-bold"><%= formated_price.join %></span> | <%= @formated_price.join.to_i / 4 %><small class="text-secondary">/partner</small>
+              <span class="font-weight-bold"><%= formated_price.join %></span> | <%= @formated_price.join.to_i / 4 %><small class="text-secondary">/partnr</small>
             </span>
           </p>
         </div>
@@ -88,30 +88,36 @@
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div>
-              <div class="d-flex justify-content-between mb-2 good-detail">
-                <strong>Ano</strong><%= @good.model_year %>/<%= @good.fabrication_year %>
+              <div class="d-flex justify-content-between mb-2 pb-2 text-partnr-dark-gray border-bottom">
+                <strong>Cor </strong><%= @good.color.capitalize %>
               </div>
-              <div class="d-flex justify-content-between mb-2 good-detail">
+              <div class="d-flex justify-content-between mb-2 pb-2 text-partnr-dark-gray border-bottom">
+                <strong>Version </strong><%= @good.version.upcase %>
+              </div>
+              <div class="d-flex justify-content-between mb-2 pb-2 text-partnr-dark-gray border-bottom">
+                <strong class="mt-2 pt-1">Ano</strong>
+                <div class="d-flex flex-column text-right">
+                  <span><%= @good.model_year.to_s + " (modelo)" %></span>
+                  <%= @good.fabrication_year.to_s  + " (fabricação)" %>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mb-2 pb-2 text-partnr-dark-gray border-bottom">
                 <strong>Chassis</strong><%= @good.serial_number %>
               </div>
-              <div class="d-flex justify-content-between mb-2 good-detail">
+              <div class="d-flex justify-content-between mb-2 pb-2 text-partnr-dark-gray border-bottom">
                 <strong>Placa </strong><%= @good.licens_plate %>
               </div>
-              <div class="d-flex justify-content-between mb-2 good-detail">
+              <div class="d-flex justify-content-between mb-2 pb-2 text-partnr-dark-gray border-bottom">
                 <strong>Quilometragem </strong><%= @good.kilometers %> km
-              </div>
-              <div class="d-flex justify-content-between mb-2 good-detail">
-                <strong>Cor </strong><%= @good.color.capitalize %>
               </div>
             </div>
           </div>
           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <div>
+            <div class="text-partnr-dark-gray">
               <%=  @good.facts %>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>

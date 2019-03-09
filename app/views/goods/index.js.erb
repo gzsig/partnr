@@ -1,0 +1,6 @@
+function refreshIndex(searchContent) {
+  const indexContainer = document.getElementById('index-container');
+  indexContainer.innerHTML = searchContent;
+}
+
+refreshIndex('<%= j render "goods/index_content", goods: @goods %>');

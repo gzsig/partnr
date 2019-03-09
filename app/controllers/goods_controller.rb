@@ -6,6 +6,8 @@ class GoodsController < ApplicationController
   def index
     @fabrication_year_range = (Good.oldest_good_fabrication_year..Time.now.year + 1).to_a
     @good_types = Good.good_types.map(&:capitalize)
+    @min_mileage = Good.min_good_mileage.to_i
+    @max_mileage = Good.max_good_mileage.to_i + 1_000
     @min_price = Good.min_good_price.to_i
     @max_price = Good.max_good_price.to_i + 100_000
     @colors = %w[Perola Branco Preto Prata Chumbo Vermelho Amarelo]
@@ -14,6 +16,7 @@ class GoodsController < ApplicationController
     query = params[:query]
     good_type = params[:good_type]
     fabrication_year = params[:fabrication_year]
+    kilometers = params["/goods"][:kilometers] unless params["/goods"].nil?
     price = params["/goods"][:price] unless params["/goods"].nil?
     color = params[:color]
     body_style = params[:body_style]
@@ -22,9 +25,15 @@ class GoodsController < ApplicationController
     @goods = @goods.search_by_brand_and_model(query.downcase) unless !query.present?
     @goods = @goods.where(good_type: good_type.capitalize) unless !good_type.present?
     @goods = @goods.where('fabrication_year >= ?', fabrication_year) unless !fabrication_year.present?
-    @goods = @goods.where('price >= ?', price) unless !price.present?
+    @goods = @goods.where('kilometers <= ?', kilometers) unless !kilometers.present?
+    @goods = @goods.where('price <= ?', price) unless !price.present?
     @goods = @goods.where(color: color.downcase) unless !color.present?
     @goods = @goods.where(body_style: body_style.downcase) unless !body_style.present?
+
+    respond_to do |format|
+      format.html { render :index }
+      format.js
+    end
   end
 
   def show

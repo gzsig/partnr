@@ -1,16 +1,13 @@
 <%= simple_form_for [@good, @partner] do |f|  %>
-
 <div class="field">
-  <%= f.input :km_month %>
+  <%= f.input :km_month, label: "Quantos kilometros você pretende dirigir em média por mês?" %>
 </div>
 <div class="field">
-  <%= f.input :track_use, as: :boolean %>
+  <%= f.input :track_use, label:'Para usar na pista', as: :boolean %>
 </div>
-<div class="field">
+<div class="field slideTwo">
   <%= f.input :other_drivers, as: :boolean %>
 </div>
-
-  <%= f.button :submit, class:'btn btn-light' %>
-  <%= link_to "Cancel", :back, class:'btn btn-light' %>
-
+  <%= f.button :submit, class:'btn btn-partnr-yellow' %>
+  <%= link_to "Cancel", good_path(@good), class:'btn btn-partnr-yellow' %>
 <% end %>
