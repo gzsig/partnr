@@ -13,3 +13,17 @@ body {
 .bg-partnr-yellow {
   background-color: $partnr-yellow;
 }
+
+
+// bootstrap-like text-related classes
+.text-partnr-dark-gray {
+  color: $partnr-dark-gray !important;
+}
+
+.text-partnr-yellow {
+  color: $partnr-yellow !important;
+}
+
+.border-partnr-yellow {
+  border: 1px solid $partnr-yellow;
+}

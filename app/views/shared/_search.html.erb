@@ -1,41 +1,83 @@
-<!-- responsive version TODO -->
-<% if  %>
+<div class="w-100 p-5">
 
-  <div class="bg-white w-100 p-4 search-index">
-<% end %>
+  <%= form_for goods_path, method: 'GET', remote: true do |f| %>
 
-    <%= form_for goods_path, method: 'GET' do |f| %>
+    <h5>Busca</h5>
+    <%= text_field_tag :query,
+      params[:query],
+      class: 'form-control mb-3',
+      placeholder: 'Procurar' %>
 
-      <h5>Busca</h5>
-      <%= text_field_tag :query,
-        params[:query],
-        class: 'form-control mb-3',
-        placeholder: 'Procurar' %>
+    <h5 class="mt-5">Filtros</h5>
+    <%= select_tag :good_type,
+      options_for_select(@good_types),
+      class: 'form-control mb-3 good-type',
+      prompt: "Encontre o seu próximo..." %>
 
-      <h5>Filtros</h5>
-      <%= select_tag :good_type,
-        options_for_select(@good_types),
-        class: 'form-control mb-3',
-        prompt: "Encontre o seu próximo..." %>
+    <%= select_tag :fabrication_year,
+      options_for_select(@fabrication_year_range),
+      class: 'form-control mb-3 good-fabrication-year',
+      prompt: "Ano de fabricação" %>
 
-      <%= select_tag :fabrication_year,
-        options_for_select(@fabrication_year_range),
-        class: 'form-control mb-3',
-        prompt: "Ano de fabricação" %>
+    <%= select_tag :color,
+      options_for_select(@colors),
+      class: 'form-control mb-3 good-color',
+      prompt: "Cor" %>
 
-      <%= select_tag :color,
-        options_for_select(@colors),
-        class: 'form-control mb-3',
-        prompt: "Cor" %>
+    <%= select_tag :body_style,
+      options_for_select(@body_styles),
+      class: 'form-control mb-5 good-body-style',
+      prompt: "Tipo" %>
 
-      <%= select_tag :body_style,
-        options_for_select(@body_styles),
-        class: 'form-control mb-3',
-        prompt: "Tipo" %>
+    <span class="text-uppercase text-partnr-dark-gray">Milhagem</span><small> até</small>
+    <div class="h4 text-partnr-dark-gray font-weight-light">
+      <span id="mileage-range-output"></span>&nbspK
+    </div>
+    <%= f.range_field :mileage, min: @min_mileage, max: @max_mileage, step: "1000", class: "custom-range mileage-range mb-4" %>
 
-      <%= f.range_field :price, min: @min_price, max: @max_price, step: "100000", class: "custom-range" %>
+    <span class="mt-4 text-uppercase text-partnr-dark-gray">Preço</span><small> até</small>
+    <div class="h4 text-partnr-dark-gray font-weight-light">
+      <span id="price-range-output"></span>&nbspK
+    </div>
+    <%= f.range_field :price, min: @min_price, max: @max_price, step: "100000", value: @max_price, class: "custom-range price-range" %>
 
-      <%= submit_tag :submit,
-        class: 'btn btn-secondary' %>
-    <% end %>
-  </div>
+    <%= submit_tag "", id: 'submit-search', style: "display: none;" %>
+
+    <!-- gets range value and injects it into the right element -->
+    <script>
+      var mileageSlider = document.querySelector(".mileage-range");
+      var mileageOutput = document.getElementById("mileage-range-output");
+      var priceSlider = document.querySelector(".price-range");
+      var priceOutput = document.getElementById("price-range-output");
+
+      mileageOutput.innerHTML = mileageSlider.value;
+      priceOutput.innerHTML = priceSlider.value; // Display the default slider value
+
+      // update slider value w/ current value (each time you drag the slider handle)
+      mileageSlider.oninput = function() {
+        mileageOutput.innerHTML = this.value;
+      }
+      priceSlider.oninput = function() {
+        priceOutput.innerHTML = this.value;
+      }
+
+      // add event listener (on click) for all search fields (except the text/query search field)
+      attributes = [
+        // slider (taking advantage on var 'slider' defined earlier)
+        document.querySelector(".mileage-range"),
+        document.querySelector(".price-range"),
+        document.querySelector(".good-type"),
+        document.querySelector(".good-fabrication-year"),
+        document.querySelector(".good-color"),
+        document.querySelector(".good-body-style")
+      ];
+      for (var i = 0; i < attributes.length; i++) {
+        attributes[i].addEventListener("click", (event) => {
+          document.getElementById('submit-search').click();
+        })
+      }
+
+    </script>
+
+  <% end %>
+</div>

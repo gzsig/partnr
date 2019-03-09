@@ -33,6 +33,11 @@ class Good < ApplicationRecord
     Good.order(fabrication_year: :asc).first.fabrication_year
   end
 
+  # def all good types within our db (to build price range @ view level)
+  def self.good_types
+    Good.all.pluck(:good_type).uniq
+  end
+
   # def min and max prices within our db (to build price range @ view level)
   def self.min_good_price
     Good.order(price: :asc).pluck(:price).first
@@ -42,10 +47,12 @@ class Good < ApplicationRecord
     Good.order(price: :asc).pluck(:price).last
   end
 
-  # def all good types within our db (to build price range @ view level)
-  def self.good_types
-    Good.all.pluck(:good_type).uniq
+  # def min and max prices within our db (to build price range @ view level)
+  def self.min_good_mileage
+    Good.order(kilometers: :asc).pluck(:kilometers).first
   end
 
-  # def all
+  def self.max_good_mileage
+    Good.order(kilometers: :asc).pluck(:kilometers).last
+  end
 end

@@ -1,26 +1,7 @@
-<div class="col-xs-12 col-md-2 p-0 float-left">
+<div class="col-xs-12 col-md-3 p-0 pl-2 float-left bg-white shadow index-search-container">
   <%= render 'shared/search' %>
 </div>
 
-<div class="col-xs-12 col-md-10 d-flex flex-wrap p-0 pt-2 float-right card-index">
-  <% @goods.each do |good| %>
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <%= link_to good_path(good), class: 'text-decoration-none' do %>
-        <div class="card index-card">
-          <div class="index-img" style="background-image: url(<%= asset_url good.photo_one%>)"> </div>
-          <div class="card-body">
-            <h5 class="card-title"><strong> <%= good.brand %> <%= good.model %></strong></h5>
-            <div class="card-text">
-              <div class="good-type">
-               <p><strong>Tipo:</strong> <%= good.good_type %></p>
-              </div>
-              <div class="good-price">
-                <p><i class="fas fa-dollar-sign"></i> <%= good.price %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+<div id="index-container" class="col-xs-12 col-md-9 d-flex flex-wrap p-0 pt-2 mt-1 float-right">
+  <%= render 'goods/index_content' %>
 </div>

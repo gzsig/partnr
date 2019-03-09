@@ -34,9 +34,14 @@
   }
 }
 
-.btn-link-partner-dark-gray {
-  color: $partnr-dark-gray !important;
+.btn-outline-partnr-yellow {
+  color: $partnr-yellow !important;
+  border: 1px solid $partnr-yellow;
   &:hover {
-    opacity: 0.9;
+    background-color: $partnr-yellow;
+    color: $partnr-blue !important;
   }
 }
+
+.btn-link-partner-dark-gray {
+  color: $partnr-dark-gray !important;
