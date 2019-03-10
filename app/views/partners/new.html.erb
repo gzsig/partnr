@@ -4,13 +4,13 @@
       <strong><h1 class="text-center text-dark">Preparado para conhecer seus proximos parceiros?</h1></strong>
     </div>
     <div class="diff-forms col-lg-8">
-      <% if @good.good_type.capitalize == 'Car' %>
+      <% if @good.good_type.capitalize == 'Carro' %>
       <%= render 'car_form' %>
-      <% elsif @good.good_type.capitalize == 'Boat' %>
+      <% elsif @good.good_type.capitalize == 'Barco' %>
       <%= render 'boat_form' %>
-      <% elsif @good.good_type.capitalize == 'Helicopter' %>
+      <% elsif @good.good_type.capitalize == 'Helicoptero' %>
       <%= render 'helicopter_form' %>
-      <% elsif @good.good_type.capitalize == 'Jet' %>
+      <% elsif @good.good_type.capitalize == 'Jatinho' %>
       <%= render 'jet_form' %>
       <% end %>
     </div>
