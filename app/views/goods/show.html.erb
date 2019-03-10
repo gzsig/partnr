@@ -70,7 +70,7 @@
             <% if @good.status %>
               <%= link_to "Perdeu o deal", goods_path, class: 'btn btn-partnr btn-partnr-blue px-4 py-3 disabled' %>
             <% else %>
-              <%= link_to "Quero", new_good_partner_path(@good), class: 'btn btn-partnr btn-partnr-blue px-4 py-3' %>
+              <%= link_to "Quero", new_good_partner_path(@good), class: 'btn btn-partnr btn-partnr-blue px-4 py-3', data:{ toggle: 'modal', target: '#formModal' } %>
             <% end %>
           <% end %>
           <%= link_to "Voltar", goods_path, class: 'btn btn-outline-partnr-dark-gray px-4 py-3' %>
