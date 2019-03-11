@@ -1,11 +1,14 @@
-<h3>Contract of <%= @good.brand %> <%= @good.model %></h3>
-<div id='container'></div>
+<div class="d-flex partnr-container p-5">
+  <div id='container' class="contract col-sm-12 col-md-9"></div>
+  <div class="status-box col-sm-12 col-md-3 ba b-dashed">
+    <h2>this is a status box</h2>
+  </div>
+</div>
 
 <% content_for :after_js do %>
   <script>
     // Carrega o widget embedded com a request_signature_key
     widget = new Clicksign("<%= @good.partners.where(user: current_user).first.request_signature_key %>");
-
 
     // Define o endpoint https://sandbox.clicksign.com ou https://app.clicksign.com
     widget.endpoint = 'https://sandbox.clicksign.com';
@@ -16,9 +19,5 @@
 
     // Monta o widget no div
     widget.mount('container');
-
-    widget.on('loaded', function(ev) { console.log('loaded!'); });
-    widget.on('signed', function(ev) { console.log('signed!'); });
-
   </script>
 <% end %>
