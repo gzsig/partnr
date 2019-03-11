@@ -33,13 +33,13 @@
     <div class="h4 text-partnr-dark-gray font-weight-light">
       <span id="mileage-range-output"></span>&nbspK
     </div>
-    <%= f.range_field :mileage, min: @min_mileage, max: @max_mileage, step: "1000", class: "custom-range mileage-range mb-4" %>
+    <%= f.range_field :mileage, min: @min_mileage, max: @max_mileage, step: (@max_mileage - @min_mileage) / 10, class: "custom-range mileage-range mb-4" %>
 
     <span class="mt-4 text-uppercase text-partnr-dark-gray">Preço</span><small> até</small>
     <div class="h4 text-partnr-dark-gray font-weight-light">
       <span id="price-range-output"></span>&nbspK
     </div>
-    <%= f.range_field :price, min: @min_price, max: @max_price, step: "100000", value: @max_price, class: "custom-range price-range" %>
+    <%= f.range_field :price, min: @min_price, max: @max_price, step: (@max_price - @min_price) / 10, value: @max_price, class: "custom-range price-range" %>
 
     <%= submit_tag "", id: 'submit-search', style: "display: none;" %>
 
