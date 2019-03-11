@@ -104,7 +104,7 @@
                 <strong>Placa </strong><%= @good.licens_plate %>
               </div>
               <div class="d-flex justify-content-between mb-2 pb-2 text-partnr-dark-gray border-bottom">
-                <strong>Quilometragem </strong><%= @good.kilometers %> km
+                <strong>Quilometragem </strong><%= number_to_currency(@good.kilometers, unit: "", precision: 0, delimiter: ".") %> km
               </div>
             </div>
           </div>
