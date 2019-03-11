@@ -8,6 +8,8 @@
   <div class="field slideTwo">
     <%= f.input :other_drivers, as: :boolean %>
   </div>
+  <div class="form-btns">
   <%= f.button :submit, class:'btn btn-partnr-yellow' %>
-  <%= link_to "Cancel", good_path(@good), class:'btn btn-partnr-yellow' %>
+  <%= link_to "Cancel", good_path(@good), class:'btn btn-outline-partnr-dark-gray', data: {dismiss: 'modal'} %>
+  </div>
 <% end %>
