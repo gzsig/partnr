@@ -24,10 +24,6 @@ class Good < ApplicationRecord
     end
   end
 
-  # def ask_colors
-  #   Good.order(color: :asc).pluck(:color).uniq
-  # end
-
   # def oldest fabrication year (to build year range @ view level)
   def self.oldest_good_fabrication_year
     Good.order(fabrication_year: :asc).first.fabrication_year

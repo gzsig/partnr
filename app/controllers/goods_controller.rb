@@ -42,7 +42,6 @@ class GoodsController < ApplicationController
       @users << partner.user
     end
 
-    @formated_price = @good.price.split('')
     @partner = Partner.new
   end
 
