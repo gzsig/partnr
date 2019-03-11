@@ -11,7 +11,7 @@ class PartnersController < ApplicationController
   def show
     @partner = Partner.find(params[:id])
   end
-
+  
   def new
     @good = Good.find(params[:good_id])
     @partner = Partner.new

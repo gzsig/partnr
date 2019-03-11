@@ -43,6 +43,7 @@ class GoodsController < ApplicationController
     end
 
     @formated_price = @good.price.split('')
+    @partner = Partner.new
   end
 
   private
