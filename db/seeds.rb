@@ -16,14 +16,10 @@ end
 puts "creating 5 users (1st is admin)..."
   User.create(first_name: "Diego", last_name: "Gonzales", email: "diegogonzalesdesouza@gmail.com", bio: "I'm Admin Regular, what else do you wanna know?", CPF: "44466492808", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988775551", password: "123123", favorite: "Carro", adm: true)
   User.create(first_name: "Gabriel", last_name: "Zsigmond", email: "gaazsig@gmail.com", bio: "I'm Regular, what else do you wanna know?", CPF: "47688683807", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11933021103", password: "123123", favorite: "Barco", adm: true)
-  User.create(first_name: "Fabi", last_name: "Carvalho", email: "fabiii.fa@gmail.com", bio: "I'm Regular, what else do you wanna know?", CPF: "41931115800", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123123", favorite: "Helicoptero", adm: false)
-  User.create(first_name: "Robertao", last_name: "Da Massa", email: "roberto.f.barros@gmail.com", bio: "I'm Regular, what else do you wanna know?", CPF: "95779626022", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11995207459", password: "123123", favorite: "Jatinho", adm: false)
+  User.create(first_name: "Fabi", last_name: "Carvalho", email: "fabiii.fa@gmail.com", bio: "I'm Regular, what else do you wanna know?", CPF: "41931115800", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11995845237", password: "123123", favorite: "Helicoptero", adm: true)
 puts "done!"
 
-cont = 0
-5.times do
-  cont += 1
-  puts "creating #{cont} (car)..."
-  Good.create(brand: ["Lamborgini", "Porsche", "Fishing"].sample, model: "Aventador", model_year: 2014, fabrication_year: [2007, 2015, 2018].sample, body_style: ['suv', 'coupe', 'conversivel'].sample, serial_number: "12345tfdsadfg", licens_plate: "EIK-1111", kilometers: "8000", price: ["1500000", "2000000", "2500000"].sample, color: ["perola", "branco", "preto"].sample, facts: "Esse carro eh foda!", version: "v12", good_type: ['Carro', 'Jatinho', 'Barco', 'Helicoptero'].sample, photo_one: seed_image('carousel1'), photo_two: seed_image('carousel2'), photo_three: seed_image('carousel3'), photo_four: seed_image('carousel4'))
-end
+  puts "creating 1 (car)..."
+  Good.create(brand: ["Lamborgini"].sample, model: "Aventador", model_year: 2014, fabrication_year: [2018].sample, body_style: ['sport'].sample, serial_number: "76FGBS3N29W", licens_plate: "EIK-1111", kilometers: "900", price: ["47000000"].sample, color: ["branco"].sample, facts: "MSRP: From CR$4.7 million \n Max speed: 350 km/h \n Horsepower: 700 to 740 hp \n Dimensions: 4,780-4,797 mm L x 2,030 mm W x 1,136 mm H \n Acceleration 0-100 km/h: 2.9 to 3 seconds \n Fuel tank capacity: 85 to 90 L", version: "v12", good_type: ['Carro'].sample, photo_one: seed_image('carousel1'), photo_two: seed_image('carousel2'), photo_three: seed_image('carousel3'), photo_four: seed_image('carousel4'))
+
 puts "done!"
