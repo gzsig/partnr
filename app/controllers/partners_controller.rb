@@ -12,11 +12,6 @@ class PartnersController < ApplicationController
     @partner = Partner.find(params[:id])
   end
   
-  def new
-    @good = Good.find(params[:good_id])
-    @partner = Partner.new
-  end
-
   def create
     @good = Good.find(params[:good_id])
     @partner = Partner.new(partner_params)

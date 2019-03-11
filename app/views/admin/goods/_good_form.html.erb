@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="card add-good">
+<div class="container p-5">
+  <div class="bg-white rounded p-5 my-5">
     <div class="add-good-content">
       <%= simple_form_for [:admin, @good] do |f| %>
         <%= f.input :good_type, label: "Tipo do bem", collection: [ "Carro", "Barco", "Helicoptero", "Jatinho"], autofocus: true %>
@@ -14,22 +14,35 @@
         <%= f.input :color, label: "Cor" %>
         <%= f.input :facts, label: "Fatos" %>
         <%= f.input :version, label: "Versão" %>
-        <div class="actions upload">
-          <%= image_tag "", width: 200, class: "d-none photo1", id: "photo-preview0", style: "border-radius: 5%" %>
-          <%= f.input :photo_one, input_html: { class: 'invisible photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Escolher foto 1' %>
-          <%= f.input :photo_one_cache, as: :hidden %>
-          <%= image_tag "", width: 200, class: "d-none photo2", id: "photo-preview1", style: "border-radius: 5%" %>
-          <%= f.input :photo_two, input_html: { class: 'invisible photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Escolher foto 2' %>
-          <%= f.input :photo_two_cache, as: :hidden %>
-          <%= image_tag "", width: 200, class: "d-none photo2", id: "photo-preview2", style: "border-radius: 5%" %>
-          <%= f.input :photo_three, input_html: { class: 'invisible photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Escolher foto 3' %>
-          <%= f.input :photo_three_cache, as: :hidden %>
-          <%= image_tag "", width: 200, class: "d-none photo2", id: "photo-preview3", style: "border-radius: 5%" %>
-          <%= f.input :photo_four, input_html: { class: 'invisible photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Escolher foto 4' %>
-          <%= f.input :photo_four_cache, as: :hidden %>
-          <%= image_tag "", width: 200, class: "d-none photo3", id: "photo-preview4", style: "border-radius: 5%" %>
-          <%= f.input :video, input_html: { class: 'invisible photo-input'}, label_html: { class: 'upload-video'}, label: '🎥  Escolher vídeo' %>
-          <%= f.input :video_cache, as: :hidden %>
+        <div class="actions upload mt-5">
+          <div class="d-flex w-100 text-center">
+            <div>
+              <%= image_tag "", width: 200, class: "d-none photo0", id: "photo-preview0" %>
+              <%= f.input :photo_one, input_html: { class: 'invisible photo-input'}, label_html: { class: 'btn btn-link p-0'}, label: '📷 Escolher foto 1' %>
+              <%= f.input :photo_one_cache, as: :hidden %>
+            </div>
+            <div>
+              <%= image_tag "", width: 200, class: "d-none photo1", id: "photo-preview1" %>
+              <%= f.input :photo_two, input_html: { class: 'invisible photo-input'}, label_html: { class: 'btn btn-link p-0'}, label: '📷 Escolher foto 2' %>
+              <%= f.input :photo_two_cache, as: :hidden %>
+            </div>
+          </div>
+          <div class="d-flex w-100 text-center">
+            <div>
+              <%= image_tag "", width: 200, class: "d-none photo2", id: "photo-preview2" %>
+              <%= f.input :photo_three, input_html: { class: 'invisible photo-input'}, label_html: { class: 'btn btn-link p-0'}, label: '📷 Escolher foto 3' %>
+              <%= f.input :photo_three_cache, as: :hidden %>
+            </div>
+            <div>
+              <%= image_tag "", width: 200, class: "d-none photo3", id: "photo-preview3" %>
+              <%= f.input :photo_four, input_html: { class: 'invisible photo-input'}, label_html: { class: 'btn btn-link p-0'}, label: '📷 Escolher foto 4' %>
+              <%= f.input :photo_four_cache, as: :hidden %>
+            </div>
+          </div>
+          <div class="d-flex w-100 text-center">
+            <%= f.input :video, input_html: { class: 'invisible photo-input'}, label_html: { class: 'btn btn-link p-0'}, label: '🎥  Escolher vídeo' %>
+            <%= f.input :video_cache, as: :hidden %>
+          </div>
         </div>
         <div class="actions">
           <%= f.button :submit, class:'btn btn-secondary btn-add-good' %>
