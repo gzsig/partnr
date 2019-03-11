@@ -136,13 +136,13 @@
       </div>
       <div class="modal-body">
         <% if @good.good_type.capitalize == 'Carro' %>
-        <%= render 'car_form' %>
+          <%= render 'car_form' %>
         <% elsif @good.good_type.capitalize == 'Barco' %>
-        <%= render 'boat_form' %>
+          <%= render 'boat_form' %>
         <% elsif @good.good_type.capitalize == 'Helicoptero' %>
-        <%= render 'helicopter_form' %>
+          <%= render 'helicopter_form' %>
         <% elsif @good.good_type.capitalize == 'Jatinho' %>
-        <%= render 'jet_form' %>
+          <%= render 'jet_form' %>
         <% end %>
       </div>
       <div class="modal-footer">
