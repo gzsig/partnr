@@ -10,8 +10,11 @@ input[type="text"],
 input[type="textarea"],
 input[type="email"], input[type="tel"],
 input[type="password"],
+input[type="year"],
+input[type="number"],
 textarea,
 select {
+  background-color: transparent !important;
   border: none !important;
   border-radius: 0 !important;
   border-bottom: 1px solid $partnr-light-gray !important;

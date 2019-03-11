@@ -1,6 +1,6 @@
 <div class="parntr-container">
   <div class="flex">
-    <div class="col-sm-12 col-md-9 float-left p-0">
+    <div class="col-sm-12 col-md-8 float-left p-0">
       <div id="carouselExampleControls" class="carousel slide mb-3" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -32,7 +32,7 @@
       <% end %>
     </div>
 
-    <div class="col-sm-12 col-md-3 float-right p-0">
+    <div class="col-sm-12 col-md-4 float-right p-0">
       <div class="bg-partnr-yellow px-5 py-4">
         <h4 class="p-0 m-0 mb-1">
           <span class="h6 border border-dark rounded p-1 pl-2 mr-2">
@@ -48,11 +48,7 @@
           <p class="d-flex">
             <small>R$</small>
             <span class="h4">
-              <% formated_price = [] %>
-              <% @formated_price.each do |d| %>
-                <% @formated_price.index(d) % 3 == 0 ? formated_price << "#{d}." : formated_price << d %>
-              <% end %>
-              <span class="font-weight-bold"><%= formated_price.join %></span> | <%= @formated_price.join.to_i / 4 %><small class="text-secondary">/partnr</small>
+              <span class="font-weight-bold"><%= number_to_currency(@good.price.to_i, unit: "", precision: 0, delimiter: ".") %></span> | <%= number_to_currency(@good.price.to_i / 4, unit: "", precision: 0, delimiter: ".") %><small class="text-secondary">/partnr</small>
             </span>
           </p>
         </div>
@@ -108,7 +104,7 @@
                 <strong>Placa </strong><%= @good.licens_plate %>
               </div>
               <div class="d-flex justify-content-between mb-2 pb-2 text-partnr-dark-gray border-bottom">
-                <strong>Quilometragem </strong><%= @good.kilometers %> km
+                <strong>Quilometragem </strong><%= number_to_currency(@good.kilometers, unit: "", precision: 0, delimiter: ".") %> km
               </div>
             </div>
           </div>
@@ -123,31 +119,4 @@
   </div>
 </div>
 
-
-
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <% if @good.good_type.capitalize == 'Carro' %>
-          <%= render 'car_form' %>
-        <% elsif @good.good_type.capitalize == 'Barco' %>
-          <%= render 'boat_form' %>
-        <% elsif @good.good_type.capitalize == 'Helicoptero' %>
-          <%= render 'helicopter_form' %>
-        <% elsif @good.good_type.capitalize == 'Jatinho' %>
-          <%= render 'jet_form' %>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-partnr-yellow" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: 'new' %>

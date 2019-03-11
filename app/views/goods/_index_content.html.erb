@@ -9,13 +9,13 @@
           <div class="card-text">
             <div class="mt-3 mb-1 pb-2">
               <span class="h6 border-partnr-yellow text-partnr-yellow rounded p-1 mr-2"><%= good.fabrication_year %></span>
-              <span class="text-partnr-dark-gray"><%= good.kilometers %> km</span>
+              <span class="text-partnr-dark-gray"><%= number_to_currency(good.kilometers, unit: "", precision: 0, delimiter: ".") %> km</span>
             </div>
             <div class="good-price">
               <p class="d-flex mb-0">
                 <small>R$</small>
                 <span class="h6">
-                  <span class="font-weight-bold"><%= good.price %></span> | <%= good.price.to_i / 4 %><small class="text-secondary">/partnr</small>
+                  <span class="font-weight-bold"><%= number_to_currency(good.price.to_i, unit: "", precision: 0, delimiter: ".") %></span> | <%= number_to_currency(good.price.to_i / 4, unit: "", precision: 0, delimiter: ".") %><small class="text-secondary">/partnr</small>
                 </span>
               </p>
             </div>
