@@ -2,7 +2,7 @@
   <div class="col-sm-12 col-md-6 col-lg-4">
     <%= link_to good_path(good), class: 'text-decoration-none' do %>
       <div class="index-card mb-4 bg-white rounded">
-        <div class="index-img" style="background-image: url(<%= asset_url good.photo_one%>)"> </div>
+        <div class="index-img" style="background-image: url(<%= cloudinary_url good.photo_one, secure: true %>)"> </div>
         <div class="card-body pb-2 mb-1">
           <div class="border-partnr-blue text-partnr-dark-gray rounded pl-1 pr-1 float-right"><%= good.good_type %></div>
           <h5 class="card-title"><strong><%= good.brand %></strong> <%= good.model %></h5>

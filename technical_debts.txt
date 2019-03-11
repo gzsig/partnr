@@ -2,6 +2,12 @@
 
 #1 - deadline na clicksign (Ocorre quando a data limite de assinatura de um documento for atingida. Se o documento contiver ao menos uma assinatura, ele é finalizado. Caso contrário, o documento é cancelado).
 
-#2 - fix price display (dots each 3 digits) for goods show
+#2 - fix price display (dots each 3 digits) for goods show and index
 
-#3 - fixed/sticky full-width search sidebar for index
+#3 - fixed/sticky full-height search sidebar for index
+
+#4 - form errors are ugly and being displayied on top of forms (we need something like this: https://www.uber.com/business/enroll errors [submit the form withou any infos])
+
+#5 - change all cloudinary url requests to 'secure: true' in order to have assets served as https instead of http (see _index_content.html.erb view for example - already performed the change on this one page)
+
+#6 - autocomplete/autosearch on search field (goods#index)

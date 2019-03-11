@@ -5,3 +5,19 @@
 <div id="index-container" class="col-xs-12 col-sm-6 col-md-8 col-lg-9 d-flex flex-wrap p-0 pt-2 mt-1 float-right">
   <%= render 'goods/index_content' %>
 </div>
+
+<script>
+  // When the user scrolls the page, execute myFunction
+  window.onscroll = function() {stickySearchBar()};
+
+  const indexSearchContainer = document.querySelector('.index-search-container');
+  const nav = document.querySelector('.navbar');
+
+  function stickySearchBar() {
+    if (window.pageYOffset > nav.offsetHeight) {
+      indexSearchContainer.classList.add("sticky");
+    } else {
+      indexSearchContainer.classList.remove("sticky");
+    }
+  }
+</script>
