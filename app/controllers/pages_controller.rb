@@ -14,6 +14,8 @@ class PagesController < ApplicationController
 
   def confirmation
     head :forbidden unless @good.users.include? current_user
+    head :forbiden if current_user.partners.where(good: @good).first.step == 'confirmed' || current_user.partners.where(good: @good).first.step == 'signed'
+
     @partner = Partner.find_by(good: @good, user: current_user)
   end
 
