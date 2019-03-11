@@ -7,12 +7,15 @@
 </div>
 
 <script>
-  // When the user scrolls the page, execute myFunction
+  // when the user scrolls the page, execute function
   window.onscroll = function() {stickySearchBar()};
 
+  // get search sidebar
   const indexSearchContainer = document.querySelector('.index-search-container');
+  // get navbar
   const nav = document.querySelector('.navbar');
 
+  // if page scroll is greater than navbar height, add sticky class to search sidebar (else, remove it)
   function stickySearchBar() {
     if (window.pageYOffset > nav.offsetHeight) {
       indexSearchContainer.classList.add("sticky");
