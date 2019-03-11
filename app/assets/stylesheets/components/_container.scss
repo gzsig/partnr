@@ -9,9 +9,14 @@
   width: 100vw;
 }
 
-
 @media only screen and (max-width: 992px) {
   .partner-form-container {
     min-height: calc(100vh - 57.25px);
   }
+}
+
+.signup-form-container {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-family: $body-font;
 }
