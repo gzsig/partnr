@@ -1,30 +1,37 @@
 <div class="container">
-  <div class="card login-user">
-    <div class="login-content">
-      <h2>Log in</h2>
-
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <%= f.input :email, label: "E-mail", autofocus: true %>
-      </div>
-
-      <div class="field">
-        <%= f.input :password, label: "Senha" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.input_field :remember_me, as: :boolean, boolean_style: :inline %>
-        <%= f.label :remember_me, label: "Lembrar-me" %>
-      </div>
-      <% end %>
-
-      <div class="actions">
-        <%= f.submit "Entrar", class: 'btn btn-secondary btn-signin' %>
-        <%= link_to "Cadastrar-se", new_user_registration_path, class: 'btn btn-secondary btn-signin' %>
-        <%= link_to "Esqueceu sua senha?", new_user_password_path, class: 'btn btn-secondary btn-signin' %>
-      </div>
-      <% end %>
+  <div class="signup-form-container d-flex shadow rounded">
+    <div class="col-sm-12 col-md-5 rounded-left" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1533558701576-23c65e0272fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format); background-repeat: no-repeat; background-size: cover; background-position: center;">
     </div>
+
+
+    <div class="col-sm-12 col-md-7 pr-2 bg-white rounded-right">
+      <div class="p-5 m-5">
+        <h2 class="mb-5">Log in</h2>
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.input :email, label: "E-mail", autofocus: true %>
+          </div>
+
+          <div class="field">
+            <%= f.input :password, label: "Senha" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.input_field :remember_me, as: :boolean, boolean_style: :inline %>
+            <%= f.label :remember_me, label: "Lembrar" %>
+          </div>
+        <% end %>
+
+        <div class="actions mt-4 pt-2">
+          <%= f.submit "Entrar", class: 'btn btn-partnr btn-partnr-blue' %>
+          <%= link_to "Cadastrar-se", new_user_registration_path, class: 'btn btn-partnr btn-outline-partnr-yellow' %>
+          <div><%= link_to "Esqueceu sua senha?", new_user_password_path, class: 'btn btn-link t' %></div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>
