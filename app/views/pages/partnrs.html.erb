@@ -7,7 +7,7 @@
   <% else %>
     <% @goods.each do |good| %>
       <%= link_to good_path(good), class: 'partners-center' do %>
-        <div class="my-card">
+        <div class="my-card" style="background-image: url(<%= asset_url "#{good.good_type}.jpg"%>); background-size: cover">
           <div class="good-title"><%= good.brand %> <%= good.model %></div>
           <div class="partners-show-flex">
             <% good.users.each do |user| %>

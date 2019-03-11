@@ -2,8 +2,8 @@ input:focus {
   box-shadow: 0px 0px 0px 0px transparent !important;
 }
 
-input:not([type="range"], [type="submit"]), select {
-  background-color: transparent;
+input:not([type="range"], [type="submit"]), select, textarea {
+  background-color: transparent !important;
   border: none !important;
   border-radius: 0 !important;
   border-bottom: 1px solid $partnr-light-gray !important;

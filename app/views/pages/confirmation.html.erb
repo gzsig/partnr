@@ -26,22 +26,22 @@
 
           <h4 class="border border-warning border-top-0 border-left-0 border-right-0 text-center"><%= user.first_name.capitalize %> afirmou que:</h4>
 
-          <% if @good.good_type.capitalize == 'Car' %>
+          <% if @good.good_type.capitalize == 'Carro' %>
             <% @good.partners.find(user: user) %>
             <p>Pretende guiar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> kilometers por mês</p>
             <p>track use<%= @good.partners.find_by(user: user).track_use %></p>
             <p>other drivers<%= @good.partners.find_by(user: user).other_drivers %></p>
-          <% elsif @good.good_type.capitalize == 'Boat' %>
+          <% elsif @good.good_type.capitalize == 'Barco' %>
             <p>Pretende levar em média <strong><%= @good.partners.find_by(user: user).numberber_of_passengers.nil? ? '0' : @good.partners.find_by(user: user).numberber_of_passengers %></strong> passageiros</p>
             <p>Pretende navegar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> milhas por mês</p>
             <p>Pretende usar <strong><%= @good.partners.find_by(user: user).frenquency_month.nil? ? '0' : @good.partners.find_by(user: user).frenquency_month %></strong> vezes por mês</p>
             <p><strong><%= @good.partners.find_by(user: user).for_work.nil? ? 'Nao vai':'Vai' %></strong> ser usado para trabalho</p>
-          <% elsif @good.good_type.capitalize == 'Helicopter' %>
+          <% elsif @good.good_type.capitalize == 'Helicoptero' %>
             <p><%= @good.partners.find_by(user: user).numberber_of_passengers %></p>
             <p>Pretende voar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> milhas por mês</p>
             <p>Pretende usar <strong><%= @good.partners.find_by(user: user).frenquency_month.nil? ? '0' : @good.partners.find_by(user: user).frenquency_month %></strong> vezes por mês</p>
             <p><strong><%= @good.partners.find_by(user: user).for_work.nil? ? 'Nao vai':'Vai' %></strong> ser usado para trabalho</p>
-          <% elsif @good.good_type.capitalize == 'Jet' %>
+          <% elsif @good.good_type.capitalize == 'Jatinho' %>
             <p>Pretende levar em média <strong><%= @good.partners.find_by(user: user).numberber_of_passengers.nil? ? '0' : @good.partners.find_by(user: user).numberber_of_passengers %></strong> passageiros</p>
             <p>Pretende voar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> milhas por mês</p>
             <p>Pretende usar <strong><%= @good.partners.find_by(user: user).frenquency_month.nil? ? '0' : @good.partners.find_by(user: user).frenquency_month %></strong> vezes por mês</p>
