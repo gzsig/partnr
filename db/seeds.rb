@@ -14,10 +14,10 @@ def seed_video(file_name)
 end
 
 puts "creating 5 users (1st is admin)..."
-  User.create(first_name: "Admin", last_name: "User", email: "admin@test.com", bio: "I'm Admin Regular, what else do you wanna know?", CPF: "44466492808", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988775551", password: "123456", favorite: "Carro", adm: true)
-  User.create(first_name: "Admin", last_name: "User", email: "user1@test.com", bio: "I'm Regular, what else do you wanna know?", CPF: "47688683807", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Barco", adm: false)
-  User.create(first_name: "Admin", last_name: "User", email: "user2@test.com", bio: "I'm Regular, what else do you wanna know?", CPF: "41931115800", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Helicoptero", adm: false)
-  User.create(first_name: "Admin", last_name: "User", email: "user3@test.com", bio: "I'm Regular, what else do you wanna know?", CPF: "00320809803", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123456", favorite: "Jatinho", adm: false)
+  User.create(first_name: "Diego", last_name: "Gonzales", email: "diegogonzalesdesouza@gmail.com", bio: "I'm Admin Regular, what else do you wanna know?", CPF: "44466492808", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988775551", password: "123123", favorite: "Carro", adm: true)
+  User.create(first_name: "Gabriel", last_name: "Zsigmond", email: "gaazsig@gmail.com", bio: "I'm Regular, what else do you wanna know?", CPF: "47688683807", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11933021103", password: "123123", favorite: "Barco", adm: true)
+  User.create(first_name: "Fabi", last_name: "Carvalho", email: "fabiii.fa@gmail.com", bio: "I'm Regular, what else do you wanna know?", CPF: "41931115800", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11988776655", password: "123123", favorite: "Helicoptero", adm: false)
+  User.create(first_name: "Robertao", last_name: "Da Massa", email: "roberto.f.barros@gmail.com", bio: "I'm Regular, what else do you wanna know?", CPF: "95779626022", occupation: "Motherfucker CEO", address: "Eike's residence", phone_number: "11995207459", password: "123123", favorite: "Jatinho", adm: false)
 puts "done!"
 
 cont = 0
