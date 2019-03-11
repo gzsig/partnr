@@ -1,6 +1,6 @@
 <div class="parntr-container">
   <div class="flex">
-    <div class="col-sm-12 col-md-9 float-left p-0">
+    <div class="col-sm-12 col-md-8 float-left p-0">
       <div id="carouselExampleControls" class="carousel slide mb-3" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -32,7 +32,7 @@
       <% end %>
     </div>
 
-    <div class="col-sm-12 col-md-3 float-right p-0">
+    <div class="col-sm-12 col-md-4 float-right p-0">
       <div class="bg-partnr-yellow px-5 py-4">
         <h4 class="p-0 m-0 mb-1">
           <span class="h6 border border-dark rounded p-1 pl-2 mr-2">
@@ -48,11 +48,7 @@
           <p class="d-flex">
             <small>R$</small>
             <span class="h4">
-              <% formated_price = [] %>
-              <% @formated_price.each do |d| %>
-                <% @formated_price.index(d) % 3 == 0 ? formated_price << "#{d}." : formated_price << d %>
-              <% end %>
-              <span class="font-weight-bold"><%= formated_price.join %></span> | <%= @formated_price.join.to_i / 4 %><small class="text-secondary">/partnr</small>
+              <span class="font-weight-bold"><%= number_to_currency(@good.price.to_i, unit: "", precision: 0, delimiter: ".") %></span> | <%= number_to_currency(@good.price.to_i / 4, unit: "", precision: 0, delimiter: ".") %><small class="text-secondary">/partnr</small>
             </span>
           </p>
         </div>
