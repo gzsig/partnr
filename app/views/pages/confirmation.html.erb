@@ -27,7 +27,7 @@
           <h4 class="border border-warning border-top-0 border-left-0 border-right-0 text-center"><%= user.first_name.capitalize %> afirmou que:</h4>
 
           <% if @good.good_type.capitalize == 'Carro' %>
-            <% @good.partners.find(user: user) %>
+            <% @good.partners.where(user: user) %>
             <p>Pretende guiar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> kilometers por mês</p>
             <p>track use<%= @good.partners.find_by(user: user).track_use %></p>
             <p>other drivers<%= @good.partners.find_by(user: user).other_drivers %></p>
@@ -55,6 +55,6 @@
   </div>
   <div class="m-3 text-center">
     <%= link_to 'CONFIRM', contract_path(@good), data: {confirm: "I agree to buy a #{@good.brand} #{@good.model}"}, class:'btn btn-partnr btn-partnr-blue px-4 py-3 mr-2' %>
-    <%= link_to 'CANCEL', good_partner_path(@partner), method: 'delete', data: {confirm: "I agree to cancel my #{@good.brand} #{@good.model} order"}, class:'btn btn-outline-partnr-dark-gray px-4 py-3 ml2' %>
+    <%= link_to 'CANCEL', partner_path(@partner), method: 'delete', data: {confirm: "I agree to cancel my #{@good.brand} #{@good.model} order"}, class:'btn btn-outline-partnr-dark-gray px-4 py-3 ml2' %>
   </div>
 </div>

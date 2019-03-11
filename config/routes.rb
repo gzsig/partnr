@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :goods, except: %i[show index]
   end
 
-  resources :partnres, only: :destroy
+  resources :partners, only: :destroy
   resources :goods, only: %i[show index] do
     resources :partners, only: %i[ create ]
   end
