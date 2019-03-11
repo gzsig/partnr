@@ -1,16 +1,27 @@
+label {
+  margin-bottom: 0;
+}
+
 input:focus {
   box-shadow: 0px 0px 0px 0px transparent !important;
 }
 
-input:not([type="range"], [type="submit"]), select, textarea {
-  background-color: transparent !important;
+input[type="text"],
+input[type="textarea"],
+input[type="email"], input[type="tel"],
+input[type="password"],
+textarea,
+select {
   border: none !important;
   border-radius: 0 !important;
   border-bottom: 1px solid $partnr-light-gray !important;
   padding-left: 0 !important;
+  margin-bottom: 1.5em !important;
 
   &:focus {
     box-shadow: 0px 0px 0px 0px transparent !important;
+    border-bottom: 1px solid $partnr-blue !important;
+    transition: 0.6s;
   }
 }
 

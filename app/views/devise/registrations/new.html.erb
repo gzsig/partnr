@@ -1,18 +1,17 @@
 <div class="ml-5 mr-4 pl-2 pr-2">
   <div class="signup-form-container d-flex shadow rounded">
     <div class="col-sm-12 col-md-5 rounded-left" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1533558701576-23c65e0272fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format); background-repeat: no-repeat; background-size: cover; background-position: center;">
-
     </div>
 
     <div class="col-sm-12 col-md-7 pr-2 bg-white rounded-right">
-      <div class="signup-content p-5 m-5">
-        <h2 class="title-signup">Cadastrar-se</h2>
+      <div class="p-5 m-5">
+        <h2 class="mb-5">Cadastrar-se</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <%= image_tag "", width: 100, class: "d-none photo1", id: "photo-preview0", width:170, height: 170, crop: :thumb, gravity: :face, style: "border-radius: 50%" %>
-          <%= f.input :profile_picture, input_html: { class: 'invisible photo-input'}, label_html: { class: 'btn btn-link mt-4 mb-0 pb-0'}, label: '📷 Escolher foto de perfil' %>
+          <%= f.input :profile_picture, input_html: { class: 'invisible photo-input'}, label_html: { class: 'btn btn-link mb-0 pb-0 pl-0'}, label: '📷 Escolher foto de perfil' %>
           <%= f.input :profile_picture_cache, as: :hidden %>
 
           <div class="field">
@@ -59,7 +58,7 @@
             <%= f.input :password_confirmation, label: "Confirmar senha", autocomplete: "new-password" %>
           </div>
 
-          <div class="actions">
+          <div class="actions  mt-4 pt-3">
             <%= f.submit "Salvar", class: 'btn btn-partnr btn-partnr-blue' %>
             <%= link_to "Login", new_user_session_path, class: 'btn btn-partnr btn-outline-partnr-yellow' %>
           </div>
