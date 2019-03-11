@@ -1,80 +1,72 @@
 <div class="container">
-  <div class="card profile-edit">
+  <div class="bg-white rounded p-5 m-5">
     <div class="profile-edit-content">
       <h2>Editar <%= resource_name.to_s.humanize %></h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-      <%= image_tag "", width: 100, class: "d-none photo1", id: "photo-preview0", width:170, height: 170, crop: :thumb, gravity: :face, style: "border-radius: 50%" %>
-      <%= f.input :profile_picture, input_html: { class: 'invisible photo-input'}, label_html: { class: 'upload-profilephoto'}, label: '📷 Mudar foto de perfil' %>
-      <%= f.input :profile_picture_cache, as: :hidden %>
+        <%= image_tag "", width: 100, class: "d-none photo1", id: "photo-preview0", width:170, height: 170, crop: :thumb, gravity: :face, style: "border-radius: 50%" %>
+        <%= f.input :profile_picture, input_html: { class: 'invisible photo-input'}, label_html: { class: 'btn btn-link mb-0 mt-4 pb-0 pl-0'}, label: '📷 Mudar foto de perfil' %>
+        <%= f.input :profile_picture_cache, as: :hidden %>
 
-      <div class="field">
-        <%= f.input :favorite, collection: [ "Carro", "Barco", "Helicoptero", "Jatinho"], autofocus: true, label: "Favorito" %>
-      </div>
+        <div class="field">
+          <%= f.input :favorite, collection: [ "Carro", "Barco", "Helicoptero", "Jatinho"], autofocus: true, label: "Favorito" %>
+        </div>
 
-      <div class="field">
-        <%= f.input :email, autofocus: true, autocomplete: "email", label: "E-mail" %>
-      </div>
+        <div class="field">
+          <%= f.input :email, autofocus: true, autocomplete: "email", label: "E-mail" %>
+        </div>
 
-      <div class="field">
-        <%= f.input :first_name, label: "Primeiro nome" %>
-      </div>
+        <div class="field">
+          <%= f.input :first_name, label: "Primeiro nome" %>
+        </div>
 
-      <div class="field">
-        <%= f.input :last_name, label: "Último nome" %>
-      </div>
+        <div class="field">
+          <%= f.input :last_name, label: "Último nome" %>
+        </div>
 
-      <div class="field">
-        <%= f.input :phone_number, label: "Celular" %>
-      </div>
+        <div class="field">
+          <%= f.input :phone_number, label: "Celular" %>
+        </div>
 
-      <div class="field">
-        <%= f.input :CPF, label: "CPF" %>
-      </div>
+        <div class="field">
+          <%= f.input :CPF, label: "CPF" %>
+        </div>
 
-      <div class="field">
-        <%= f.input :bio, label: "Biografia" %>
-      </div>
+        <div class="field">
+          <%= f.input :bio, label: "Biografia" %>
+        </div>
 
-      <div class="field">
-        <%= f.input :occupation, label: "Ocupação" %>
-      </div>
+        <div class="field">
+          <%= f.input :occupation, label: "Ocupação" %>
+        </div>
 
-      <div class="field">
-        <%= f.input :address, label: "Endereço" %>
-      </div>
+        <div class="field">
+          <%= f.input :address, label: "Endereço" %>
+        </div>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-
-      <div class="field">
-        <%= f.input :password, autocomplete: "new-password", label: "Senha", hint: "Deixar em branco se não quiser mudar." %>
-        <% if @minimum_password_length %>
-        <br />
-        <em><%= @minimum_password_length %> characters minimum</em>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
-      </div>
 
-      <div class="field">
-        <%= f.input :password_confirmation, label: "Confirmar senha", autocomplete: "new-password" %>
-      </div>
+        <div class="field">
+          <%= f.input :password, autocomplete: "new-password", label: "Senha", hint: "Deixar em branco se não quiser mudar." %>
+        </div>
 
-      <div class="field">
-        <%= f.input :current_password, label: "Senha atual", autocomplete: "current-password", hint: "Precisamos da sua senha atual para confirmar suas mudanças." %>
-      </div>
+        <div class="field">
+          <%= f.input :password_confirmation, label: "Confirmar senha", autocomplete: "new-password" %>
+        </div>
 
-      <div class="actions">
-        <%= f.submit "Salvar", class: 'btn btn-secondary btn-edit' %>
-        <%= link_to "Voltar", :back, class: 'btn btn-secondary' %>
-      </div>
+        <div class="field">
+          <%= f.input :current_password, label: "Senha atual", autocomplete: "current-password", hint: "Precisamos da sua senha atual para confirmar suas mudanças." %>
+        </div>
+
+        <div class="actions mt-5">
+          <%= f.submit "Salvar", class: 'btn btn-partnr btn-partnr-blue' %>
+          <%= link_to "Voltar", :back, class: 'btn btn-partnr btn-outline-partnr-dark-gray' %>
+        </div>
       <% end %>
-
-      <h3 class="cancel">Cancelar minha conta</h3>
-
-      <p>Insatisfeito? <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Você tem certeza" }, method: :delete, class: 'btn btn-secondary' %></p>
     </div>
   </div>
 </div>

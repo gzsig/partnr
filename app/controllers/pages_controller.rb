@@ -37,6 +37,18 @@ class PagesController < ApplicationController
   end
 
   def create_contract(good)
+    # gets all partners' data
+    count = 1
+    # b = binding
+    Partner.where(good: good).each do |p|
+      instance_variable_set("@name#{count}", "#{p.user.first_name} #{p.user.last_name}")
+      instance_variable_set("@occupation#{count}", "#{p.user.occupation}")
+      instance_variable_set("@cpf#{count}", "#{p.user.CPF}")
+      instance_variable_set("@address#{count}", "#{p.user.address}")
+
+      count += 1
+    end
+
     response = HTTParty.post('https://sandbox.clicksign.com/api/v1/templates/eaa238ba-f5e9-4a29-849a-94427897c23e/documents?access_token=27db8324-897b-485a-9848-1e8482a60aab',
       headers: {
         Host: 'sandbox.clicksign.com',
@@ -48,8 +60,34 @@ class PagesController < ApplicationController
           path: "/Patnership-Contracts/#{good.brand}-#{good.model}-contract.docx",
           template: {
             data: {
-              Name: "Contrato - #{good.brand} #{good.model}",
-              Good: "#{good.brand} #{good.model}"
+              Brand: "#{good.brand}",
+              Model: "#{good.model}",
+              ModelY: "#{good.model_year}",
+              FabricationY: "#{good.fabrication_year}",
+              'Serial_Number' => "#{good.serial_number}",
+              Kilometers: "#{good.kilometers}",
+              Color: "#{good.color}",
+              Version: "#{good.version}",
+              Price: "#{good.price}",
+              Day: "#{Time.now.day}",
+              Month: "#{Time.now.month}",
+              Year: "#{Time.now.year}",
+              Name1: "#{@name1}",
+              Name2: "#{@name2}",
+              Name3: "#{@name3}",
+              Name4: "#{@name4}",
+              Occupation1: "#{@occupation1}",
+              Occupation2: "#{@occupation2}",
+              Occupation3: "#{@occupation3}",
+              Occupation4: "#{@occupation4}",
+              CPF1: "#{@cpf1}",
+              CPF2: "#{@cpf2}",
+              CPF3: "#{@cpf3}",
+              CPF4: "#{@cpf4}",
+              Address1: "#{@address1}",
+              Address2: "#{@address2}",
+              Address3: "#{@address3}",
+              Address4: "#{@address4}"
             }
           }
         }
