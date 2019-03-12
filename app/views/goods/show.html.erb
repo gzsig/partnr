@@ -56,9 +56,13 @@
             <% if @good.status %>
               <%= link_to icon('fas', 'glass-cheers') + " Fechou!", goods_path, class: 'btn btn-partnr btn-partnr-yellow px-4 py-3 disabled' %> <%=  %>
             <% else %>
-              <% @good.users.each do |user| %>
-                <%= cl_image_tag user.profile_picture, class: 'avatar ' %>
-              <% end %>
+              <div class="mb-4 mt-1 pb-2">Your partnrs:&nbsp
+                <% @good.users.each do |user| %>
+                  <% unless user == current_user %>
+                    <%= cl_image_tag user.profile_picture, class: 'avatar' %>
+                  <% end %>
+                <% end %>
+              </div>
             <% end %>
           <% else %>
             <% if @good.status %>
