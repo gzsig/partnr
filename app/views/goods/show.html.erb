@@ -30,7 +30,7 @@
         </video>
     </div>
 
-    <div class="col-sm-12 col-md-4 float-right p-0">
+    <div class="col-sm-12 col-md-4 float-right p-0 car-info-container">
       <div class="bg-partnr-yellow px-5 py-4">
         <h4 class="p-0 m-0 mb-1">
           <span class="h6 border border-dark rounded p-1 pl-2 mr-2">
@@ -118,3 +118,22 @@
 </div>
 
 <%= render partial: 'new' %>
+
+<script>
+  // when the user scrolls the page, execute function
+  window.onscroll = function() {stickySearchBar()};
+
+  // get search sidebar
+  const indexSearchContainer = document.querySelector('.car-info-container');
+  // get navbar
+  const nav = document.querySelector('.navbar');
+
+  // if page scroll is greater than navbar height, add sticky class to search sidebar (else, remove it)
+  function stickySearchBar() {
+    if (window.pageYOffset > nav.offsetHeight) {
+      indexSearchContainer.classList.add("sticky-right");
+    } else {
+      indexSearchContainer.classList.remove("sticky-right");
+    }
+  }
+</script>
