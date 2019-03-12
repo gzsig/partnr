@@ -25,9 +25,7 @@ class GoodsController < ApplicationController
     @goods = @goods.search_by_brand_and_model(query.downcase) unless !query.present?
     @goods = @goods.where(good_type: good_type.capitalize) unless !good_type.present?
     @goods = @goods.where('fabrication_year >= ?', fabrication_year) unless !fabrication_year.present?
-    # @goods = @goods.where('kilometers <= ?', kilometers) unless !kilometers.present?
     @goods = @goods.where("CAST(kilometers AS INT) <= ?", kilometers.to_i) unless !kilometers.present?
-    # @goods = @goods.where('price <= ?', price) unless !price.present?
     @goods = @goods.where("CAST(price AS INT) <= ?", price.to_i) unless !price.present?
     @goods = @goods.where(color: color.downcase) unless !color.present?
     @goods = @goods.where(body_style: body_style.downcase) unless !body_style.present?

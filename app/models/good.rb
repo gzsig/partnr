@@ -36,11 +36,11 @@ class Good < ApplicationRecord
 
   # def min and max prices within our db (to build price range @ view level)
   def self.min_good_price
-    Good.pluck(:price).map{ |k| k.to_i }.sort.first
+    Good.pluck(:price).map{ |p| p.to_i }.sort.first
   end
 
   def self.max_good_price
-    Good.pluck(:price).map{ |k| k.to_i }.sort.last
+    Good.pluck(:price).map{ |p| p.to_i }.sort.last
   end
 
   # def min and max prices within our db (to build price range @ view level)
