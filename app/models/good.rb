@@ -36,19 +36,19 @@ class Good < ApplicationRecord
 
   # def min and max prices within our db (to build price range @ view level)
   def self.min_good_price
-    Good.order(price: :asc).pluck(:price).first
+    Good.pluck(:price).map{ |k| k.to_i }.sort.first
   end
 
   def self.max_good_price
-    Good.order(price: :asc).pluck(:price).last
+    Good.pluck(:price).map{ |k| k.to_i }.sort.last
   end
 
   # def min and max prices within our db (to build price range @ view level)
   def self.min_good_mileage
-    Good.order(kilometers: :asc).pluck(:kilometers).first
+    Good.pluck(:kilometers).map{ |k| k.to_i }.sort.first
   end
 
   def self.max_good_mileage
-    Good.order(kilometers: :asc).pluck(:kilometers).last
+    Good.pluck(:kilometers).map{ |k| k.to_i }.sort.last
   end
 end
