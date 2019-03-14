@@ -49,9 +49,9 @@ class PagesController < ApplicationController
       count += 1
     end
 
-    response = HTTParty.post('https://sandbox.clicksign.com/api/v1/templates/eaa238ba-f5e9-4a29-849a-94427897c23e/documents?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+    response = HTTParty.post('https://app.clicksign.com/api/v1/templates/eaa238ba-f5e9-4a29-849a-94427897c23e/documents?',
       headers: {
-        Host: 'sandbox.clicksign.com',
+        Host: 'app.clicksign.com',
         'Content-Type' => 'application/json',
         Accept: 'application/json'
       },
@@ -105,9 +105,9 @@ class PagesController < ApplicationController
 
   def create_signers(good)
     Partner.where(good: good).each do |p|
-      response = HTTParty.post('https://sandbox.clicksign.com/api/v1/signers?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+      response = HTTParty.post('https://app.clicksign.com/api/v1/signers?',
         headers: {
-          Host: 'sandbox.clicksign.com',
+          Host: 'app.clicksign.com',
           'Content-Type' => 'application/json',
           Accept: 'application/json'
         },
@@ -136,9 +136,9 @@ class PagesController < ApplicationController
 
   def add_signers_to_contract(good)
     Partner.where(good: good).each do |p|
-      response = HTTParty.post('https://sandbox.clicksign.com/api/v1/lists?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+      response = HTTParty.post('https://app.clicksign.com/api/v1/lists?',
         headers: {
-          Host: 'sandbox.clicksign.com',
+          Host: 'app.clicksign.com',
           'Content-Type' => 'application/json',
           Accept: 'application/json'
         },
@@ -162,9 +162,9 @@ class PagesController < ApplicationController
   #   good = sign[:good]
   #   user = sign[:user]
 
-  #   repsonse = HTTParty.get('https://sandbox.clicksign.com/api/v1/documents/#{good.clicksign_key}?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+  #   repsonse = HTTParty.get('https://app.clicksign.com/api/v1/documents/#{good.clicksign_key}?',
   #     headers: {
-  #       Host: 'sandbox.clicksign.com',
+  #       Host: 'app.clicksign.com',
   #       'Content-Type' => 'application/json',
   #       Accept: 'application/json'
   #     }
@@ -182,9 +182,9 @@ class PagesController < ApplicationController
   end
   # def delete_signer_from_contract(good)
   #   Partner.where(good: good).each do |p|
-  #     HTTParty.delete('https://sandbox.clicksign.com/api/v1/lists?access_token=27db8324-897b-485a-9848-1e8482a60aab',
+  #     HTTParty.delete('https://app.clicksign.com/api/v1/lists?',
   #       headers: {
-  #         Host: 'sandbox.clicksign.com',
+  #         Host: 'app.clicksign.com',
   #         'Content-Type' => 'application/json',
   #         Accept: 'application/json'
   #       },
