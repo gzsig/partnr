@@ -1,61 +1,61 @@
-
 <div class="container">
   <div class="row">
     <% @good.users.each do |user| %>
-    <% unless user == current_user %>
-    <div class="col-xs-12 col-lg-4">
-      <div class="card confirmation-card">
-        <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_url "#{user.favorite}.jpg"%>)" class="profile-photo">
-          <%= cl_image_tag user.profile_picture, width:100, height: 100, crop: :thumb, gravity: :face, class: 'profile-pic', style: "border-radius: 50%" %>
-          <h5 class="confirmation-profile-name "><%= user.first_name %>  <%= user.last_name %></h5>
-        </div>
-        <div class="card-body profile-content">
-          <br>
-          <h5>Info</h5>
-          <p><i class="far fa-id-card"> <%= user.CPF %></i></p>
-          <p><i class="fas fa-briefcase"> <%= user.occupation %></i></p>
-          <p><i class="fas fa-home"> <%= user.address %></i></p>
-          <br>
-          <div class="bg-white">
-            <h5>Contact</h5>
-            <p><i class="fas fa-at"> <%= user.email %></i></p>
-            <p><i class="fas fa-phone"> <%= user.phone_number %></i></p>
+      <% unless user == current_user %>
+        <div class="col-xs-12 col-lg-4">
+          <div class="card confirmation-card">
+            <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_url "#{user.favorite}.jpg"%>)" class="profile-photo">
+              <%= cl_image_tag user.profile_picture, width:100, height: 100, crop: :thumb, gravity: :face, class: 'profile-pic', style: "border-radius: 50%" %>
+              <h5 class="confirmation-profile-name "><%= user.first_name %>  <%= user.last_name %></h5>
+            </div>
+            <div class="card-body profile-content">
+              <br>
+              <h5>Info</h5>
+              <p><i class="far fa-id-card"> <%= user.CPF %></i></p>
+              <p><i class="fas fa-briefcase"> <%= user.occupation %></i></p>
+              <p><i class="fas fa-home"> <%= user.address %></i></p>
+              <br>
+              <div class="bg-white">
+                <h5>Contact</h5>
+                <p><i class="fas fa-at"> <%= user.email %></i></p>
+                <p><i class="fas fa-phone"> <%= user.phone_number %></i></p>
+              </div>
+              <br>
+              <h5>About me</h5>
+              <p><i class="fas fa-book-open"> <%= user.bio %></i></p>
+
+              <h4 class="border border-warning border-top-0 border-left-0 border-right-0 text-center"><%= user.first_name.capitalize %> afirmou que:</h4>
+
+              <% if @good.good_type.capitalize == 'Carro' %>
+                <% @good.partners.where(user: user) %>
+                <p>Pretende guiar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> kilometers por mês</p>
+                <p>track use<%= @good.partners.find_by(user: user).track_use %></p>
+                <p>other drivers<%= @good.partners.find_by(user: user).other_drivers %></p>
+              <% elsif @good.good_type.capitalize == 'Barco' %>
+                <p>Pretende levar em média <strong><%= @good.partners.find_by(user: user).numberber_of_passengers.nil? ? '0' : @good.partners.find_by(user: user).numberber_of_passengers %></strong> passageiros</p>
+                <p>Pretende navegar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> milhas por mês</p>
+                <p>Pretende usar <strong><%= @good.partners.find_by(user: user).frenquency_month.nil? ? '0' : @good.partners.find_by(user: user).frenquency_month %></strong> vezes por mês</p>
+                <p><strong><%= @good.partners.find_by(user: user).for_work.nil? ? 'Nao vai':'Vai' %></strong> ser usado para trabalho</p>
+              <% elsif @good.good_type.capitalize == 'Helicoptero' %>
+                <p><%= @good.partners.find_by(user: user).numberber_of_passengers %></p>
+                <p>Pretende voar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> milhas por mês</p>
+                <p>Pretende usar <strong><%= @good.partners.find_by(user: user).frenquency_month.nil? ? '0' : @good.partners.find_by(user: user).frenquency_month %></strong> vezes por mês</p>
+                <p><strong><%= @good.partners.find_by(user: user).for_work.nil? ? 'Nao vai':'Vai' %></strong> ser usado para trabalho</p>
+              <% elsif @good.good_type.capitalize == 'Jatinho' %>
+                <p>Pretende levar em média <strong><%= @good.partners.find_by(user: user).numberber_of_passengers.nil? ? '0' : @good.partners.find_by(user: user).numberber_of_passengers %></strong> passageiros</p>
+                <p>Pretende voar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> milhas por mês</p>
+                <p>Pretende usar <strong><%= @good.partners.find_by(user: user).frenquency_month.nil? ? '0' : @good.partners.find_by(user: user).frenquency_month %></strong> vezes por mês</p>
+                <p><strong><%= @good.partners.find_by(user: user).for_work.nil? ? 'Nao vai':'Vai' %></strong> ser usado para trabalho</p>
+              <% end %>
+            </div>
           </div>
-          <br>
-          <h5>About me</h5>
-          <p><i class="fas fa-book-open"> <%= user.bio %></i></p>
-
-          <h4 class="border border-warning border-top-0 border-left-0 border-right-0 text-center"><%= user.first_name.capitalize %> afirmou que:</h4>
-
-          <% if @good.good_type.capitalize == 'Carro' %>
-            <% @good.partners.where(user: user) %>
-            <p>Pretende guiar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> kilometers por mês</p>
-            <p>track use<%= @good.partners.find_by(user: user).track_use %></p>
-            <p>other drivers<%= @good.partners.find_by(user: user).other_drivers %></p>
-          <% elsif @good.good_type.capitalize == 'Barco' %>
-            <p>Pretende levar em média <strong><%= @good.partners.find_by(user: user).numberber_of_passengers.nil? ? '0' : @good.partners.find_by(user: user).numberber_of_passengers %></strong> passageiros</p>
-            <p>Pretende navegar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> milhas por mês</p>
-            <p>Pretende usar <strong><%= @good.partners.find_by(user: user).frenquency_month.nil? ? '0' : @good.partners.find_by(user: user).frenquency_month %></strong> vezes por mês</p>
-            <p><strong><%= @good.partners.find_by(user: user).for_work.nil? ? 'Nao vai':'Vai' %></strong> ser usado para trabalho</p>
-          <% elsif @good.good_type.capitalize == 'Helicoptero' %>
-            <p><%= @good.partners.find_by(user: user).numberber_of_passengers %></p>
-            <p>Pretende voar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> milhas por mês</p>
-            <p>Pretende usar <strong><%= @good.partners.find_by(user: user).frenquency_month.nil? ? '0' : @good.partners.find_by(user: user).frenquency_month %></strong> vezes por mês</p>
-            <p><strong><%= @good.partners.find_by(user: user).for_work.nil? ? 'Nao vai':'Vai' %></strong> ser usado para trabalho</p>
-          <% elsif @good.good_type.capitalize == 'Jatinho' %>
-            <p>Pretende levar em média <strong><%= @good.partners.find_by(user: user).numberber_of_passengers.nil? ? '0' : @good.partners.find_by(user: user).numberber_of_passengers %></strong> passageiros</p>
-            <p>Pretende voar em média <strong><%= @good.partners.find_by(user: user).km_month.nil? ? '0' : @good.partners.find_by(user: user).km_month %></strong> milhas por mês</p>
-            <p>Pretende usar <strong><%= @good.partners.find_by(user: user).frenquency_month.nil? ? '0' : @good.partners.find_by(user: user).frenquency_month %></strong> vezes por mês</p>
-            <p><strong><%= @good.partners.find_by(user: user).for_work.nil? ? 'Nao vai':'Vai' %></strong> ser usado para trabalho</p>
-          <% end %>
         </div>
-      </div>
-    </div>
-    <% end %>
+      <% end %>
     <% end %>
   </div>
+
   <div class="m-3 text-center">
-    <%= link_to 'CONFIRM', contract_path(@good), data: {confirm: "I agree to buy a #{@good.brand} #{@good.model}"}, class:'btn btn-partnr btn-partnr-blue px-4 py-3 mr-2' %>
-    <%= link_to 'CANCEL', partner_path(@partner), method: 'delete', data: {confirm: "I agree to cancel my #{@good.brand} #{@good.model} order"}, class:'btn btn-outline-partnr-dark-gray px-4 py-3 ml2' %>
+    <%= link_to 'CONFIRM', contract_path(@good), data: {confirm: "Sim, estou de acordo com meus partnrs e quero comprar o #{@good.brand} #{@good.model}"}, class:'btn btn-partnr btn-partnr-blue px-4 py-3 mr-2' %>
+    <%= link_to 'CANCEL', partner_path(@partner), method: 'delete', data: {confirm: "Sim, confirmo que quero cancelar a compra de meu #{@good.brand} #{@good.model} order"}, class:'btn btn-outline-partnr-dark-gray px-4 py-3 ml2' %>
   </div>
 </div>
